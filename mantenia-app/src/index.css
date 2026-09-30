@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-ink: #111111;
+  --color-ink-soft: #2a2a2a;
+  --color-brand: #ffc20e;
+  --color-brand-soft: #fff3c7;
+  --color-brand-ink: #7a5a00;
+  --color-line: #e8e8e4;
+  --color-muted: #7b7b76;
+  --color-canvas: #f4f4f2;
+  --color-ok: #1f8a3b;
+  --color-bad: #c2362b;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* evita el zoom automático de iOS al enfocar */
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-[11px] font-semibold tracking-[0.12em] uppercase text-muted;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition
+      placeholder:text-[#a8a8a3] focus:border-ink;
+  }
+
+  .label {
+    @apply mb-2 block text-[13px] font-semibold text-ink;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}

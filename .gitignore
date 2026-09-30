@@ -1,0 +1,10 @@
+.vs/
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+**/appsettings.Development.json
+**/*.csproj.user
+**/.env
+**/.env.*
+!**/.env.example

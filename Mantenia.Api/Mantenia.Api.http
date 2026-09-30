@@ -1,0 +1,55 @@
+@api = http://localhost:5080
+@token = pegar_aca_el_token
+
+### Crear un usuario (requiere Auth:PermitirRegistro = true)
+POST {{api}}/api/auth/registro
+Content-Type: application/json
+
+{
+  "nombre": "Admin",
+  "apellido": "Mantenia",
+  "email": "admin@mantenia.com",
+  "clave": "CambiarEsto123",
+  "idOrganizacion": 1,
+  "idRol": 1
+}
+
+### Login (devuelve token válido por 24 hs)
+POST {{api}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@mantenia.com",
+  "clave": "CambiarEsto123"
+}
+
+### Contexto: usuario, organización, perfil y permisos
+GET {{api}}/api/app/contexto
+Authorization: Bearer {{token}}
+
+### Dashboard de inicio
+GET {{api}}/api/app/dashboard
+Authorization: Bearer {{token}}
+
+### Activos en riesgo
+GET {{api}}/api/app/activos?filtro=riesgo
+Authorization: Bearer {{token}}
+
+### Ficha de un activo con su historial
+GET {{api}}/api/app/activos/1
+Authorization: Bearer {{token}}
+
+### Crear una orden con repuestos
+POST {{api}}/api/app/ordenes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "idActivo": 1,
+  "descripcion": "Ruido en el motor",
+  "repuestos": [{ "repuesto": "Filtro de aceite", "cantidad": 1, "costo": 15000 }]
+}
+
+### Ajustes de la organización (Administrador)
+GET {{api}}/api/app/ajustes
+Authorization: Bearer {{token}}
