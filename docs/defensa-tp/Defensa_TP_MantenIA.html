@@ -152,6 +152,22 @@ dl.glosario dd{margin:0;font-size:15px;color:var(--ink-2)}
 @media (max-width:620px){dl.glosario{grid-template-columns:minmax(0,1fr);gap:2px}dl.glosario dd{margin-bottom:10px}}
 footer{margin-top:40px;font-size:13px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.pill.inf{color:var(--info);background:var(--info-soft)}
+.recordar{background:var(--ok-soft);border-radius:12px;padding:12px 16px 12px 16px;margin:20px 0 6px;font-size:15px}
+.recordar::before{content:"Lo que tenés que recordar";display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);margin-bottom:4px}
+.recordar ul{margin:0;padding-left:20px}.recordar li{margin:3px 0}
+.probalo{border:1px dashed var(--line);border-radius:12px;padding:12px 16px;margin:16px 0;font-size:15px;background:var(--surface)}
+.probalo::before{content:"Probalo vos";display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.probalo p{margin:2px 0}
+.er{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.er .ent{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0;font-size:13px}
+.er .ent b{display:block;font-family:var(--f-mono);font-size:13.5px;font-weight:500}
+.er .ent small{display:block;color:var(--ink-2);font-size:12.5px;line-height:1.45;margin-top:4px;overflow-wrap:anywhere}
+.er .ent i{display:block;font-style:normal;color:var(--brand-ink);font-size:12px;margin-top:6px}
+.er .centro{border:2px solid var(--brand);background:var(--brand-soft)}
+@media (max-width:700px){.er{grid-template-columns:minmax(0,1fr)}.er .centro{order:-1}}
+.secuencia li pre{margin-top:8px}
 </style>
 </head>
 <body>
@@ -160,36 +176,60 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
 <div class="wrap">
 <nav class="toc" aria-label="Índice">
   <div class="marca"><span class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffc20e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>MantenIA</div>
+  <div class="parte">Antes de empezar</div>
+  <ol>
+    <li><a href="#como-leer"><span>00</span>Cómo usar esta guía</a></li>
+  </ol>
   <div class="parte">Parte A · Panorama</div>
   <ol>
     <li><a href="#proyecto"><span>01</span>El proyecto</a></li>
     <li><a href="#veredicto"><span>02</span>¿Cumple la consigna?</a></li>
-    <li><a href="#conceptos"><span>03</span>Conceptos de API</a></li>
   </ol>
-  <div class="parte">Parte B · El backend por dentro</div>
+  <div class="parte">Parte 1 · Aprender desde cero</div>
   <ol>
-    <li><a href="#estructura"><span>04</span>Estructura de carpetas</a></li>
-    <li><a href="#arranque"><span>05</span>Cómo arranca: Program.cs</a></li>
-    <li><a href="#di"><span>06</span>Inyección de dependencias</a></li>
-    <li><a href="#datos"><span>07</span>Capa de datos</a></li>
-    <li><a href="#dtos"><span>08</span>Entidades y DTOs</a></li>
-    <li><a href="#negocio"><span>09</span>Capa de negocio</a></li>
-    <li><a href="#controllers"><span>10</span>Controllers</a></li>
-    <li><a href="#recorrido"><span>11</span>Un pedido de punta a punta</a></li>
-    <li><a href="#seguridad"><span>12</span>Login, JWT y permisos</a></li>
-    <li><a href="#errores"><span>13</span>Manejo de errores</a></li>
-    <li><a href="#mtbf"><span>14</span>Indicadores: MTBF</a></li>
-    <li><a href="#swagger"><span>15</span>Swagger y OpenAPI</a></li>
-    <li><a href="#front"><span>16</span>Cómo la usa la app</a></li>
+    <li><a href="#dotnet"><span>03</span>¿Qué es .NET?</a></li>
+    <li><a href="#herramientas"><span>04</span>Herramientas</a></li>
+    <li><a href="#csproj"><span>05</span>Proyecto y paquetes</a></li>
+    <li><a href="#cs-basico"><span>06</span>C# 1: variables y null</a></li>
+    <li><a href="#cs-clases"><span>07</span>C# 2: clases y objetos</a></li>
+    <li><a href="#cs-interfaces"><span>08</span>C# 3: interfaces y atributos</a></li>
+    <li><a href="#cs-linq"><span>09</span>C# 4: lambdas y LINQ</a></li>
+    <li><a href="#cs-async"><span>10</span>C# 5: errores y async</a></li>
+    <li><a href="#conceptos"><span>11</span>La web: HTTP y REST</a></li>
+    <li><a href="#base"><span>12</span>La base de datos</a></li>
+    <li><a href="#de-cero"><span>13</span>Armar el proyecto de cero</a></li>
   </ol>
-  <div class="parte">Parte C · Consigna y defensa</div>
+  <div class="parte">Parte 2 · El backend por dentro</div>
   <ol>
-    <li><a href="#funcionales"><span>17</span>Funcionales con capturas</a></li>
-    <li><a href="#diseno"><span>18</span>Requisitos de diseño</a></li>
-    <li><a href="#demo"><span>19</span>Guion de la demo</a></li>
-    <li><a href="#pendientes"><span>20</span>Qué falta y cómo hacerlo</a></li>
-    <li><a href="#preguntas"><span>21</span>Preguntas probables</a></li>
-    <li><a href="#glosario"><span>22</span>Glosario</a></li>
+    <li><a href="#estructura"><span>14</span>Estructura de carpetas</a></li>
+    <li><a href="#arranque"><span>15</span>Program.cs</a></li>
+    <li><a href="#di"><span>16</span>Inyección de dependencias</a></li>
+    <li><a href="#datos"><span>17</span>Capa de datos</a></li>
+    <li><a href="#dtos"><span>18</span>Entidades y DTOs</a></li>
+    <li><a href="#negocio"><span>19</span>Capa de negocio</a></li>
+    <li><a href="#ordenes"><span>20</span>Órdenes y contexto</a></li>
+    <li><a href="#controllers"><span>21</span>Controllers</a></li>
+    <li><a href="#recorrido"><span>22</span>Un pedido de punta a punta</a></li>
+    <li><a href="#seguridad"><span>23</span>Login, JWT y permisos</a></li>
+    <li><a href="#errores"><span>24</span>Manejo de errores</a></li>
+    <li><a href="#mtbf"><span>25</span>Indicadores: MTBF</a></li>
+    <li><a href="#swagger"><span>26</span>Swagger y OpenAPI</a></li>
+  </ol>
+  <div class="parte">Parte 3 · El frontend</div>
+  <ol>
+    <li><a href="#react"><span>27</span>React desde cero</a></li>
+    <li><a href="#front"><span>28</span>Cómo la app llama a la API</a></li>
+  </ol>
+  <div class="parte">Parte 4 · Consigna y defensa</div>
+  <ol>
+    <li><a href="#funcionales"><span>29</span>Funcionales con capturas</a></li>
+    <li><a href="#diseno"><span>30</span>Requisitos de diseño</a></li>
+    <li><a href="#receta"><span>31</span>Receta: agregar un campo</a></li>
+    <li><a href="#depurar"><span>32</span>Depurar y errores comunes</a></li>
+    <li><a href="#demo"><span>33</span>Guion de la demo</a></li>
+    <li><a href="#pendientes"><span>34</span>Qué falta y cómo hacerlo</a></li>
+    <li><a href="#preguntas"><span>35</span>Preguntas probables</a></li>
+    <li><a href="#glosario"><span>36</span>Glosario</a></li>
   </ol>
 </nav>
 
@@ -197,7 +237,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
 <header class="portada">
   <div class="eyebrow">UNLaM · DIIT · Programación Avanzada II · 2026-2C</div>
   <h1>Defensa del TP: <em>MantenIA</em></h1>
-  <p class="lead">Sistema de mantenimiento predictivo para plantas industriales y talleres. Una API REST en .NET documentada con OpenAPI (Swagger) y una app web mobile que la consume. Esta guía recorre el backend archivo por archivo para que cualquiera del equipo pueda explicarlo.</p>
+  <p class="lead">Sistema de mantenimiento predictivo para plantas industriales y talleres. Una API REST en .NET documentada con OpenAPI (Swagger) y una app web mobile que la consume. Esta guía enseña .NET desde cero y después recorre el proyecto archivo por archivo, para que cualquiera del equipo pueda explicarlo y modificarlo.</p>
   <div class="datos">
     <span>Entidad principal: <b>Activo</b></span>
     <span>Entidad de relación: <b>Cliente</b> (y Orden de trabajo)</span>
@@ -205,6 +245,31 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     <span>Stack: <b>.NET 10 · EF Core · SQL Server · React</b></span>
   </div>
 </header>
+
+<section id="como-leer">
+  <h2><span class="n">00</span>Cómo usar esta guía</h2>
+  <p>Esta guía está pensada para alguien que <b>nunca programó en .NET</b>. Al terminarla vas a saber qué es cada pieza que usa MantenIA, cómo se escribe, para qué sirve y cómo se conecta con las demás, como si el proyecto lo hubieras escrito vos.</p>
+  <h4>Ruta de lectura</h4>
+  <ol class="secuencia">
+    <li><div><b>Panorama</b> (secciones 01–02): qué es el proyecto y qué pide la consigna. 10 minutos.</div></li>
+    <li><div><b>Aprender desde cero</b>: qué es .NET, cómo se instala, el lenguaje C# paso a paso, cómo funciona la web, la base de datos y cómo se arma un proyecto de cero. Es la parte más larga y la más importante. Leela en orden.</div></li>
+    <li><div><b>El backend por dentro</b>: el código real de MantenIA, archivo por archivo, línea por línea.</div></li>
+    <li><div><b>El frontend</b>: cómo la app React usa la API.</div></li>
+    <li><div><b>Consigna y defensa</b>: capturas, cómo agregar un campo de punta a punta, cómo depurar, guion de la demo y preguntas probables.</div></li>
+  </ol>
+  <h4>Qué significa cada recuadro</h4>
+  <div class="tabla"><table>
+    <thead><tr><th>Recuadro</th><th>Para qué está</th></tr></thead>
+    <tbody>
+      <tr><td><span class="verbo" style="background:var(--brand)">①②③</span></td><td>Círculos amarillos dentro del código: marcan líneas importantes. Debajo del código hay una lista con la explicación de cada número.</td></tr>
+      <tr><td><span class="pill inf" style="background:var(--info-soft);color:var(--info)">Ejemplo del día a día</span></td><td>Una comparación con algo cotidiano para entender la idea antes que el código.</td></tr>
+      <tr><td><span class="pill" style="background:var(--ok-soft);color:var(--ok)">Lo que tenés que recordar</span></td><td>Resumen de la sección en pocas líneas. Si te acordás de eso, entendiste lo esencial.</td></tr>
+      <tr><td><span class="pill warn">Para decir en la defensa</span></td><td>Una frase lista para usar frente a los profesores.</td></tr>
+      <tr><td><span class="pill" style="background:var(--surface);color:var(--ink);border:1px solid var(--line)">Probalo vos</span></td><td>Un ejercicio corto para hacer en la computadora y fijar lo aprendido.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="nota inf"><p><b>Consejo.</b> Leé con el proyecto abierto en Visual Studio al lado. Cada vez que la guía nombra un archivo (por ejemplo <code>Mantenia.Api/Program.cs</code>), abrilo y buscá el código. Lo vas a entender mucho más rápido.</p></div>
+</section>
 
 <section id="proyecto">
   <h2><span class="n">01</span>El proyecto en 1 minuto</h2>
@@ -230,7 +295,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     <div><b>5</b><span>cumplidos con matices (hay que saber argumentarlos)</span></div>
     <div><b>4</b><span>faltan en el código actual</span></div>
   </div>
-  <div class="nota bad"><p><b>Importante.</b> La consigna dice que <i>“no se aceptará que alguna funcionalidad o requisito técnico no se encuentre plasmado”</i>. Los 4 puntos en rojo hay que agregarlos antes de entregar. La sección <a href="#pendientes">20</a> trae el código de cada uno.</p></div>
+  <div class="nota bad"><p><b>Importante.</b> La consigna dice que <i>“no se aceptará que alguna funcionalidad o requisito técnico no se encuentre plasmado”</i>. Los 4 puntos en rojo hay que agregarlos antes de entregar. La sección <a href="#pendientes">34</a> trae el código de cada uno.</p></div>
 
   <h3>Requerimientos funcionales</h3>
   <div class="tabla"><table>
@@ -239,7 +304,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
       <tr><td>1. Alta de la entidad</td><td><span class="pill ok">Cumple</span><br><span class="verbo POST">POST</span> <code>/api/app/activos</code> en <code>AppController.cs:67</code> → <code>ActivosAppService.CrearAsync</code>. Pantalla <code>/activos/nuevo</code>.</td></tr>
       <tr><td>2. Actualizar campos</td><td><span class="pill ok">Cumple</span><br><span class="verbo PUT">PUT</span> <code>/api/app/activos/{id}</code> en <code>AppController.cs:75</code> → <code>GuardarAsync</code>. Pantalla <code>/activos/:id/editar</code>.</td></tr>
       <tr><td>3. Eliminar</td><td><span class="pill ok">Cumple</span><br><span class="verbo DELETE">DELETE</span> <code>/api/app/activos/{id}</code> en <code>AppController.cs:84</code>. Si el activo tiene órdenes devuelve <b>409 Conflict</b> y no lo borra.</td></tr>
-      <tr><td>4. Listar con buscador de 2+ campos</td><td><span class="pill warn">Cumple con matiz</span><br><span class="verbo GET">GET</span> <code>/api/app/activos?buscar=&amp;filtro=</code>. El buscador mira <b>5 campos</b> (nombre, ID, cliente, marca y modelo) y hay filtro por estado. Pero es <b>un solo input</b>: conviene sumar un combo de categoría (ver <a href="#pendientes">20</a>).</td></tr>
+      <tr><td>4. Listar con buscador de 2+ campos</td><td><span class="pill warn">Cumple con matiz</span><br><span class="verbo GET">GET</span> <code>/api/app/activos?buscar=&amp;filtro=</code>. El buscador mira <b>5 campos</b> (nombre, ID, cliente, marca y modelo) y hay filtro por estado. Pero es <b>un solo input</b>: conviene sumar un combo de categoría (ver <a href="#pendientes">34</a>).</td></tr>
       <tr><td>5. Entidad de relación con alta y asociación</td><td><span class="pill ok">Cumple</span><br><b>Cliente</b>: se da de alta desde el formulario del activo (<span class="verbo POST">POST</span> <code>/api/app/clientes</code>) y queda asociado por la FK <code>Activo.IdCliente</code>. También <b>OrdenTrabajo</b> (FK <code>IdActivo</code>) con sus repuestos.</td></tr>
       <tr><td>6. Login</td><td><span class="pill ok">Cumple</span><br><span class="verbo POST">POST</span> <code>/api/auth/login</code> devuelve un <b>JWT</b>. Claves con hash PBKDF2. Rutas protegidas con <code>[Authorize]</code>.</td></tr>
     </tbody>
@@ -263,8 +328,556 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
   </table></div>
 </section>
 
+<div class="separador">Parte 1<b>Aprender .NET desde cero</b></div>
+
+<section id="dotnet">
+  <h2><span class="n">03</span>¿Qué es .NET?</h2>
+  <p>Un <b>programa</b> es una lista de instrucciones que la computadora ejecuta. Esas instrucciones se escriben en un <b>lenguaje de programación</b>. Para el backend de MantenIA usamos el lenguaje <b>C#</b> (se pronuncia “ce sharp”) sobre la plataforma <b>.NET</b> (“dot net”), ambos de Microsoft.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🌎</span><div><b class="t">Ejemplo del día a día: un país</b>
+    <p><b>C#</b> es el <b>idioma</b> en el que escribimos. <b>.NET</b> es el <b>país</b> donde ese idioma funciona: tiene sus leyes (cómo se ejecuta un programa), sus servicios públicos (miles de funciones ya hechas para leer archivos, manejar fechas, conectarse a internet) y sus herramientas (el compilador, el comando <code>dotnet</code>). <b>ASP.NET Core</b> es una <b>ciudad</b> de ese país especializada en hacer sitios web y APIs, y <b>Entity Framework Core</b> es la <b>oficina</b> que se encarga de hablar con la base de datos.</p></div></div>
+
+  <h3>Las piezas de .NET que usa MantenIA</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Pieza</th><th>Qué es</th><th>Para qué la usamos</th></tr></thead>
+    <tbody>
+      <tr><td>C#</td><td>Lenguaje de programación orientado a objetos.</td><td>Todo el código del backend (archivos <code>.cs</code>).</td></tr>
+      <tr><td>.NET 10</td><td>La plataforma: el motor que ejecuta el programa y la biblioteca base. Es la versión de soporte largo (LTS) lanzada en noviembre de 2025.</td><td>Ejecutar la API en Windows, Linux o Mac.</td></tr>
+      <tr><td>ASP.NET Core</td><td>El framework de .NET para hacer aplicaciones web y APIs.</td><td>Recibir pedidos HTTP, controllers, seguridad, validación.</td></tr>
+      <tr><td>Kestrel</td><td>El servidor web que viene adentro de ASP.NET Core.</td><td>Escuchar en <code>http://localhost:5080</code>.</td></tr>
+      <tr><td>Entity Framework Core</td><td>Un ORM: traduce entre objetos de C# y tablas SQL.</td><td>Leer y guardar activos, clientes, órdenes en SQL Server.</td></tr>
+      <tr><td>NuGet</td><td>El repositorio de librerías de .NET.</td><td>Bajar EF Core, JWT, OpenAPI y Scalar.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>¿Qué pasa cuando “ejecutamos” la API?</h3>
+  <p>La computadora no entiende C# directamente. El código pasa por varias etapas:</p>
+  <div class="cadena">
+    <div class="p"><b>Program.cs, *.cs</b><small>código C# que escribimos</small></div><span class="a">→</span>
+    <div class="p"><b>Compilador</b><small>revisa errores y traduce</small></div><span class="a">→</span>
+    <div class="p"><b>Mantenia.Api.dll</b><small>código intermedio (IL)</small></div><span class="a">→</span>
+    <div class="p"><b>Runtime (CLR)</b><small>lo traduce a código de máquina mientras corre</small></div><span class="a">→</span>
+    <div class="p"><b>API funcionando</b><small>escuchando pedidos</small></div>
+  </div>
+  <ol class="anot">
+    <li><div><b>Compilar</b> es traducir el código escrito por personas a algo que la máquina pueda ejecutar. Si hay un error de escritura (falta un <code>;</code>, una variable no existe), el compilador avisa y no deja seguir. Esto evita muchos errores antes de ejecutar.</div></li>
+    <li><div>El resultado es un archivo <code>.dll</code> en la carpeta <code>bin/</code>. No hay que tocarlo: se regenera cada vez que compilamos.</div></li>
+    <li><div>El <b>runtime</b> (CLR, Common Language Runtime) carga ese <code>.dll</code> y lo ejecuta. También libera la memoria que ya no se usa (el “recolector de basura”), así no tenemos que hacerlo a mano.</div></li>
+  </ol>
+
+  <h3>SDK y Runtime</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Se instala</th><th>Qué trae</th><th>Quién lo necesita</th></tr></thead>
+    <tbody>
+      <tr><td>.NET SDK</td><td>Compilador + runtime + comando <code>dotnet</code> + plantillas de proyectos.</td><td>Quien <b>programa</b> (nosotros).</td></tr>
+      <tr><td>.NET Runtime</td><td>Solo lo necesario para ejecutar.</td><td>El servidor donde se <b>publica</b> la API.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="nota inf"><p><b>.NET Framework vs .NET.</b> Hay dos “familias”. <b>.NET Framework</b> (hasta la 4.8) es la vieja, solo para Windows. <b>.NET</b> a secas (antes “.NET Core”, versiones 5, 6, 7, 8, 9, 10) es la moderna y multiplataforma. MantenIA usa la moderna. Si en internet encontrás ejemplos con <code>Global.asax</code> o <code>Web.config</code>, son de la vieja.</p></div>
+  <div class="recordar"><ul>
+    <li>C# es el lenguaje; .NET es la plataforma que lo ejecuta; ASP.NET Core es la parte de .NET para la web; EF Core es la parte para la base de datos.</li>
+    <li>El código se <b>compila</b> a un <code>.dll</code> y el <b>runtime</b> lo ejecuta.</li>
+    <li>Usamos <b>.NET 10</b>, versión moderna y multiplataforma.</li>
+  </ul></div>
+</section>
+
+<section id="herramientas">
+  <h2><span class="n">04</span>Herramientas: qué instalar y cómo se usan</h2>
+  <div class="tabla"><table>
+    <thead><tr><th>Herramienta</th><th>Para qué</th><th>Cómo verificar que está</th></tr></thead>
+    <tbody>
+      <tr><td>.NET 10 SDK</td><td>Compilar y ejecutar la API.</td><td><code>dotnet --version</code> → <code>10.0.xxx</code></td></tr>
+      <tr><td>Visual Studio (Community, gratis) con la carga “Desarrollo de ASP.NET y web”</td><td>Editor completo: escribir código, compilar con F5, depurar paso a paso.</td><td>Abrir <code>Mantenia.slnx</code></td></tr>
+      <tr><td>o VS Code + extensión “C# Dev Kit”</td><td>Editor liviano alternativo.</td><td>Abrir la carpeta del repo</td></tr>
+      <tr><td>SQL Server (Express o Developer) + SQL Server Management Studio (SSMS)</td><td>El motor de base de datos y el programa para ver las tablas y correr SQL.</td><td>Conectarse a <code>localhost</code> en SSMS</td></tr>
+      <tr><td>Node.js 20+</td><td>Solo para el frontend React.</td><td><code>node -v</code></td></tr>
+      <tr><td>Git</td><td>Control de versiones: guardar la historia de cambios del código.</td><td><code>git --version</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>El comando <code>dotnet</code></h3>
+  <p>Todo lo que hace Visual Studio con botones también se puede hacer desde la terminal. Conviene conocerlos porque los profesores pueden preguntar cómo se crea o ejecuta un proyecto.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><code>dotnet new webapi -n Mantenia.Api --use-controllers</code></td><td>Crea un proyecto nuevo de API a partir de una plantilla, con carpeta <code>Controllers</code>.</td></tr>
+      <tr><td><code>dotnet add package Microsoft.EntityFrameworkCore.SqlServer</code></td><td>Descarga una librería de NuGet y la anota en el <code>.csproj</code>.</td></tr>
+      <tr><td><code>dotnet restore</code></td><td>Descarga todos los paquetes que figuran en el <code>.csproj</code> (lo hace solo antes de compilar).</td></tr>
+      <tr><td><code>dotnet build</code></td><td>Compila. Muestra errores y advertencias.</td></tr>
+      <tr><td><code>dotnet run --launch-profile http</code></td><td>Compila y ejecuta usando el perfil <code>http</code> de <code>launchSettings.json</code>.</td></tr>
+      <tr><td><code>dotnet watch</code></td><td>Ejecuta y recompila solo cada vez que guardás un archivo.</td></tr>
+      <tr><td><code>dotnet user-secrets set "Jwt:Key" "..."</code></td><td>Guarda un dato secreto fuera del repositorio, solo en tu máquina.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>En Visual Studio</h3>
+  <ol class="secuencia">
+    <li><div><b>Archivo → Abrir → Proyecto o solución</b> y elegir <code>Mantenia.slnx</code>.</div></li>
+    <li><div>A la derecha aparece el <b>Explorador de soluciones</b>: el árbol de carpetas y archivos.</div></li>
+    <li><div>Arriba, en el botón verde ▶, elegir el perfil <b>http</b>.</div></li>
+    <li><div><b>F5</b> ejecuta con depurador (se puede pausar en una línea). <b>Ctrl+F5</b> ejecuta sin depurador.</div></li>
+    <li><div>Se abre el navegador en <code>http://localhost:5080/scalar/v1</code>, la página para probar la API.</div></li>
+  </ol>
+  <div class="probalo"><p>Instalá el SDK, abrí una terminal en la carpeta <code>Mantenia.Api</code> y ejecutá <code>dotnet build</code>. Si termina con “Compilación correcta” (o “Build succeeded”), tu entorno está listo.</p></div>
+</section>
+
+<section id="csproj">
+  <h2><span class="n">05</span>Proyecto, solución y paquetes</h2>
+  <p>En .NET el código se organiza en <b>proyectos</b>, y los proyectos se agrupan en una <b>solución</b>.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Archivo</th><th>Qué es</th><th>En MantenIA</th></tr></thead>
+    <tbody>
+      <tr><td><code>.slnx</code> (solución)</td><td>Una “carpeta lógica” que agrupa uno o más proyectos. Es lo que se abre en Visual Studio.</td><td><code>Mantenia.slnx</code> con un solo proyecto adentro.</td></tr>
+      <tr><td><code>.csproj</code> (proyecto)</td><td>Describe un programa: qué versión de .NET usa, qué paquetes necesita, cómo compilarlo. Todos los <code>.cs</code> de su carpeta forman parte de él.</td><td><code>Mantenia.Api/Mantenia.Api.csproj</code></td></tr>
+    </tbody>
+  </table></div>
+  <span class="ruta">Mantenia.slnx</span>
+<pre><code>&lt;Solution&gt;
+  &lt;Project Path=<span class="s">"Mantenia.Api/Mantenia.Api.csproj"</span> /&gt;
+&lt;/Solution&gt;</code></pre>
+
+  <h3>El <code>.csproj</code> línea por línea</h3>
+  <span class="ruta">Mantenia.Api/Mantenia.Api.csproj</span>
+<pre><code><span class="o">1</span> &lt;Project Sdk=<span class="s">"Microsoft.NET.Sdk.Web"</span>&gt;
+    &lt;PropertyGroup&gt;
+<span class="o">2</span>     &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;
+<span class="o">3</span>     &lt;Nullable&gt;enable&lt;/Nullable&gt;
+<span class="o">4</span>     &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+      &lt;RootNamespace&gt;Mantenia.Api&lt;/RootNamespace&gt;
+<span class="o">5</span>     &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt;
+      &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt;
+    &lt;/PropertyGroup&gt;
+
+<span class="o">6</span> &lt;ItemGroup&gt;
+      &lt;PackageReference Include=<span class="s">"Microsoft.AspNetCore.Authentication.JwtBearer"</span> Version=<span class="s">"10.0.*"</span> /&gt;
+      &lt;PackageReference Include=<span class="s">"Microsoft.AspNetCore.OpenApi"</span> Version=<span class="s">"10.0.*"</span> /&gt;
+      &lt;PackageReference Include=<span class="s">"Microsoft.EntityFrameworkCore.SqlServer"</span> Version=<span class="s">"10.0.*"</span> /&gt;
+      &lt;PackageReference Include=<span class="s">"Scalar.AspNetCore"</span> Version=<span class="s">"2.*"</span> /&gt;
+    &lt;/ItemGroup&gt;
+  &lt;/Project&gt;</code></pre>
+  <ol class="anot">
+    <li><div><code>Microsoft.NET.Sdk.Web</code> dice “esto es una aplicación web”: trae ASP.NET Core incluido.</div></li>
+    <li><div>Versión de .NET: la 10.</div></li>
+    <li><div>Activa los <b>tipos que aceptan null</b>: el compilador avisa si usamos algo que podría ser <code>null</code> sin revisarlo. Por eso en el código vemos <code>string?</code> (lo explicamos en la sección de C#).</div></li>
+    <li><div>Agrega solos los <code>using</code> más comunes (<code>System</code>, <code>System.Linq</code>, etc.), para no escribirlos en cada archivo.</div></li>
+    <li><div>Genera un archivo con los comentarios <code>/// &lt;summary&gt;</code>. Lo usa OpenAPI para mostrar la descripción de cada endpoint en Swagger/Scalar. <code>1591</code> apaga la advertencia “falta comentario” en lo que no comentamos.</div></li>
+    <li><div>Los <b>paquetes NuGet</b> que usa el proyecto. <code>10.0.*</code> significa “la última versión 10.0.x”.</div></li>
+  </ol>
+  <div class="analogia"><span class="ico" aria-hidden="true">🧰</span><div><b class="t">Ejemplo del día a día: la tienda de apps</b>
+    <p>NuGet es como la Play Store de los programadores .NET. En vez de escribir desde cero cómo firmar un token o cómo hablar con SQL Server, “instalamos” una librería que ya lo hace. El <code>.csproj</code> es la lista de apps instaladas: cualquiera que clone el repo ejecuta <code>dotnet restore</code> y se bajan las mismas.</p></div></div>
+  <div class="tabla"><table>
+    <thead><tr><th>Paquete</th><th>Para qué lo usamos</th></tr></thead>
+    <tbody>
+      <tr><td><code>Microsoft.EntityFrameworkCore.SqlServer</code></td><td>Entity Framework Core con el “traductor” para SQL Server.</td></tr>
+      <tr><td><code>Microsoft.AspNetCore.Authentication.JwtBearer</code></td><td>Leer y validar el token JWT que llega en cada pedido.</td></tr>
+      <tr><td><code>Microsoft.AspNetCore.OpenApi</code></td><td>Generar el documento OpenAPI (<code>/openapi/v1.json</code>).</td></tr>
+      <tr><td><code>Scalar.AspNetCore</code></td><td>La página web para ver y probar la API (<code>/scalar/v1</code>).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Otros archivos y carpetas del proyecto</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Archivo / carpeta</th><th>Qué es</th></tr></thead>
+    <tbody>
+      <tr><td><code>bin/</code> y <code>obj/</code></td><td>Los genera el compilador. No se suben a Git (están en <code>.gitignore</code>) y se pueden borrar sin problema.</td></tr>
+      <tr><td><code>appsettings.json</code></td><td>Configuración: cadena de conexión a la base, datos del JWT, CORS.</td></tr>
+      <tr><td><code>appsettings.Development.json</code></td><td>Pisa valores de <code>appsettings.json</code> solo en desarrollo. Ahí van la cadena de conexión local y la clave JWT de prueba. No se sube al repo.</td></tr>
+      <tr><td><code>Properties/launchSettings.json</code></td><td>Cómo arrancar en desarrollo: puerto, URL que se abre, variables de entorno.</td></tr>
+      <tr><td><code>Mantenia.Api.http</code></td><td>Pedidos HTTP de ejemplo para ejecutar desde el editor.</td></tr>
+    </tbody>
+  </table></div>
+  <span class="ruta">Mantenia.Api/Properties/launchSettings.json (perfil http)</span>
+<pre><code><span class="s">"http"</span>: {
+  <span class="s">"commandName"</span>: <span class="s">"Project"</span>,
+  <span class="s">"launchBrowser"</span>: <span class="k">true</span>,                       <span class="c">// abre el navegador solo</span>
+  <span class="s">"launchUrl"</span>: <span class="s">"scalar/v1"</span>,                    <span class="c">// ...en esta página</span>
+  <span class="s">"applicationUrl"</span>: <span class="s">"http://localhost:5080"</span>,     <span class="c">// dirección y puerto</span>
+  <span class="s">"environmentVariables"</span>: { <span class="s">"ASPNETCORE_ENVIRONMENT"</span>: <span class="s">"Development"</span> }
+}</code></pre>
+  <p><code>ASPNETCORE_ENVIRONMENT</code> le dice a la API en qué <b>entorno</b> está. En <code>Development</code> se lee <code>appsettings.Development.json</code> y se publica Swagger/Scalar. En producción (<code>Production</code>) no.</p>
+  <div class="recordar"><ul>
+    <li><b>Solución</b> (<code>.slnx</code>) agrupa <b>proyectos</b> (<code>.csproj</code>).</li>
+    <li>El <code>.csproj</code> define la versión de .NET y los paquetes NuGet.</li>
+    <li>La configuración vive en <code>appsettings.json</code>; los secretos, en <code>appsettings.Development.json</code> o user-secrets.</li>
+  </ul></div>
+</section>
+
+<section id="cs-basico">
+  <h2><span class="n">06</span>C# desde cero (1): variables, tipos y null</h2>
+  <p>Una <b>variable</b> es una caja con nombre donde guardamos un dato. En C# cada caja tiene un <b>tipo</b> que dice qué se puede guardar adentro. Si intentás guardar un texto en una caja de números, el compilador no te deja.</p>
+<pre><code><span class="o">1</span> int cantidad = <span class="m">2</span>;
+<span class="o">2</span> string nombre = <span class="s">"Compresor C-02"</span>;
+<span class="o">3</span> bool activo = <span class="k">true</span>;
+<span class="o">4</span> decimal costo = <span class="m">21000.50m</span>;
+<span class="o">5</span> DateTime ahora = DateTime.Now;
+<span class="o">6</span> var email = dto.Email.Trim();      <span class="c">// el compilador deduce que es string</span></code></pre>
+  <ol class="anot">
+    <li><div>Se lee: “creo una caja de tipo <code>int</code> llamada <code>cantidad</code> y le pongo 2”. El <code>;</code> marca el fin de cada instrucción.</div></li>
+    <li><div>Los textos van entre comillas dobles.</div></li>
+    <li><div>Verdadero o falso.</div></li>
+    <li><div>Números con decimales exactos, para plata. La <code>m</code> final indica que el número es <code>decimal</code>.</div></li>
+    <li><div>Fecha y hora. <code>DateTime.Now</code> es “ahora mismo”.</div></li>
+    <li><div><code>var</code> deja que el compilador deduzca el tipo mirando lo que está a la derecha. Sigue siendo un tipo fijo, solo que no lo escribimos.</div></li>
+  </ol>
+  <div class="tabla"><table>
+    <thead><tr><th>Tipo</th><th>Guarda</th><th>Dónde aparece en MantenIA</th></tr></thead>
+    <tbody>
+      <tr><td><code>int</code></td><td>Números enteros</td><td><code>IdActivo</code>, <code>Cantidad</code> de un repuesto</td></tr>
+      <tr><td><code>string</code></td><td>Texto</td><td><code>Nombre</code>, <code>Marca</code>, <code>Email</code></td></tr>
+      <tr><td><code>bool</code></td><td><code>true</code> / <code>false</code></td><td><code>Usuario.Activo</code>, <code>EstadoOrden.EsFinal</code></td></tr>
+      <tr><td><code>decimal</code></td><td>Dinero</td><td><code>OrdenTrabajo.Importe</code>, <code>Costo</code> del repuesto</td></tr>
+      <tr><td><code>double</code></td><td>Números con decimales para cálculos</td><td>MTBF en días</td></tr>
+      <tr><td><code>DateTime</code></td><td>Fecha y hora</td><td><code>FechaCreacion</code>, <code>FechaCierre</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3><code>null</code> y el signo <code>?</code></h3>
+  <p><code>null</code> significa “no hay nada”. En la base de datos es una columna vacía. En C#, un tipo seguido de <code>?</code> <b>acepta</b> null; sin <code>?</code>, no.</p>
+<pre><code>public int IdActivo { get; set; }          <span class="c">// siempre tiene número</span>
+public int? IdCliente { get; set; }        <span class="c">// puede no tener cliente → null</span>
+public string? Marca { get; set; }         <span class="c">// la marca es opcional</span></code></pre>
+  <div class="analogia"><span class="ico" aria-hidden="true">📦</span><div><b class="t">Ejemplo del día a día: un formulario en papel</b>
+    <p>Un casillero vacío no es lo mismo que un casillero con un 0. Si en “cantidad de hijos” ponés 0, es un dato; si lo dejás en blanco, no sabemos. <code>null</code> es el casillero en blanco.</p></div></div>
+  <p>Usar algo que es <code>null</code> como si tuviera valor hace que el programa falle con el error más famoso de C#: <code>NullReferenceException</code>. Por eso C# tiene operadores para manejar null con cuidado. Todos aparecen en el proyecto:</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Operador</th><th>Se lee</th><th>Ejemplo real</th></tr></thead>
+    <tbody>
+      <tr><td><code>??</code></td><td>“si lo de la izquierda es null, usá lo de la derecha”</td><td><code>usuario.Email ?? string.Empty</code> → si no tiene email, texto vacío</td></tr>
+      <tr><td><code>?.</code></td><td>“si no es null, seguí; si es null, devolvé null”</td><td><code>a.Cliente?.Nombre</code> → si el activo no tiene cliente, no explota</td></tr>
+      <tr><td><code>??=</code></td><td>“asignale este valor solo si todavía está en null”</td><td><code>orden.FechaInicio ??= ahora;</code> → la fecha de inicio se pone una sola vez</td></tr>
+      <tr><td><code>!</code> (al final)</td><td>“compilador, confiá: esto no es null”</td><td><code>conFecha[0].FechaCreacion!.Value</code></td></tr>
+      <tr><td><code>is null</code> / <code>is not null</code></td><td>pregunta si es null</td><td><code>return dto is null ? NotFound() : Ok(dto);</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Otros operadores que vas a ver</h3>
+<pre><code><span class="c">// Comparar: ==  !=  &gt;  &lt;  &gt;=  &lt;=     Lógicos: &amp;&amp; (y)   || (o)   ! (no)</span>
+if (ordenes &gt; <span class="m">0</span> &amp;&amp; !esSistemas) { ... }
+
+<span class="c">// Ternario:  condición ? valorSiVerdadero : valorSiFalso</span>
+var nivel = probabilidad &gt;= <span class="m">80</span> ? <span class="s">"riesgo"</span> : <span class="s">"ok"</span>;
+
+<span class="c">// Texto con variables adentro (interpolación): el $ antes de las comillas</span>
+var mensaje = $<span class="s">"No se puede eliminar: tiene {ordenes} orden(es)."</span>;
+
+<span class="c">// Comentarios: // una línea     /// documentación (la usa OpenAPI)</span></code></pre>
+  <h3>Decisiones: <code>if</code> y <code>switch</code></h3>
+<pre><code>if (usuario is null)                  <span class="c">// si...</span>
+{
+    return null;
+}
+else                                   <span class="c">// si no...</span>
+{
+    return CrearRespuesta(usuario);
+}
+
+<span class="c">// switch expression: elegir un valor según varios casos</span>
+var orden = nivel switch
+{
+    <span class="s">"riesgo"</span>  =&gt; <span class="m">0</span>,
+    <span class="s">"revisar"</span> =&gt; <span class="m">1</span>,
+    _          =&gt; <span class="m">2</span>,                <span class="c">// _ = cualquier otro caso</span>
+};</code></pre>
+  <div class="recordar"><ul>
+    <li>Cada variable tiene un tipo: <code>int</code>, <code>string</code>, <code>bool</code>, <code>decimal</code>, <code>DateTime</code>.</li>
+    <li><code>?</code> después del tipo = puede ser null. <code>??</code>, <code>?.</code> y <code>??=</code> sirven para manejar null sin errores.</li>
+    <li><code>$"...{variable}..."</code> arma textos; <code>condición ? a : b</code> elige entre dos valores.</li>
+  </ul></div>
+</section>
+
+<section id="cs-clases">
+  <h2><span class="n">07</span>C# desde cero (2): clases y objetos</h2>
+  <p>C# es un lenguaje <b>orientado a objetos</b>: el programa se arma con piezas llamadas <b>clases</b>. Una clase es un <b>molde</b> que define qué datos tiene algo y qué puede hacer. Un <b>objeto</b> es una pieza concreta hecha con ese molde.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🍪</span><div><b class="t">Ejemplo del día a día: el molde de galletitas</b>
+    <p>La clase <code>Activo</code> es el molde: dice que todo activo tiene nombre, marca, modelo. Cada activo real (“Compresor C-02”, “Torno T-04”) es una galletita hecha con ese molde: un objeto. Con un molde podés hacer miles de galletitas, cada una con sus propios valores.</p></div></div>
+
+  <h3>Una clase: datos (propiedades)</h3>
+  <span class="ruta">Mantenia.Api/Entities/Cliente.cs</span>
+<pre><code><span class="o">1</span> namespace Mantenia.Api.Entities;
+
+<span class="o">2</span> public class Cliente
+  {
+<span class="o">3</span>     public int IdCliente { get; set; }
+      public int? IdOrganizacion { get; set; }
+      public string? Nombre { get; set; }
+      public string? Apellido { get; set; }
+      public string? Telefono { get; set; }
+      public string? Email { get; set; }
+
+<span class="o">4</span>     public Organizacion? Organizacion { get; set; }
+  }</code></pre>
+  <ol class="anot">
+    <li><div><b>namespace</b> es el “apellido” de la clase: su nombre completo es <code>Mantenia.Api.Entities.Cliente</code>. Sirve para ordenar y para que no choquen dos clases con el mismo nombre. Coincide con la carpeta donde está el archivo.</div></li>
+    <li><div><code>public class Cliente</code>: declara la clase. <code>public</code> = la puede usar cualquier parte del programa.</div></li>
+    <li><div>Una <b>propiedad</b>: un dato del objeto. <code>{ get; set; }</code> quiere decir que se puede leer (<code>get</code>) y escribir (<code>set</code>).</div></li>
+    <li><div>Una propiedad puede ser otro objeto: el cliente “tiene” una organización.</div></li>
+  </ol>
+
+  <h3>Crear y usar un objeto</h3>
+<pre><code><span class="o">1</span> var cliente = new Cliente
+  {
+      IdOrganizacion = <span class="m">1</span>,
+      Nombre = <span class="s">"Carlos"</span>,
+      Apellido = <span class="s">"Díaz"</span>,
+      Telefono = <span class="s">"11 6666-7777"</span>,
+  };
+<span class="o">2</span> cliente.Email = <span class="s">"carlos@mail.com"</span>;
+<span class="o">3</span> Console.WriteLine(cliente.Nombre);   <span class="c">// muestra: Carlos</span></code></pre>
+  <ol class="anot">
+    <li><div><code>new</code> fabrica un objeto nuevo con el molde. Las llaves <code>{ ... }</code> le cargan valores al crearlo (se llama “inicializador de objeto”). Así lo hace <code>CrearClienteAsync</code> en el proyecto.</div></li>
+    <li><div>Con el punto <code>.</code> accedemos a una propiedad para leerla o cambiarla.</div></li>
+    <li><div><code>IdCliente</code> todavía vale 0: lo asigna la base al guardar.</div></li>
+  </ol>
+
+  <h3>Métodos: lo que una clase sabe hacer</h3>
+  <p>Un <b>método</b> es un bloque de código con nombre que recibe datos (<b>parámetros</b>), hace algo y puede devolver un resultado.</p>
+<pre><code><span class="o">1</span> private static string? Texto(string? valor)
+  {
+<span class="o">2</span>     if (string.IsNullOrWhiteSpace(valor))
+          return null;
+<span class="o">3</span>     return valor.Trim();
+  }
+
+<span class="o">4</span> private static string? Texto(string? valor) =&gt; string.IsNullOrWhiteSpace(valor) ? null : valor.Trim();</code></pre>
+  <ol class="anot">
+    <li><div>Se lee: método privado, estático, que devuelve <code>string?</code>, se llama <code>Texto</code> y recibe un parámetro <code>valor</code>.</div></li>
+    <li><div>Si el texto es null, vacío o solo espacios, devuelve null.</div></li>
+    <li><div><code>return</code> termina el método y devuelve el valor. <code>Trim()</code> saca espacios al principio y al final.</div></li>
+    <li><div>La misma función en una línea, como está en <code>ActivosAppService</code>. <code>=&gt;</code> reemplaza a “<code>{ return ... }</code>”.</div></li>
+  </ol>
+  <h4>Palabras que acompañan a clases y métodos</h4>
+  <div class="tabla"><table>
+    <thead><tr><th>Palabra</th><th>Significa</th></tr></thead>
+    <tbody>
+      <tr><td><code>public</code></td><td>Lo puede usar cualquier clase.</td></tr>
+      <tr><td><code>private</code></td><td>Solo lo usa la propia clase (detalles internos, como <code>Aplicar</code> o <code>Texto</code>).</td></tr>
+      <tr><td><code>internal</code></td><td>Solo dentro de este proyecto.</td></tr>
+      <tr><td><code>static</code></td><td>Pertenece a la clase, no a un objeto: se usa sin <code>new</code>. Ej.: <code>Indicadores.CalcularSalud(...)</code>.</td></tr>
+      <tr><td><code>sealed</code></td><td>Nadie puede heredar de esta clase. Lo usamos en casi todas por prolijidad.</td></tr>
+      <tr><td><code>void</code></td><td>El método no devuelve nada.</td></tr>
+      <tr><td><code>const</code></td><td>Valor fijo que nunca cambia: <code>public const string Sistemas = "Sistemas";</code></td></tr>
+      <tr><td><code>readonly</code></td><td>Se asigna una vez y después no se puede cambiar.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Constructores: lo que un objeto necesita para nacer</h3>
+  <p>El <b>constructor</b> es un método especial que se ejecuta al hacer <code>new</code>. Sirve para recibir lo que el objeto necesita para funcionar. C# 12 trae una forma corta, el <b>constructor primario</b>, que usamos en todo el proyecto. Estas dos versiones hacen lo mismo:</p>
+  <div class="lado">
+    <div><div class="et">Forma clásica</div>
+<pre><code>public class AuthService : IAuthService
+{
+    private readonly ManteniaDbContext db;
+    private readonly ITokenService tokenService;
+
+    public AuthService(ManteniaDbContext db,
+                       ITokenService tokenService)
+    {
+        this.db = db;
+        this.tokenService = tokenService;
+    }
+}</code></pre></div>
+    <div><div class="et">Constructor primario (como está en el proyecto)</div>
+<pre><code>public sealed class AuthService(
+    ManteniaDbContext db,
+    ITokenService tokenService) : IAuthService
+{
+    <span class="c">// db y tokenService ya se pueden usar</span>
+    <span class="c">// en cualquier método de la clase</span>
+}</code></pre></div>
+  </div>
+  <p>¿Quién llama a ese constructor y le pasa la base y el servicio de tokens? Nadie de nosotros: lo hace ASP.NET con la <b>inyección de dependencias</b>, que vemos en la parte del backend.</p>
+  <div class="probalo"><p>Abrí <code>Entities/OrdenTrabajo.cs</code>. ¿Qué propiedades son opcionales? ¿Cuál guarda plata? (Respuesta: todas menos <code>IdOrdenTrabajo</code> tienen <code>?</code>; <code>Importe</code> es <code>decimal?</code>).</p></div>
+  <div class="recordar"><ul>
+    <li><b>Clase</b> = molde; <b>objeto</b> = pieza hecha con <code>new</code>.</li>
+    <li><b>Propiedades</b> = datos (<code>{ get; set; }</code>); <b>métodos</b> = acciones.</li>
+    <li>El <b>constructor</b> recibe lo que el objeto necesita; en el proyecto usamos el constructor primario <code>class X(Dependencia d)</code>.</li>
+  </ul></div>
+</section>
+
+<section id="cs-interfaces">
+  <h2><span class="n">08</span>C# desde cero (3): herencia, interfaces, atributos y genéricos</h2>
+  <h3>Herencia: “es un”</h3>
+  <p>Una clase puede <b>heredar</b> de otra con <code>:</code>. Recibe todo lo que tiene la otra y puede agregar o cambiar cosas.</p>
+<pre><code><span class="o">1</span> public sealed class AppController(...) : ControllerBase { ... }
+
+<span class="o">2</span> public class ManteniaDbContext(...) : DbContext(options)
+  {
+<span class="o">3</span>     protected override void OnModelCreating(ModelBuilder modelBuilder) { ... }
+  }</code></pre>
+  <ol class="anot">
+    <li><div>Nuestro controller <b>es un</b> <code>ControllerBase</code>: por eso tiene gratis métodos como <code>Ok()</code>, <code>NotFound()</code>, <code>CreatedAtAction()</code>.</div></li>
+    <li><div>Nuestro contexto <b>es un</b> <code>DbContext</code> de Entity Framework: hereda todo lo necesario para hablar con la base.</div></li>
+    <li><div><code>override</code> = “reemplazo este método de la clase padre por mi versión”. EF llama a <code>OnModelCreating</code> al arrancar y nosotros le decimos cómo son las tablas.</div></li>
+  </ol>
+
+  <h3>Interfaces: un contrato</h3>
+  <p>Una <b>interfaz</b> es una lista de métodos <b>sin código</b>: dice <i>qué</i> se puede hacer, no <i>cómo</i>. Una clase que la implementa se compromete a escribir todos esos métodos. Por convención los nombres de interfaz empiezan con <code>I</code>.</p>
+  <div class="lado">
+    <div><div class="et">El contrato · Interfaces/ITokenService.cs</div>
+<pre><code>public interface ITokenService
+{
+    TokenGenerado CrearToken(Usuario usuario, string? rol);
+}</code></pre></div>
+    <div><div class="et">Quien lo cumple · Services/TokenService.cs</div>
+<pre><code>public sealed class TokenService(...) : ITokenService
+{
+    public TokenGenerado CrearToken(Usuario usuario, string? rol)
+    {
+        <span class="c">// el código real que arma el JWT</span>
+    }
+}</code></pre></div>
+  </div>
+  <div class="analogia"><span class="ico" aria-hidden="true">🚕</span><div><b class="t">Ejemplo del día a día: pedir un auto en una app</b>
+    <p>Vos pedís “un auto que me lleve de A a B” (la interfaz). No te importa quién maneja ni qué modelo es (la clase concreta). Mientras cumpla el contrato, te sirve. Por eso <code>AuthService</code> pide un <code>ITokenService</code> y no un <code>TokenService</code>: depende del contrato, no de la clase. Si mañana cambiamos cómo se generan los tokens, <code>AuthService</code> no se toca.</p></div></div>
+
+  <h3>Atributos: etiquetas entre corchetes</h3>
+  <p>Un <b>atributo</b> es una etiqueta <code>[ ... ]</code> que se pone arriba de una clase, método o propiedad. No hace nada por sí sola: es información que <b>lee el framework</b> para saber cómo tratar esa pieza.</p>
+<pre><code>[HttpPost(<span class="s">"activos"</span>)]                              <span class="c">// ASP.NET: este método responde a POST /activos</span>
+[Authorize(Policy = Politicas.GestionarActivos)]   <span class="c">// ASP.NET: exigí este permiso</span>
+public async Task&lt;...&gt; CrearActivo([FromBody] ActivoGuardarDto dto, ...)   <span class="c">// el dato sale del cuerpo JSON</span>
+
+[Required]                                         <span class="c">// validación: obligatorio</span>
+[StringLength(<span class="m">150</span>)]                                 <span class="c">// validación: máximo 150 caracteres</span>
+public string Nombre { get; set; }</code></pre>
+  <div class="analogia"><span class="ico" aria-hidden="true">🏷️</span><div><b class="t">Ejemplo del día a día: etiquetas de un paquete</b>
+    <p>“Frágil”, “Este lado arriba”, “Entregar en mano”. El paquete no cambia, pero el que lo maneja lo trata distinto según la etiqueta. Los atributos son esas etiquetas y ASP.NET es el empleado del correo.</p></div></div>
+
+  <h3>Genéricos: los <code>&lt;T&gt;</code></h3>
+  <p>Cuando ves algo entre <code>&lt; &gt;</code> es un <b>genérico</b>: una clase que funciona con cualquier tipo, y entre los signos se indica cuál.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Escrito</th><th>Se lee</th></tr></thead>
+    <tbody>
+      <tr><td><code>List&lt;Activo&gt;</code></td><td>Una lista de activos.</td></tr>
+      <tr><td><code>Dictionary&lt;int, Activo&gt;</code></td><td>Un diccionario: dado un número (id), te da el activo.</td></tr>
+      <tr><td><code>DbSet&lt;Cliente&gt;</code></td><td>La tabla de clientes en EF Core.</td></tr>
+      <tr><td><code>Task&lt;ClienteDto&gt;</code></td><td>Una tarea asincrónica que, cuando termine, devuelve un <code>ClienteDto</code>.</td></tr>
+      <tr><td><code>ActionResult&lt;ActivoFichaDto&gt;</code></td><td>Una respuesta HTTP que, si sale bien, trae un <code>ActivoFichaDto</code>.</td></tr>
+      <tr><td><code>IEnumerable&lt;T&gt;</code></td><td>“Algo que se puede recorrer”, como una lista.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Records: clases solo de datos</h3>
+  <p>Para objetos que solo transportan datos, C# tiene <code>record</code>: se declara en una línea.</p>
+<pre><code>public sealed record ClienteDto(int IdCliente, string? Nombre, string? Apellido, string? Telefono, string? Email);
+
+var dto = new ClienteDto(<span class="m">4</span>, <span class="s">"Carlos"</span>, <span class="s">"Díaz"</span>, <span class="s">"11 6666-7777"</span>, null);
+Console.WriteLine(dto.Nombre);   <span class="c">// Carlos</span></code></pre>
+  <p>Sus propiedades son de solo lectura: una vez creado, no se cambia. Ideal para respuestas de la API.</p>
+  <div class="recordar"><ul>
+    <li><code>: ClaseBase</code> = herencia (“es un”). <code>override</code> reemplaza un método heredado.</li>
+    <li><b>Interfaz</b> = contrato sin código (<code>IActivosAppService</code>); la <b>clase</b> lo cumple (<code>ActivosAppService</code>).</li>
+    <li><b>Atributos</b> <code>[...]</code> = etiquetas que lee el framework (rutas, seguridad, validación).</li>
+    <li><code>&lt;T&gt;</code> = genérico: <code>List&lt;Activo&gt;</code>, <code>Task&lt;T&gt;</code>.</li>
+  </ul></div>
+</section>
+
+<section id="cs-linq">
+  <h2><span class="n">09</span>C# desde cero (4): lambdas y LINQ</h2>
+  <h3>Lambdas: funciones cortitas</h3>
+  <p>Una <b>lambda</b> es una función sin nombre escrita en una línea con la flecha <code>=&gt;</code>. A la izquierda va lo que recibe, a la derecha lo que devuelve.</p>
+<pre><code>a =&gt; a.Nombre                              <span class="c">// “dado un activo a, devolvé su nombre”</span>
+a =&gt; a.IdOrganizacion == org               <span class="c">// “dado un activo a, ¿es de mi organización?” (true/false)</span>
+(x, y) =&gt; x + y                            <span class="c">// dos parámetros</span></code></pre>
+  <h3>LINQ: preguntarle cosas a una colección</h3>
+  <p><b>LINQ</b> (Language Integrated Query) es un conjunto de métodos para filtrar, ordenar y transformar listas. Reciben lambdas. Es lo que más se usa en el proyecto.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🛒</span><div><b class="t">Ejemplo del día a día: filtrar en una tienda online</b>
+    <p>“Mostrame las zapatillas (<code>Where</code>) de talle 42, ordenadas por precio (<code>OrderBy</code>), solo nombre y precio (<code>Select</code>), las primeras 10 (<code>Take</code>)”. LINQ es exactamente eso, escrito en código.</p></div></div>
+<pre><code>var activos = new List&lt;Activo&gt; { ... };
+
+activos.Where(a =&gt; a.Marca == <span class="s">"Atlas Copco"</span>)        <span class="c">// filtra: solo los Atlas Copco</span>
+activos.Select(a =&gt; a.Nombre)                         <span class="c">// transforma: de cada activo, solo el nombre</span>
+activos.OrderBy(a =&gt; a.Nombre)                        <span class="c">// ordena A→Z</span>
+activos.Any(a =&gt; a.IdActivo == <span class="m">5</span>)                     <span class="c">// ¿hay alguno? → true/false</span>
+activos.Count(a =&gt; a.IdCliente != null)               <span class="c">// ¿cuántos tienen cliente?</span>
+activos.First(a =&gt; a.IdActivo == <span class="m">5</span>)                   <span class="c">// el primero que cumpla (error si no hay)</span>
+activos.FirstOrDefault(a =&gt; a.IdActivo == <span class="m">5</span>)          <span class="c">// el primero o null si no hay</span>
+activos.Sum(r =&gt; r.Costo)                             <span class="c">// suma</span>
+activos.ToList()                                      <span class="c">// ejecuta y devuelve una lista</span></code></pre>
+  <p>Se pueden <b>encadenar</b>, uno detrás del otro, como en <code>ListarAsync</code>:</p>
+<pre><code>var ordenados = items
+    .Where(a =&gt; a.Salud.Nivel == <span class="s">"riesgo"</span>)
+    .OrderBy(a =&gt; a.Nombre)
+    .ToList();</code></pre>
+
+  <h3>LINQ sobre la base de datos</h3>
+  <p>Lo más útil: si la colección es una tabla de EF Core (<code>db.Activos</code>), LINQ <b>no trae todo a memoria</b>. EF traduce la cadena entera a una consulta SQL y la ejecuta en el servidor.</p>
+  <div class="lado">
+    <div><div class="et">C# con LINQ</div>
+<pre><code>var nombres = await db.Activos
+    .Where(a =&gt; a.IdOrganizacion == <span class="m">1</span>)
+    .OrderBy(a =&gt; a.Nombre)
+    .Select(a =&gt; a.Nombre)
+    .ToListAsync();</code></pre></div>
+    <div><div class="et">SQL que genera EF</div>
+<pre><code><span class="k">SELECT</span> a.Nombre
+<span class="k">FROM</span> dbo.Activo a
+<span class="k">WHERE</span> a.IdOrganizacion = @p0
+<span class="k">ORDER BY</span> a.Nombre</code></pre></div>
+  </div>
+  <div class="tabla"><table>
+    <thead><tr><th>Tipo</th><th>Dónde se ejecuta</th><th>En el proyecto</th></tr></thead>
+    <tbody>
+      <tr><td><code>IQueryable&lt;T&gt;</code></td><td>En SQL Server (se traduce a SQL)</td><td><code>db.Activos.Where(...)</code>, <code>ActivosQuery()</code></td></tr>
+      <tr><td><code>IEnumerable&lt;T&gt;</code> / <code>List&lt;T&gt;</code></td><td>En la memoria de la API</td><td>El filtro por riesgo en <code>ListarAsync</code>, porque el riesgo se calcula en C# y no existe como columna.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="probalo"><p>Escribí en LINQ “los clientes de la organización 1 cuyo apellido empieza con G, ordenados por nombre”. Respuesta: <code>db.Clientes.Where(c =&gt; c.IdOrganizacion == 1 &amp;&amp; c.Apellido!.StartsWith("G")).OrderBy(c =&gt; c.Nombre).ToListAsync()</code>.</p></div>
+  <div class="recordar"><ul>
+    <li><code>x =&gt; ...</code> es una lambda: una función corta.</li>
+    <li>LINQ: <code>Where</code> filtra, <code>Select</code> transforma, <code>OrderBy</code> ordena, <code>Any</code>/<code>Count</code>/<code>First</code> consultan.</li>
+    <li>Sobre <code>db.Tabla</code>, LINQ se convierte en SQL y corre en la base.</li>
+  </ul></div>
+</section>
+
+<section id="cs-async">
+  <h2><span class="n">10</span>C# desde cero (5): errores y código asincrónico</h2>
+  <h3>Excepciones: cómo se avisa que algo salió mal</h3>
+  <p>Cuando algo falla, C# <b>lanza una excepción</b> (<code>throw</code>). La ejecución se corta y la excepción “sube” hasta que alguien la <b>atrapa</b> (<code>catch</code>). Si nadie la atrapa, el programa falla.</p>
+<pre><code><span class="o">1</span> public sealed class ConflictException(string message) : Exception(message);
+
+  if (ordenes &gt; <span class="m">0</span>)
+<span class="o">2</span>     throw new ConflictException(<span class="s">"No se puede eliminar: tiene órdenes."</span>);
+
+  try
+  {
+<span class="o">3</span>     return _hasher.VerifyHashedPassword(usuario, hash, clave) != PasswordVerificationResult.Failed;
+  }
+<span class="o">4</span> catch (FormatException)
+  {
+      return false;
+  }</code></pre>
+  <ol class="anot">
+    <li><div>Creamos nuestra propia excepción heredando de <code>Exception</code>. La usamos para “regla de negocio violada”.</div></li>
+    <li><div><code>throw</code> la lanza: el método se corta ahí.</div></li>
+    <li><div><code>try</code>: “intentá esto”.</div></li>
+    <li><div><code>catch</code>: “si falló con este tipo de error, hacé esto otro en vez de explotar”.</div></li>
+  </ol>
+  <p>En la API, las excepciones que nadie atrapa las agarra un manejador global y las convierte en una respuesta JSON (lo vemos en “Manejo de errores”).</p>
+
+  <h3><code>async</code> y <code>await</code>: no quedarse esperando</h3>
+  <p>Ir a la base de datos tarda (milisegundos, pero para una computadora es muchísimo). Si la API se quedara “congelada” esperando, no podría atender a otros usuarios mientras tanto.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🍔</span><div><b class="t">Ejemplo del día a día: el local de hamburguesas</b>
+    <p>Pedís, te dan un <b>número</b> y te corrés. El cajero atiende al siguiente mientras cocinan lo tuyo. Cuando está listo, te llaman. El número es el <code>Task</code>, correrte a esperar es el <code>await</code>, y el cajero que sigue atendiendo es el servidor, que no se bloquea.</p></div></div>
+<pre><code><span class="o">1</span> public async Task&lt;ClienteDto&gt; CrearClienteAsync(ClienteCrearDto dto, CancellationToken ct = default)
+  {
+      ...
+<span class="o">2</span>     await db.SaveChangesAsync(ct);
+<span class="o">3</span>     return new ClienteDto(...);
+  }</code></pre>
+  <ol class="anot">
+    <li><div><code>async</code> marca que el método tiene esperas adentro. Devuelve <code>Task&lt;ClienteDto&gt;</code>: “una tarea que en algún momento va a dar un <code>ClienteDto</code>”. Por convención el nombre termina en <code>Async</code>.</div></li>
+    <li><div><code>await</code> = “esperá a que esto termine, pero liberá el hilo mientras tanto”.</div></li>
+    <li><div>Cuando vuelve la base, sigue en la línea siguiente como si nada.</div></li>
+  </ol>
+  <p><b><code>CancellationToken ct</code></b>: aparece como último parámetro en casi todos los métodos. Si el usuario cierra la app a mitad de un pedido, ASP.NET “cancela” ese token y las consultas pendientes se cortan, sin gastar recursos de más.</p>
+  <div class="recordar"><ul>
+    <li><code>throw</code> lanza un error; <code>try/catch</code> lo atrapa.</li>
+    <li><code>async</code>/<code>await</code>/<code>Task</code>: esperar a la base sin bloquear al servidor.</li>
+    <li><code>CancellationToken</code> permite cancelar si el usuario se va.</li>
+  </ul></div>
+</section>
+
 <section id="conceptos">
-  <h2><span class="n">03</span>Conceptos de API que hay que dominar</h2>
+  <h2><span class="n">11</span>Cómo funciona la web: HTTP, REST y JSON</h2>
   <h3>¿Qué es una API REST?</h3>
   <p>Una <b>API</b> (Application Programming Interface) es un contrato para que un programa use a otro. Una API <b>REST</b> usa HTTP, el mismo protocolo de las páginas web, con tres ideas:</p>
   <ol class="anot">
@@ -335,12 +948,132 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     </tbody>
   </table></div>
   <div class="decir">Los 2xx son “todo bien”, los 4xx son “el que pidió hizo algo mal” y los 5xx son “el servidor falló”. Diferenciamos 401 (no te identificaste) de 403 (te identificaste pero tu rol no alcanza).</div>
+  <div class="recordar"><ul><li>Una API REST expone <b>recursos</b> (URLs) y la acción la indica el <b>verbo</b>: GET lee, POST crea, PUT modifica, DELETE borra.</li><li>Cada pedido tiene línea (verbo + ruta), headers y cuerpo JSON; la respuesta trae un <b>código de estado</b>.</li><li>2xx bien, 4xx error del que pidió (400 datos, 401 sin login, 403 sin permiso, 404 no existe, 409 regla de negocio), 5xx error del servidor.</li></ul></div>
 </section>
 
-<div class="separador">Parte B<b>El backend por dentro</b></div>
+<section id="base">
+  <h2><span class="n">12</span>La base de datos de MantenIA</h2>
+  <p>Los datos viven en <b>SQL Server</b>, un motor de base de datos relacional de Microsoft. La base se llama <code>ManteniaDB</code>.</p>
+  <h3>Conceptos mínimos</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Concepto</th><th>Qué es</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td>Tabla</td><td>Una planilla con columnas fijas.</td><td><code>Activo</code></td></tr>
+      <tr><td>Fila (registro)</td><td>Un elemento de la tabla.</td><td>El “Compresor C-02”</td></tr>
+      <tr><td>Columna (campo)</td><td>Un dato de cada fila, con su tipo.</td><td><code>Nombre varchar(150)</code></td></tr>
+      <tr><td>Clave primaria (PK)</td><td>Columna que identifica cada fila sin repetirse.</td><td><code>IdActivo</code></td></tr>
+      <tr><td>IDENTITY</td><td>La base asigna el número sola (1, 2, 3…).</td><td><code>IdActivo</code> al insertar</td></tr>
+      <tr><td>Clave foránea (FK)</td><td>Columna que apunta a la PK de otra tabla. Así se <b>relacionan</b> las tablas.</td><td><code>Activo.IdCliente</code> → <code>Cliente.IdCliente</code></td></tr>
+    </tbody>
+  </table></div>
+  <div class="analogia"><span class="ico" aria-hidden="true">🗂️</span><div><b class="t">Ejemplo del día a día: el DNI</b>
+    <p>La PK es como el DNI: cada persona tiene uno y no se repite. Una FK es anotar el DNI de otra persona en tu ficha (“contacto de emergencia: DNI 30.111.222”) en vez de copiar todos sus datos. Si esa persona cambia de teléfono, se actualiza en un solo lugar.</p></div></div>
+
+  <h3>El activo y sus relaciones</h3>
+  <p>Así se conecta la entidad principal con las demás tablas. “N → 1” significa “muchos activos pueden apuntar al mismo”.</p>
+  <div class="er">
+    <div class="ent"><b>Organizacion</b><small>IdOrganizacion · RazonSocial · CUIT · FechaAlta</small><i>N activos → 1 organización</i></div>
+    <div class="ent"><b>CategoriaActivo</b><small>IdCategoriaActivo · Descripcion</small><i>combo “Categoría”</i></div>
+    <div class="ent"><b>Cliente</b><small>IdCliente · Nombre · Apellido · Telefono · Email</small><i>entidad de relación</i></div>
+    <div class="ent"><b>Ubicacion</b><small>IdUbicacion · Direccion · IdLocalidad</small><i>combo “Ubicación”</i></div>
+    <div class="ent centro"><b>Activo</b><small>IdActivo (PK)<br>IdOrganizacion (FK) · IdCategoriaActivo (FK)<br>IdCliente (FK) · IdUbicacion (FK) · IdEstadoActivo (FK)<br>Identificador · Nombre · Marca · Modelo</small><i>entidad principal</i></div>
+    <div class="ent"><b>EstadoActivo</b><small>IdEstadoActivo · Descripcion · IdCategoriaActivo</small><i>Operativo, Detenido…</i></div>
+    <div class="ent"><b>OrdenTrabajo</b><small>IdOrdenTrabajo · IdActivo (FK) · Fechas · Descripcion · Importe</small><i>1 activo → N órdenes</i></div>
+    <div class="ent"><b>OrdenTrabajoDetalle</b><small>Repuesto · Cantidad · Costo · IdOrdenTrabajo (FK)</small><i>1 orden → N repuestos</i></div>
+    <div class="ent"><b>Usuario</b><small>Email · ClaveHash · IdRol · IdOrganizacion</small><i>quién crea la orden</i></div>
+  </div>
+
+  <h3>Todas las tablas, por grupo</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Grupo</th><th>Tablas</th><th>Para qué</th></tr></thead>
+    <tbody>
+      <tr><td>Activos</td><td><code>Activo</code>, <code>CategoriaActivo</code>, <code>EstadoActivo</code>, <code>Cliente</code>, <code>Ubicacion</code>, <code>Localidad</code></td><td>Los equipos, cómo se clasifican, dónde están y de quién son.</td></tr>
+      <tr><td>Trabajos</td><td><code>OrdenTrabajo</code>, <code>OrdenTrabajoDetalle</code>, <code>TipoTrabajo</code>, <code>EstadoOrden</code>, <code>Prioridad</code>, <code>TipoTrabajoEstadoOrden</code></td><td>Las órdenes, sus repuestos, tipos (falla, service), estados posibles y prioridad.</td></tr>
+      <tr><td>Seguridad</td><td><code>Usuario</code>, <code>Rol</code>, <code>Accion</code>, <code>RolAccion</code>, <code>Modulo</code></td><td>Quién entra, con qué rol y qué puede hacer cada rol.</td></tr>
+      <tr><td>Organizaciones (SaaS)</td><td><code>Organizacion</code>, <code>TipoOrganizacion</code>, <code>TipoOrganizacionModulo</code>, <code>LabelTipoOrganizacionModulo</code>, <code>PlanSaaS</code>, <code>Suscripcion</code></td><td>Varias empresas usan el mismo sistema; cada una tiene su tipo (planta o taller), sus textos y su plan.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="nota inf"><p><b>¿Qué es SaaS?</b> “Software as a Service”: un mismo sistema en la nube que usan muchas empresas pagando un plan. Por eso casi todas las tablas tienen <code>IdOrganizacion</code>: cada empresa ve solo lo suyo.</p></div>
+
+  <h3>Cómo es la tabla Activo en SQL</h3>
+  <p>Equivalente en SQL de la tabla tal como la describe el mapeo del proyecto:</p>
+<pre><code><span class="k">CREATE TABLE</span> dbo.Activo (
+    IdActivo          <span class="k">INT IDENTITY</span>(1,1) <span class="k">PRIMARY KEY</span>,   <span class="c">-- se numera solo</span>
+    IdOrganizacion    <span class="k">INT NULL REFERENCES</span> dbo.Organizacion(IdOrganizacion),
+    IdCategoriaActivo <span class="k">INT NULL REFERENCES</span> dbo.CategoriaActivo(IdCategoriaActivo),
+    IdCliente         <span class="k">INT NULL REFERENCES</span> dbo.Cliente(IdCliente),
+    IdUbicacion       <span class="k">INT NULL REFERENCES</span> dbo.Ubicacion(IdUbicacion),
+    IdEstadoActivo    <span class="k">INT NULL REFERENCES</span> dbo.EstadoActivo(IdEstadoActivo),
+    Identificador     <span class="k">VARCHAR</span>(100) NULL,
+    Nombre            <span class="k">VARCHAR</span>(150) NULL,
+    Marca             <span class="k">VARCHAR</span>(100) NULL,
+    Modelo            <span class="k">VARCHAR</span>(100) NULL
+);</code></pre>
+
+  <h3>Los scripts de la carpeta <code>Scripts/</code></h3>
+  <p>Como la base se diseñó directamente en SQL Server, los cambios de estructura se hacen con scripts SQL que se ejecutan en SSMS. Por ejemplo, <code>Activo_Organizacion_y_Permisos.sql</code> agrega la columna que dice de qué organización es cada activo:</p>
+<pre><code><span class="o">1</span> <span class="k">IF</span> COL_LENGTH(<span class="s">'dbo.Activo'</span>, <span class="s">'IdOrganizacion'</span>) <span class="k">IS NULL</span>
+      <span class="k">ALTER TABLE</span> dbo.Activo <span class="k">ADD</span> IdOrganizacion <span class="k">INT NULL</span>;
+  GO
+<span class="o">2</span> <span class="k">IF NOT EXISTS</span> (<span class="k">SELECT</span> 1 <span class="k">FROM</span> sys.foreign_keys <span class="k">WHERE</span> name = <span class="s">'FK_Activo_Organizacion'</span>)
+      <span class="k">ALTER TABLE</span> dbo.Activo <span class="k">ADD CONSTRAINT</span> FK_Activo_Organizacion
+          <span class="k">FOREIGN KEY</span> (IdOrganizacion) <span class="k">REFERENCES</span> dbo.Organizacion (IdOrganizacion);
+  GO
+<span class="o">3</span> <span class="k">UPDATE</span> a <span class="k">SET</span> a.IdOrganizacion = <span class="k">COALESCE</span>(c.IdOrganizacion, cl.IdOrganizacion)
+  <span class="k">FROM</span> dbo.Activo a
+  <span class="k">LEFT JOIN</span> dbo.CategoriaActivo c <span class="k">ON</span> c.IdCategoriaActivo = a.IdCategoriaActivo
+  <span class="k">LEFT JOIN</span> dbo.Cliente cl <span class="k">ON</span> cl.IdCliente = a.IdCliente
+  <span class="k">WHERE</span> a.IdOrganizacion <span class="k">IS NULL</span>;</code></pre>
+  <ol class="anot">
+    <li><div>Solo agrega la columna si todavía no existe. Así el script se puede ejecutar varias veces sin romper nada.</div></li>
+    <li><div>Crea la clave foránea que relaciona el activo con su organización.</div></li>
+    <li><div>A los activos que ya existían les completa la organización tomándola de su categoría o de su cliente. <code>COALESCE</code> devuelve el primer valor que no sea null.</div></li>
+  </ol>
+  <div class="recordar"><ul>
+    <li>Tablas con <b>PK</b> (identifica la fila) y <b>FK</b> (relaciona con otra tabla).</li>
+    <li><code>Activo</code> se relaciona con Organización, Categoría, Cliente, Ubicación y Estado; tiene muchas Órdenes.</li>
+    <li>Los cambios de estructura están en <code>Scripts/*.sql</code>.</li>
+  </ul></div>
+</section>
+
+<section id="de-cero">
+  <h2><span class="n">13</span>Cómo se arma este proyecto de cero</h2>
+  <p>Este es el orden en que se construye una API como la de MantenIA. Leelo como una receta: cada paso nombra el archivo que se crea y en qué sección de esta guía está explicado.</p>
+  <ol class="secuencia">
+    <li><div><b>Crear la solución y el proyecto</b>
+<pre><code>mkdir Mantenia &amp;&amp; cd Mantenia
+dotnet new sln -n Mantenia                       <span class="c"># en .NET 10 crea Mantenia.slnx</span>
+dotnet new webapi -n Mantenia.Api --use-controllers
+dotnet sln add Mantenia.Api/Mantenia.Api.csproj</code></pre>
+      La plantilla <code>webapi</code> crea <code>Program.cs</code>, <code>appsettings.json</code>, <code>launchSettings.json</code> y un controller de ejemplo (que se borra).</div></li>
+    <li><div><b>Agregar los paquetes</b>
+<pre><code>cd Mantenia.Api
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Scalar.AspNetCore</code></pre>
+      (<code>Microsoft.AspNetCore.OpenApi</code> ya viene con la plantilla).</div></li>
+    <li><div><b>Crear las carpetas por capa</b>: <code>Entities</code>, <code>Data/Configurations</code>, <code>DTOs</code>, <code>Interfaces</code>, <code>Services</code>, <code>Controllers</code>, <code>Middleware</code>, <code>Extensions</code>, <code>Configuration</code>.</div></li>
+    <li><div><b>Entidades</b>: una clase por tabla en <code>Entities/</code> (<code>Activo.cs</code>, <code>Cliente.cs</code>…). Ver “Entidades y DTOs”.</div></li>
+    <li><div><b>DbContext y mapeo</b>: <code>Data/ManteniaDbContext.cs</code> con un <code>DbSet</code> por tabla, y en <code>Data/Configurations/</code> una clase por tabla que dice nombre, PK, largos y relaciones. Ver “Capa de datos”.</div></li>
+    <li><div><b>Cadena de conexión</b> en <code>appsettings.Development.json</code>:
+<pre><code>{ <span class="s">"ConnectionStrings"</span>: { <span class="s">"ConexionSql"</span>: <span class="s">"Server=localhost;Database=ManteniaDB;Trusted_Connection=True;TrustServerCertificate=True"</span> } }</code></pre>
+      <code>Trusted_Connection=True</code> = entrar con el usuario de Windows. <code>TrustServerCertificate=True</code> evita el error de certificado en una instalación local.</div></li>
+    <li><div><b>DTOs</b> en <code>DTOs/</code>: lo que entra y sale por la API, con data annotations.</div></li>
+    <li><div><b>Interfaces y servicios</b>: <code>Interfaces/IAppServices.cs</code> (contratos) y <code>Services/App/ActivosAppService.cs</code> (reglas de negocio).</div></li>
+    <li><div><b>Registrar todo en la inyección de dependencias</b> (<code>Extensions/ServiceCollectionExtensions.cs</code>) y llamarlo desde <code>Program.cs</code>.</div></li>
+    <li><div><b>Controllers</b>: <code>AppController.cs</code> con un método por endpoint.</div></li>
+    <li><div><b>Seguridad</b>: <code>AuthController</code>, <code>AuthService</code>, <code>TokenService</code>, <code>PasswordHasherService</code> y la configuración JWT.</div></li>
+    <li><div><b>Manejo de errores</b>: <code>Middleware/GlobalExceptionHandler.cs</code>.</div></li>
+    <li><div><b>OpenAPI + Scalar</b>: <code>MapOpenApi()</code> y <code>MapScalarApiReference()</code> en <code>Program.cs</code>.</div></li>
+    <li><div><b>Probar</b>: <code>dotnet run --launch-profile http</code> y usar Scalar.</div></li>
+  </ol>
+  <div class="decir">Construimos la API por capas, de abajo hacia arriba: primero las entidades y el acceso a datos, después la lógica en servicios y al final los controllers que la exponen por HTTP. Cada capa se puede probar antes de pasar a la siguiente.</div>
+</section>
+
+<div class="separador">Parte 2<b>El backend de MantenIA, archivo por archivo</b></div>
 
 <section id="estructura">
-  <h2><span class="n">04</span>Estructura de carpetas</h2>
+  <h2><span class="n">14</span>Estructura de carpetas</h2>
   <p>Cada carpeta de <code>Mantenia.Api</code> es una pieza con una única responsabilidad:</p>
 <pre><code>Mantenia.Api/
 ├── <span class="k">Program.cs</span>              <span class="c">← punto de entrada: arma y arranca la API</span>
@@ -373,10 +1106,11 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     <div class="capa"><h4>Datos<small>Data/</small></h4><p>Entity Framework Core traduce objetos a SQL y habla con SQL Server.</p></div>
   </div>
   <div class="decir">La regla es que cada capa solo conoce a la de abajo. El controller nunca toca el DbContext y el DbContext no sabe que existe HTTP.</div>
+  <div class="recordar"><ul><li>Cada carpeta es una responsabilidad: Controllers (presentación), Services (negocio), Entities/DTOs (entidades), Data (datos).</li><li>Cada capa solo conoce a la de abajo y se comunican pasando objetos.</li></ul></div>
 </section>
 
 <section id="arranque">
-  <h2><span class="n">05</span>Cómo arranca la API: <code>Program.cs</code></h2>
+  <h2><span class="n">15</span>Cómo arranca la API: <code>Program.cs</code></h2>
   <p>Es el primer archivo que se ejecuta. Tiene dos mitades: <b>armar</b> (registrar servicios) y <b>configurar el recorrido</b> que hace cada pedido.</p>
   <span class="ruta">Mantenia.Api/Program.cs</span>
 <pre><code><span class="o">1</span> var builder = WebApplication.CreateBuilder(args);
@@ -404,10 +1138,10 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
 <span class="o">9</span> app.Run();</code></pre>
   <ol class="anot">
     <li><div><b><code>CreateBuilder</code></b> lee la configuración (<code>appsettings.json</code>, <code>appsettings.Development.json</code>, variables de entorno) y prepara el contenedor de servicios.</div></li>
-    <li><div>Registramos lo que la API necesita con <b>métodos de extensión</b> propios (en <code>Extensions/ServiceCollectionExtensions.cs</code>), para que <code>Program.cs</code> quede corto y cada grupo ordenado. Los vemos en la sección <a href="#di">06</a>.</div></li>
+    <li><div>Registramos lo que la API necesita con <b>métodos de extensión</b> propios (en <code>Extensions/ServiceCollectionExtensions.cs</code>), para que <code>Program.cs</code> quede corto y cada grupo ordenado. Los vemos en la sección <a href="#di">16</a>.</div></li>
     <li><div><b>CORS</b>: el navegador bloquea que una página llame a otro dominio salvo que el servidor lo permita. Acá listamos los orígenes permitidos desde <code>Cors:Origenes</code>.</div></li>
     <li><div><b><code>Build()</code></b> crea la aplicación con todo lo registrado. A partir de acá ya no se agregan servicios.</div></li>
-    <li><div>Primer <b>middleware</b>: si algo explota más adelante, lo atrapa y lo convierte en una respuesta JSON prolija (sección <a href="#errores">13</a>).</div></li>
+    <li><div>Primer <b>middleware</b>: si algo explota más adelante, lo atrapa y lo convierte en una respuesta JSON prolija (sección <a href="#errores">24</a>).</div></li>
     <li><div>Solo en desarrollo publicamos el documento OpenAPI y la interfaz para probarlo. En producción no se expone.</div></li>
     <li><div>El orden importa: primero <b>autenticación</b> (¿quién sos? lee el token) y después <b>autorización</b> (¿podés hacer esto?).</div></li>
     <li><div>Conecta las rutas de todos los controllers (<code>[Route]</code>, <code>[HttpGet]</code>…).</div></li>
@@ -454,10 +1188,11 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     .Bind(configuration.GetSection(JwtOptions.Seccion))
     .Validate(o =&gt; Encoding.UTF8.GetByteCount(o.Key) &gt;= <span class="m">32</span>, <span class="s">"Jwt:Key debe tener al menos 32 caracteres."</span>)
     .ValidateOnStart();</code></pre>
+  <div class="recordar"><ul><li><code>Program.cs</code> registra servicios (<code>builder.Services</code>) y arma el recorrido de cada pedido (<code>app.Use...</code>).</li><li>El orden de los middlewares importa: autenticación antes que autorización.</li><li>La configuración sale de <code>appsettings.json</code> y se lee con clases Options.</li></ul></div>
 </section>
 
 <section id="di">
-  <h2><span class="n">06</span>Inyección de dependencias</h2>
+  <h2><span class="n">16</span>Inyección de dependencias</h2>
   <p>Ninguna clase hace <code>new</code> de las clases que necesita. Las <b>pide en el constructor</b> y ASP.NET se las entrega. Eso es la inyección de dependencias (DI).</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🔌</span><div><b class="t">Ejemplo del día a día: el enchufe</b>
     <p>Una lámpara no trae su propia central eléctrica: tiene un enchufe y la conectás a la pared. No le importa si la energía viene de una represa o de paneles solares, mientras el enchufe sea compatible. La <b>interfaz</b> (<code>IActivosAppService</code>) es la forma del enchufe; la <b>clase</b> (<code>ActivosAppService</code>) es la central; el <b>contenedor de DI</b> es la instalación eléctrica que los conecta.</p></div></div>
@@ -508,10 +1243,11 @@ public static IServiceCollection AddAplicacion(this IServiceCollection services)
     <span class="k">IActivosAppService activos</span>,       <span class="c">// ← ASP.NET le pasa un ActivosAppService</span>
     IOrdenesAppService ordenes) : ControllerBase</code></pre>
   <div class="decir">Usamos interfaces para que cada capa dependa de un contrato y no de una clase concreta. Si mañana cambiamos la implementación, o queremos un servicio falso para tests, el controller no se toca.</div>
+  <div class="recordar"><ul><li>Las clases piden lo que necesitan en el constructor; ASP.NET se lo entrega.</li><li><code>AddScoped&lt;IInterfaz, Clase&gt;()</code> = “cuando pidan la interfaz, dales esta clase”.</li><li>Singleton: una para todos. Scoped: una por pedido.</li></ul></div>
 </section>
 
 <section id="datos">
-  <h2><span class="n">07</span>Capa de datos: Entity Framework Core</h2>
+  <h2><span class="n">17</span>Capa de datos: Entity Framework Core</h2>
   <p><b>Entity Framework Core</b> es un <b>ORM</b> (Object-Relational Mapper): traduce entre objetos de C# y tablas de SQL. Escribimos LINQ sobre objetos y EF genera el SQL.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🗣️</span><div><b class="t">Ejemplo del día a día: un traductor</b>
     <p>Nosotros hablamos C# y SQL Server habla SQL. EF Core es el intérprete en el medio: le decimos “agregá este activo” y él le dice a la base <code>INSERT INTO dbo.Activo ...</code>.</p></div></div>
@@ -594,10 +1330,11 @@ await db.SaveChangesAsync(ct);</code></pre></div>
     <li><div><b><code>CancellationToken ct</code>:</b> si el usuario cierra la app a mitad de un pedido, la consulta se cancela y no gasta recursos.</div></li>
     <li><div><b><code>AsNoTracking()</code>:</b> para consultas de solo lectura le decimos a EF que no vigile cambios en esos objetos. Es más rápido.</div></li>
   </ol>
+  <div class="recordar"><ul><li><code>DbContext</code> es la puerta a la base; cada <code>DbSet&lt;T&gt;</code> es una tabla.</li><li>Las clases de <code>Data/Configurations</code> describen nombre, PK, largos y relaciones de cada tabla.</li><li>LINQ sobre <code>db.Tabla</code> se traduce a SQL con parámetros (protege de inyección SQL).</li></ul></div>
 </section>
 
 <section id="dtos">
-  <h2><span class="n">08</span>Entidades y DTOs: dos tipos de objetos</h2>
+  <h2><span class="n">18</span>Entidades y DTOs: dos tipos de objetos</h2>
   <div class="lado">
     <div><div class="et">Entidad · Entities/Activo.cs · “cómo está en la base”</div>
 <pre><code>public class Activo
@@ -655,10 +1392,11 @@ await db.SaveChangesAsync(ct);</code></pre></div>
 <pre><code>public sealed record ClienteDto(int IdCliente, string? Nombre, string? Apellido, string? Telefono, string? Email);
 <span class="c">// equivale a una clase con 5 propiedades de solo lectura y su constructor</span></code></pre>
   <p>Al convertir a JSON, ASP.NET pasa los nombres a <b>camelCase</b> (<code>IdCliente</code> → <code>idCliente</code>), que es la convención de JavaScript.</p>
+  <div class="recordar"><ul><li><b>Entidad</b> = cómo está en la base. <b>DTO</b> = lo que entra o sale por la API.</li><li>El DTO no expone ni acepta campos peligrosos (<code>IdOrganizacion</code>).</li><li>Las data annotations del DTO validan antes de entrar al método.</li></ul></div>
 </section>
 
 <section id="negocio">
-  <h2><span class="n">09</span>Capa de negocio: <code>ActivosAppService</code></h2>
+  <h2><span class="n">19</span>Capa de negocio: <code>ActivosAppService</code></h2>
   <p>Acá viven las reglas. Primero el <b>contrato</b> (interfaz) y después la implementación.</p>
   <span class="ruta">Mantenia.Api/Interfaces/IAppServices.cs</span>
 <pre><code>public interface IActivosAppService
@@ -729,7 +1467,7 @@ await db.SaveChangesAsync(ct);</code></pre></div>
   <ol class="anot">
     <li><div>Si el usuario no tiene organización, no puede cargar activos.</div></li>
     <li><div><code>dto.IdCliente is int idCliente</code> es <b>pattern matching</b>: “si vino un cliente, guardalo en la variable <code>idCliente</code>”. Si es null, no valida nada (hoy es opcional).</div></li>
-    <li><div>Si alguien manda el id de un cliente de <b>otra empresa</b>, se rechaza con una excepción propia que termina como <b>409</b> (sección <a href="#errores">13</a>).</div></li>
+    <li><div>Si alguien manda el id de un cliente de <b>otra empresa</b>, se rechaza con una excepción propia que termina como <b>409</b> (sección <a href="#errores">24</a>).</div></li>
   </ol>
 
   <h3>Modificación</h3>
@@ -842,10 +1580,97 @@ private static bool Contiene(string? campo, string texto)
 }</code></pre>
   <div class="analogia"><span class="ico" aria-hidden="true">🏢</span><div><b class="t">Ejemplo del día a día: un edificio de oficinas</b>
     <p>Varias empresas comparten el mismo edificio (la misma base). Tu tarjeta solo abre las puertas de tu piso. <code>ActivosQuery()</code> es la tarjeta: todas las consultas de activos empiezan por acá, así que no se pueden ver los equipos de otra empresa. Esto se llama <b>multi-tenant</b>.</p></div></div>
+  <div class="recordar"><ul><li>El servicio aplica las reglas: valida referencias, asigna la organización del usuario, impide borrar con órdenes.</li><li>Todas las consultas de activos parten de <code>ActivosQuery()</code>, que filtra por organización.</li><li>Cuando una regla se viola, lanza <code>ConflictException</code> (→ 409).</li></ul></div>
+</section>
+
+<section id="ordenes">
+  <h2><span class="n">20</span>Órdenes de trabajo y contexto del usuario</h2>
+  <p>Además de los activos, la API maneja las órdenes de trabajo (<code>OrdenesAppService</code>) y le dice a la app quién está logueado y qué puede hacer (<code>ContextoAppService</code>).</p>
+
+  <h3>Crear una orden con sus repuestos</h3>
+  <span class="ruta">Mantenia.Api/Services/App/OrdenesAppService.cs · CrearAsync</span>
+<pre><code>public async Task&lt;OrdenDetalleDto?&gt; CrearAsync(NuevaOrdenDto dto, CancellationToken ct = default)
+{
+    var idActivo = dto.IdActivo!.Value;
+<span class="o">1</span> if (!await datos.ActivosQuery().AnyAsync(a =&gt; a.IdActivo == idActivo, ct))
+        return null;
+
+<span class="o">2</span> var estadoInicial = (await EstadosParaTipoAsync(dto.IdTipoTrabajo, ct)).FirstOrDefault(e =&gt; e.EsFinal != true);
+    var ahora = DateTime.Now;
+
+<span class="o">3</span> var orden = new OrdenTrabajo
+    {
+        IdActivo = idActivo,
+        IdTipoTrabajo = dto.IdTipoTrabajo,
+        IdPrioridad = dto.IdPrioridad,
+        IdEstadoOrden = estadoInicial?.IdEstadoOrden,
+        IdUsuario = usuarioActual.IdUsuario,
+        FechaCreacion = ahora,
+        FechaProgramada = dto.FechaProgramada,
+        Descripcion = Indicadores.UnirKm(dto.Kilometraje, dto.Descripcion),
+        Importe = dto.Importe,
+    };
+    db.OrdenesTrabajo.Add(orden);
+
+<span class="o">4</span> foreach (var repuesto in dto.Repuestos.Where(r =&gt; !string.IsNullOrWhiteSpace(r.Repuesto)))
+    {
+        db.OrdenesTrabajoDetalle.Add(new OrdenTrabajoDetalle
+        {
+<span class="o">5</span>         OrdenTrabajo = orden,
+            Repuesto = repuesto.Repuesto.Trim(),
+            Cantidad = repuesto.Cantidad,
+            Costo = repuesto.Costo,
+            FechaCreacion = ahora,
+        });
+    }
+
+<span class="o">6</span> await db.SaveChangesAsync(ct);
+    return await GetDetalleAsync(orden.IdOrdenTrabajo, ct);
+}</code></pre>
+  <ol class="anot">
+    <li><div>La orden solo se puede crear para un activo de tu organización.</div></li>
+    <li><div>Cada tipo de trabajo tiene sus estados posibles (tabla <code>TipoTrabajoEstadoOrden</code>). La orden nace en el primero que no sea final (por ejemplo “Programada”).</div></li>
+    <li><div>La fecha de creación y el usuario los pone el servidor, no la app: así nadie puede inventar una fecha o crear a nombre de otro.</div></li>
+    <li><div><code>foreach</code> recorre la lista de repuestos que vino en el JSON, uno por uno, salteando los vacíos.</div></li>
+    <li><div>En vez de <code>IdOrdenTrabajo</code> (que todavía no existe) le pasamos el objeto <code>orden</code>. EF entiende la relación y, al guardar, completa el id solo.</div></li>
+    <li><div>Un único <code>SaveChangesAsync</code> guarda la orden y todos sus repuestos <b>en la misma transacción</b>: o se guarda todo o no se guarda nada.</div></li>
+  </ol>
+  <div class="analogia"><span class="ico" aria-hidden="true">🧾</span><div><b class="t">Ejemplo del día a día: una factura con renglones</b>
+    <p>La orden es la cabecera de la factura y los repuestos son los renglones. No tiene sentido guardar renglones sin cabecera ni una cabecera a medias: por eso se guardan juntos.</p></div></div>
+
+  <h3>Cambiar el estado de una orden</h3>
+<pre><code>orden.IdEstadoOrden = estado.IdEstadoOrden;
+<span class="o">1</span> if (estado.EsFinal == true)
+  {
+      orden.FechaInicio ??= orden.FechaCreacion ?? ahora;
+      orden.FechaCierre = ahora;
+  }
+  else
+  {
+<span class="o">2</span>     orden.FechaCierre = null;
+      if (estado.IdEstadoOrden != inicial)
+<span class="o">3</span>         orden.FechaInicio ??= ahora;
+  }</code></pre>
+  <ol class="anot">
+    <li><div>Si el estado nuevo es final (por ejemplo “Cerrada”), se completa la fecha de cierre con la hora actual.</div></li>
+    <li><div>Si se reabre, se borra el cierre.</div></li>
+    <li><div>La primera vez que la orden pasa a un estado de trabajo (“En curso”), se anota la hora de inicio. <code>??=</code> hace que no se pise si ya tenía una.</div></li>
+  </ol>
+  <p>Con <code>FechaInicio</code> y <code>FechaCierre</code> se calculan las horas que el equipo estuvo detenido, que se ven en Reportes.</p>
+
+  <h3>El contexto: quién soy y qué puedo hacer</h3>
+  <p>Apenas el usuario entra, la app llama a <span class="verbo GET">GET</span> <code>/api/app/contexto</code>. <code>ContextoAppService</code> arma la respuesta:</p>
+  <ul>
+    <li>Datos del usuario, su rol y su organización.</li>
+    <li>El <b>perfil</b>: “planta” o “taller”. Si el tipo de organización contiene palabras como “taller” o “mecánico”, es taller, y la app muestra “Vehículos” en vez de “Activos” y “Patente” en vez de “ID”.</li>
+    <li>Los <b>textos</b> configurables por tipo de organización (tabla <code>LabelTipoOrganizacionModulo</code>).</li>
+    <li>La lista de <b>permisos</b> del rol (por ejemplo <code>["activos.gestionar", "ordenes.crear"]</code>). La app la usa para esconder los botones que el usuario no puede usar. La API igual lo vuelve a controlar en cada pedido.</li>
+  </ul>
+  <div class="decir">La app esconde lo que el usuario no puede hacer, pero la seguridad real está en la API: aunque alguien fuerce el botón, el endpoint responde 403.</div>
 </section>
 
 <section id="controllers">
-  <h2><span class="n">10</span>Controllers: la puerta de entrada HTTP</h2>
+  <h2><span class="n">21</span>Controllers: la puerta de entrada HTTP</h2>
   <span class="ruta">Mantenia.Api/Controllers/AppController.cs</span>
 <pre><code><span class="o">1</span> [ApiController]
 <span class="o">2</span> [Authorize]
@@ -919,10 +1744,11 @@ private static bool Contiene(string? campo, string texto)
       <tr><td>/api/app/sistemas/…</td><td>Configuración general, roles y permisos</td><td>Sistemas</td></tr>
     </tbody>
   </table></div>
+  <div class="recordar"><ul><li>Atributos de ruta (<code>[HttpGet]</code>, <code>[Route]</code>) dicen qué URL atiende cada método.</li><li><code>[FromBody]</code>/<code>[FromQuery]</code> dicen de dónde sale cada dato.</li><li>El controller delega al servicio y traduce el resultado a un código HTTP.</li></ul></div>
 </section>
 
 <section id="recorrido">
-  <h2><span class="n">11</span>Un pedido de punta a punta</h2>
+  <h2><span class="n">22</span>Un pedido de punta a punta</h2>
   <p>Qué pasa, en orden, desde que el usuario toca <b>“Crear activo”</b> hasta que ve la ficha:</p>
   <ol class="secuencia">
     <li><div><span class="quien">React</span> <code>ActivoForm.tsx</code> arma el objeto con lo que cargó el usuario y llama a <code>api("/api/app/activos", { method: "POST", body })</code>.</div></li>
@@ -941,7 +1767,7 @@ private static bool Contiene(string? campo, string texto)
 </section>
 
 <section id="seguridad">
-  <h2><span class="n">12</span>Login, JWT y permisos</h2>
+  <h2><span class="n">23</span>Login, JWT y permisos</h2>
   <h3>Paso 1 · Guardar la clave de forma segura</h3>
   <p>Nunca guardamos la contraseña. Guardamos un <b>hash</b>: el resultado de pasarla por una función que no tiene vuelta atrás.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🥤</span><div><b class="t">Ejemplo del día a día: la licuadora</b>
@@ -1112,10 +1938,11 @@ public sealed class PasswordHasherService : IPasswordHasherService
 <pre><code>foreach (var clave in Acciones.Todas)        <span class="c">// escanear.qr, ordenes.crear, activos.gestionar...</span>
     options.AddPolicy(Politicas.Prefijo + clave, p =&gt; p.RequireAuthenticatedUser()
         .AddRequirements(new PermisoRequerido(clave)));</code></pre>
+  <div class="recordar"><ul><li>La clave se guarda como <b>hash</b>, nunca en texto.</li><li>El login devuelve un <b>JWT firmado</b>; la app lo manda en cada pedido.</li><li>Autenticación (¿quién sos?) → 401. Autorización por permisos del rol (¿podés?) → 403.</li></ul></div>
 </section>
 
 <section id="errores">
-  <h2><span class="n">13</span>Manejo de errores</h2>
+  <h2><span class="n">24</span>Manejo de errores</h2>
   <p>Queremos que todos los errores lleguen a la app con <b>el mismo formato</b>, para mostrarlos sin casos especiales. Usamos el estándar <b>ProblemDetails</b> (RFC 7807).</p>
   <div class="cadena">
     <div class="p"><b>Servicio</b><small>throw new ConflictException("...")</small></div><span class="a">→</span>
@@ -1169,10 +1996,11 @@ public sealed class ConflictException(string message) : Exception(message);</cod
 }</code></pre></div>
   </div>
   <p>La app lee <code>errors</code> para poner el mensaje debajo del campo, y <code>detail</code> para mostrar el cartel rojo.</p>
+  <div class="recordar"><ul><li>Los servicios lanzan excepciones; <code>GlobalExceptionHandler</code> las convierte en JSON ProblemDetails con el código correcto.</li><li>Los errores de validación (400) los genera ASP.NET solo.</li></ul></div>
 </section>
 
 <section id="mtbf">
-  <h2><span class="n">14</span>Lógica propia: el cálculo del MTBF</h2>
+  <h2><span class="n">25</span>Lógica propia: el cálculo del MTBF</h2>
   <p>La base no tiene columnas de “probabilidad de falla”: la API la calcula con el historial de órdenes en <code>Services/App/Indicadores.cs</code>.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🚗</span><div><b class="t">Ejemplo del día a día: el auto que se rompe seguido</b>
     <p>Si tu auto se quedó 2 veces en 90 días, en promedio se rompe cada 45 días. Si ya pasaron 39 días desde la última vez, es lógico pensar que está por fallar de nuevo. Eso es el MTBF (Mean Time Between Failures).</p></div></div>
@@ -1210,10 +2038,11 @@ public sealed class ConflictException(string message) : Exception(message);</cod
   <div class="barra" role="img" aria-label="87 por ciento"><i style="width:87%"></i></div>
   <div class="escala"><span>0 %</span><span>60 % revisar</span><span>80 % riesgo</span><span>99 %</span></div>
   <div class="decir">No es inteligencia artificial: es una regla estadística simple sobre el historial. La elegimos porque se puede explicar y verificar a mano.</div>
+  <div class="recordar"><ul><li>MTBF = días observados ÷ fallas. Probabilidad = días desde la última falla ÷ MTBF.</li><li>60 % o más: revisar. 80 % o más: en riesgo.</li></ul></div>
 </section>
 
 <section id="swagger">
-  <h2><span class="n">15</span>Investigación: Swagger y OpenAPI</h2>
+  <h2><span class="n">26</span>Investigación: Swagger y OpenAPI</h2>
   <h3>Tres nombres que se confunden</h3>
   <div class="tabla"><table>
     <thead><tr><th>Nombre</th><th>Qué es</th><th>Analogía</th></tr></thead>
@@ -1314,10 +2143,96 @@ public sealed class ActivoGuardarDto
   </ol>
   <p>Alternativa sin navegador: <code>Mantenia.Api/Mantenia.Api.http</code> tiene los pedidos listos para ejecutar desde Visual Studio o VS Code.</p>
   <div class="decir">Swagger cumple dos funciones: es documentación siempre actualizada (se genera del código, no se desactualiza) y es una herramienta de prueba para quien desarrolla el frontend o integra otro sistema.</div>
+  <div class="recordar"><ul><li><b>OpenAPI</b> es el estándar (un JSON); <b>Swagger UI</b> y <b>Scalar</b> son páginas que lo muestran y permiten probar.</li><li>El documento se genera solo a partir de controllers, DTOs, data annotations y comentarios <code>///</code>.</li><li>Se prueba: login → copiar token → Authorize → ejecutar endpoints.</li></ul></div>
+</section>
+
+<div class="separador">Parte 3<b>La app React</b></div>
+
+<section id="react">
+  <h2><span class="n">27</span>El frontend en React, desde cero</h2>
+  <p>La app que usa el operario está hecha con <b>React</b>, una librería de JavaScript para armar pantallas, y <b>TypeScript</b>, que es JavaScript con tipos (como C#). Corre en el navegador y no toca la base: todo lo pide a la API.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Concepto de React</th><th>Qué es</th><th>Ejemplo en MantenIA</th></tr></thead>
+    <tbody>
+      <tr><td>Componente</td><td>Una función que devuelve un pedazo de pantalla. Se combinan como piezas de Lego.</td><td><code>Login</code>, <code>Activos</code>, <code>ActivoForm</code>, <code>Fila</code>, <code>Campo</code></td></tr>
+      <tr><td>JSX</td><td>HTML escrito dentro del código.</td><td><code>&lt;input className="field" ... /&gt;</code></td></tr>
+      <tr><td>Estado (<code>useState</code>)</td><td>Datos que, al cambiar, redibujan la pantalla.</td><td>Lo que el usuario escribe en el formulario.</td></tr>
+      <tr><td>Rutas (react-router)</td><td>Qué componente se muestra según la URL.</td><td><code>/activos/nuevo</code> → <code>ActivoForm</code></td></tr>
+      <tr><td>TanStack Query</td><td>Librería que pide datos a la API, los guarda en caché y los refresca.</td><td><code>useActivos</code>, <code>useGuardarActivo</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Rutas: qué pantalla corresponde a cada URL</h3>
+  <span class="ruta">mantenia-app/src/App.tsx (resumido)</span>
+<pre><code>&lt;Routes&gt;
+  &lt;Route path=<span class="s">"/login"</span> element={&lt;Login /&gt;} /&gt;
+<span class="o">1</span> &lt;Route element={&lt;RequiereSesion /&gt;}&gt;
+<span class="o">2</span>   &lt;Route element={&lt;LayoutConNav /&gt;}&gt;
+      &lt;Route index element={&lt;Inicio /&gt;} /&gt;
+      &lt;Route path=<span class="s">"/activos"</span> element={&lt;Activos /&gt;} /&gt;
+      &lt;Route path=<span class="s">"/activos/:id"</span> element={&lt;ActivoFicha /&gt;} /&gt;
+    &lt;/Route&gt;
+<span class="o">3</span>   &lt;Route element={&lt;RequierePermiso permiso=<span class="s">"activos.gestionar"</span> /&gt;}&gt;
+      &lt;Route path=<span class="s">"/activos/nuevo"</span> element={&lt;ActivoForm /&gt;} /&gt;
+      &lt;Route path=<span class="s">"/activos/:id/editar"</span> element={&lt;ActivoForm /&gt;} /&gt;
+    &lt;/Route&gt;
+  &lt;/Route&gt;
+&lt;/Routes&gt;</code></pre>
+  <ol class="anot">
+    <li><div>Todo lo de adentro exige haber iniciado sesión. Si no, redirige a <code>/login</code>.</div></li>
+    <li><div>Esas pantallas se muestran dentro del layout con la barra de navegación inferior.</div></li>
+    <li><div>Solo entra quien tiene el permiso. El mismo formulario sirve para alta y edición: si la URL trae <code>:id</code>, edita.</div></li>
+  </ol>
+
+  <h3>Pedir datos: el listado de activos</h3>
+  <span class="ruta">mantenia-app/src/api/hooks.ts</span>
+<pre><code>export function useActivos(buscar: string, filtro: string) {
+  return useQuery({
+<span class="o">1</span>   queryKey: [<span class="s">"activos"</span>, buscar, filtro],
+    queryFn: ({ signal }) =&gt; {
+      const qs = new URLSearchParams();
+      if (buscar) qs.set(<span class="s">"buscar"</span>, buscar);
+      if (filtro !== <span class="s">"todos"</span>) qs.set(<span class="s">"filtro"</span>, filtro);
+<span class="o">2</span>     return api&lt;ActivosListado&gt;(`/api/app/activos?${qs}`, { signal });
+    },
+  });
+}</code></pre>
+  <ol class="anot">
+    <li><div>La “clave” de la consulta. Si cambia el texto buscado, cambia la clave y TanStack Query vuelve a pedir los datos solo.</div></li>
+    <li><div>Arma la URL <code>/api/app/activos?buscar=atlas</code> y la llama con la función <code>api</code> (la vemos en “Cómo la usa la app”).</div></li>
+  </ol>
+  <p>En la pantalla (<code>pages/Activos.tsx</code>) se usa así: <code>const { data } = useActivos(buscar, filtro);</code> y después <code>data.items.map(a =&gt; &lt;Fila ... /&gt;)</code> dibuja una fila por activo. Además espera 300 ms después de la última tecla antes de buscar, para no llamar a la API en cada letra.</p>
+
+  <h3>Guardar: el formulario de alta</h3>
+  <span class="ruta">mantenia-app/src/pages/ActivoForm.tsx (resumido)</span>
+<pre><code><span class="o">1</span> const [form, setForm] = useState&lt;ActivoInput&gt;(vacio);
+<span class="o">2</span> const guardar = useGuardarActivo(id);
+
+  async function onSubmit(e: FormEvent) {
+<span class="o">3</span>   e.preventDefault();
+<span class="o">4</span>   const guardado = await guardar.mutateAsync(form).catch(() =&gt; null);
+<span class="o">5</span>   if (guardado) navigate(`/activos/${guardado.idActivo}`, { replace: true });
+  }
+
+  &lt;input value={form.nombre ?? <span class="s">""</span>}
+<span class="o">6</span>        onChange={(e) =&gt; set(<span class="s">"nombre"</span>, aTexto(e.target.value))} /&gt;</code></pre>
+  <ol class="anot">
+    <li><div><code>form</code> guarda lo que el usuario va cargando; <code>setForm</code> lo cambia y redibuja.</div></li>
+    <li><div>Prepara la llamada: <code>POST /api/app/activos</code> si es alta, <code>PUT /api/app/activos/{id}</code> si es edición.</div></li>
+    <li><div>Evita que el navegador recargue la página al enviar el formulario.</div></li>
+    <li><div>Manda el objeto <code>form</code> como JSON. Si la API responde error (400, 409), queda en <code>guardar.error</code> y se muestra en rojo.</div></li>
+    <li><div>Si salió bien, va a la ficha del activo recién guardado.</div></li>
+    <li><div>Cada tecla actualiza el estado con el texto nuevo.</div></li>
+  </ol>
+  <div class="recordar"><ul>
+    <li>React arma la pantalla con <b>componentes</b>; el <b>estado</b> guarda lo que cambia.</li>
+    <li>Las <b>rutas</b> deciden qué pantalla mostrar según la URL.</li>
+    <li>La app solo habla con la API por HTTP + JSON, con el token en cada pedido.</li>
+  </ul></div>
 </section>
 
 <section id="front">
-  <h2><span class="n">16</span>Cómo la usa la app</h2>
+  <h2><span class="n">28</span>Cómo la usa la app</h2>
   <p>La app React no sabe nada de SQL ni de C#. Solo conoce las URLs y el formato JSON. Todo pasa por una función:</p>
   <span class="ruta">mantenia-app/src/api/client.ts</span>
 <pre><code>export async function api&lt;T&gt;(path: string, options = {}): Promise&lt;T&gt; {
@@ -1343,12 +2258,13 @@ public sealed class ActivoGuardarDto
     <li><div>Si la API responde 401 (token vencido), borra la sesión y manda al login.</div></li>
     <li><div>Cualquier otro error se convierte en un mensaje legible usando <code>title</code>, <code>detail</code> o <code>errors</code> del ProblemDetails.</div></li>
   </ol>
+  <div class="recordar"><ul><li>La app usa una sola función, <code>api()</code>, para todos los pedidos: agrega el token y traduce los errores.</li></ul></div>
 </section>
 
-<div class="separador">Parte C<b>Consigna y defensa</b></div>
+<div class="separador">Parte 4<b>Consigna y defensa</b></div>
 
 <section id="funcionales">
-  <h2><span class="n">17</span>Requerimientos funcionales con capturas</h2>
+  <h2><span class="n">29</span>Requerimientos funcionales con capturas</h2>
   <p class="sub">Capturas de la app real con datos de ejemplo, en el orden en que conviene mostrarlas.</p>
   <h3>6 · Login</h3>
   <div class="capturas">
@@ -1390,7 +2306,7 @@ public sealed class ActivoGuardarDto
 </section>
 
 <section id="diseno">
-  <h2><span class="n">18</span>Requisitos de diseño</h2>
+  <h2><span class="n">30</span>Requisitos de diseño</h2>
   <h3>Campos de Activo hoy</h3>
   <div class="tabla"><table>
     <thead><tr><th>Campo</th><th>Tipo SQL</th><th>Control</th><th>Obligatorio</th></tr></thead>
@@ -1422,16 +2338,81 @@ public sealed class ActivoGuardarDto
 }</code></pre>
 </section>
 
+<section id="receta">
+  <h2><span class="n">31</span>Receta: agregar un campo de punta a punta</h2>
+  <p>La mejor forma de demostrar que entendemos el proyecto es saber modificarlo. Esta receta agrega <b>FechaAlta</b> (fecha validada) y <b>VidaUtilMeses</b> (número de 1 a 1000) al activo. Son justo dos requisitos que faltan, y el recorrido pasa por <b>todas las capas</b>.</p>
+  <ol class="secuencia">
+    <li><div><span class="quien">Base de datos</span> Agregar las columnas (crear <code>Scripts/Activo_FechaAlta_VidaUtil.sql</code> y ejecutarlo en SSMS):
+<pre><code><span class="k">ALTER TABLE</span> dbo.Activo <span class="k">ADD</span> FechaAlta <span class="k">DATE NULL</span>, VidaUtilMeses <span class="k">INT NULL</span>;</code></pre></div></li>
+    <li><div><span class="quien">Entidad</span> En <code>Entities/Activo.cs</code>, dos propiedades con el mismo nombre que las columnas (así EF las conecta solo):
+<pre><code>public DateTime? FechaAlta { get; set; }
+public int? VidaUtilMeses { get; set; }</code></pre></div></li>
+    <li><div><span class="quien">DTO de entrada</span> En <code>ActivoGuardarDto</code>, con sus validaciones:
+<pre><code>[Required(ErrorMessage = <span class="s">"La fecha de alta es obligatoria."</span>)]
+[DataType(DataType.Date)]
+public DateTime? FechaAlta { get; set; }
+
+[Required(ErrorMessage = <span class="s">"La vida útil es obligatoria."</span>)]
+[Range(<span class="m">1</span>, <span class="m">1000</span>, ErrorMessage = <span class="s">"La vida útil debe estar entre 1 y 1000 meses."</span>)]
+public int? VidaUtilMeses { get; set; }</code></pre>
+      Y para que la fecha no sea futura, la clase implementa <code>IValidatableObject</code> (ASP.NET lo ejecuta junto con las anotaciones):
+<pre><code>public sealed class ActivoGuardarDto : IValidatableObject
+{
+    ...
+    public IEnumerable&lt;ValidationResult&gt; Validate(ValidationContext ctx)
+    {
+        if (FechaAlta &gt; DateTime.Today)
+            yield return new ValidationResult(<span class="s">"La fecha de alta no puede ser futura."</span>, [nameof(FechaAlta)]);
+    }
+}</code></pre></div></li>
+    <li><div><span class="quien">Negocio</span> En <code>ActivosAppService.Aplicar</code>, copiar los valores:
+<pre><code>activo.FechaAlta = dto.FechaAlta;
+activo.VidaUtilMeses = dto.VidaUtilMeses;</code></pre></div></li>
+    <li><div><span class="quien">DTO de salida</span> Sumar los dos campos al record <code>ActivoEdicionDto</code> y al <code>Select</code> de <code>GetEdicionAsync</code>, para que la edición los traiga cargados.</div></li>
+    <li><div><span class="quien">Frontend</span> En <code>api/types.ts</code> sumar <code>fechaAlta: string | null</code> y <code>vidaUtilMeses: number | null</code>; en <code>ActivoForm.tsx</code> agregar los inputs:
+<pre><code>&lt;input type=<span class="s">"date"</span> max={hoy} value={form.fechaAlta ?? <span class="s">""</span>} onChange={...} /&gt;
+&lt;input type=<span class="s">"number"</span> min={<span class="m">1</span>} max={<span class="m">1000</span>} value={form.vidaUtilMeses ?? <span class="s">""</span>} onChange={...} /&gt;</code></pre></div></li>
+    <li><div><span class="quien">Probar</span> En Scalar, <span class="verbo POST">POST</span> con <code>"vidaUtilMeses": 5000</code> → 400 “La vida útil debe estar entre 1 y 1000 meses.” Con una fecha de mañana → 400 “no puede ser futura”. Con datos correctos → 201.</div></li>
+  </ol>
+  <div class="decir">Para agregar un campo recorremos todas las capas en orden: base, entidad, DTO con su validación, servicio, DTO de respuesta y pantalla. No hace falta tocar el controller, porque solo pasa el objeto.</div>
+</section>
+
+<section id="depurar">
+  <h2><span class="n">32</span>Cómo depurar y errores comunes</h2>
+  <h3>Pausar el programa en una línea</h3>
+  <ol class="secuencia">
+    <li><div>En Visual Studio, abrir <code>ActivosAppService.cs</code> y hacer clic en el margen izquierdo de la línea <code>await ValidarReferenciasAsync(dto, ct);</code>. Aparece un punto rojo: un <b>punto de interrupción</b> (o <b>F9</b>).</div></li>
+    <li><div>Ejecutar con <b>F5</b>.</div></li>
+    <li><div>Desde Scalar o la app, crear un activo. Visual Studio se detiene en esa línea.</div></li>
+    <li><div>Pasar el mouse sobre <code>dto</code> para ver qué llegó del JSON. <b>F10</b> avanza una línea; <b>F11</b> entra al método; <b>F5</b> continúa.</div></li>
+  </ol>
+  <div class="analogia"><span class="ico" aria-hidden="true">⏸️</span><div><b class="t">Ejemplo del día a día: pausar un video</b>
+    <p>Un punto de interrupción es poner pausa en el momento exacto y mirar el cuadro con detalle. Es la mejor forma de entender qué hace el código con datos reales.</p></div></div>
+  <h3>Errores comunes y qué significan</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Síntoma</th><th>Causa probable</th><th>Solución</th></tr></thead>
+    <tbody>
+      <tr><td>La API no arranca: “Jwt:Key debe tener al menos 32 caracteres”</td><td>Falta la clave JWT o es corta.</td><td>Cargarla en <code>appsettings.Development.json</code> o con user-secrets.</td></tr>
+      <tr><td>“Falta la cadena de conexión”</td><td><code>ConnectionStrings:ConexionSql</code> vacía.</td><td>Completarla.</td></tr>
+      <tr><td>Error al conectar con SQL Server</td><td>El servicio de SQL no está levantado o el nombre del servidor es otro (<code>localhost\SQLEXPRESS</code>).</td><td>Revisar en SSMS a qué servidor te conectás y usar ese nombre.</td></tr>
+      <tr><td>401 en todos los endpoints</td><td>No se pegó el token en Scalar o venció (24 h).</td><td>Hacer login de nuevo y pegar el token.</td></tr>
+      <tr><td>403 al crear un activo</td><td>El rol no tiene <code>activos.gestionar</code> en <code>RolAccion</code>.</td><td>Asignar el permiso desde Sistemas o por SQL.</td></tr>
+      <tr><td>Login siempre “Credenciales inválidas”</td><td>La clave en la base está en texto plano, no hasheada.</td><td>Crear el usuario con <code>POST /api/auth/registro</code>.</td></tr>
+      <tr><td>La app dice “No hay conexión con la API”</td><td>La API no está corriendo en el puerto 5080.</td><td>Levantarla antes que la app.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
 <section id="demo">
-  <h2><span class="n">19</span>Guion de la demo</h2>
+  <h2><span class="n">33</span>Guion de la demo</h2>
   <p class="sub">Unos 12 minutos. Se evalúa la participación de cada uno, así que conviene que cada integrante tenga un bloque y lo explique con el código abierto.</p>
   <div class="tabla"><table>
     <thead><tr><th>Bloque</th><th>Qué mostrar</th><th>Apoyo</th></tr></thead>
     <tbody>
-      <tr><td>Integrante 1 · Arquitectura</td><td>Carpetas, capas, <code>Program.cs</code>, inyección de dependencias.</td><td><a href="#estructura">04</a>–<a href="#di">06</a></td></tr>
-      <tr><td>Integrante 2 · Datos y negocio</td><td>Entidad, DTO, DbContext, mapeo, <code>ActivosAppService</code> (alta y baja con regla).</td><td><a href="#datos">07</a>–<a href="#negocio">09</a></td></tr>
-      <tr><td>Integrante 3 · API y Swagger</td><td>Controller, códigos HTTP, Scalar/Swagger: login, autorizar, GET, POST con 400, DELETE con 409.</td><td><a href="#controllers">10</a>, <a href="#swagger">15</a></td></tr>
-      <tr><td>Integrante 4 · Seguridad y app</td><td>Hash, JWT, permisos; demo en la app: login, búsqueda, alta con cliente nuevo, edición, baja.</td><td><a href="#seguridad">12</a>, <a href="#funcionales">17</a></td></tr>
+      <tr><td>Integrante 1 · Arquitectura</td><td>Carpetas, capas, <code>Program.cs</code>, inyección de dependencias.</td><td><a href="#estructura">14</a>–<a href="#di">16</a></td></tr>
+      <tr><td>Integrante 2 · Datos y negocio</td><td>Entidad, DTO, DbContext, mapeo, <code>ActivosAppService</code> (alta y baja con regla).</td><td><a href="#datos">17</a>–<a href="#negocio">19</a></td></tr>
+      <tr><td>Integrante 3 · API y Swagger</td><td>Controller, códigos HTTP, Scalar/Swagger: login, autorizar, GET, POST con 400, DELETE con 409.</td><td><a href="#controllers">21</a>, <a href="#swagger">26</a></td></tr>
+      <tr><td>Integrante 4 · Seguridad y app</td><td>Hash, JWT, permisos; demo en la app: login, búsqueda, alta con cliente nuevo, edición, baja.</td><td><a href="#seguridad">23</a>, <a href="#funcionales">29</a></td></tr>
     </tbody>
   </table></div>
   <h4>Antes de la defensa</h4>
@@ -1444,7 +2425,7 @@ public sealed class ActivoGuardarDto
 </section>
 
 <section id="pendientes">
-  <h2><span class="n">20</span>Qué falta y cómo hacerlo</h2>
+  <h2><span class="n">34</span>Qué falta y cómo hacerlo</h2>
   <p class="sub">Cambios mínimos para que todo quede en verde, por prioridad.</p>
   <details open>
     <summary><span class="pill bad">Falta</span> Campo fecha y numérico 1–1000 (y con eso, 10 campos cargables)</summary>
@@ -1500,7 +2481,7 @@ app.MapScalarApiReference();</code></pre>
 </section>
 
 <section id="preguntas">
-  <h2><span class="n">21</span>Preguntas probables</h2>
+  <h2><span class="n">35</span>Preguntas probables</h2>
   <details><summary>¿Por qué una API y no MVC directo?</summary><p>Porque el tema de investigación es API y Swagger. Separar la API permite que la use cualquier cliente (web, mobile, otro sistema), que quede documentada con OpenAPI y que la lógica de negocio esté en un solo lugar.</p></details>
   <details><summary>¿Qué diferencia hay entre una entidad y un DTO?</summary><p>La entidad representa la tabla y la usa EF Core. El DTO es lo que entra o sale por la API: solo los campos necesarios y con data annotations. Así no exponemos la estructura de la base ni aceptamos campos como <code>IdOrganizacion</code>.</p></details>
   <details><summary>¿Qué es la inyección de dependencias y para qué sirve?</summary><p>Las clases piden lo que necesitan en el constructor (por interfaz) y el framework se lo entrega. Desacopla las capas, facilita testear y cambiar implementaciones. Se configura en <code>ServiceCollectionExtensions.cs</code>.</p></details>
@@ -1517,34 +2498,73 @@ app.MapScalarApiReference();</code></pre>
   <details><summary>¿Swagger y OpenAPI son lo mismo?</summary><p>OpenAPI es el estándar (el JSON). Swagger UI y Scalar son interfaces que lo leen. Usamos Scalar porque .NET 9+ ya no trae Swashbuckle, pero el documento es el mismo.</p></details>
   <details><summary>¿Cómo calculan el MTBF?</summary><p>Días desde la primera orden ÷ cantidad de fallas. La probabilidad es qué porcentaje del MTBF pasó desde la última falla; 60 % es “revisar”, 80 % “en riesgo”. Está en <code>Indicadores.cs</code>.</p></details>
   <details><summary>¿Qué pasa si se cae la base?</summary><p>EF lanza una excepción, el <code>GlobalExceptionHandler</code> la registra en el log y responde 500 con un mensaje genérico, sin exponer detalles técnicos.</p></details>
+  <details><summary>¿Qué es .NET y qué es C#?</summary><p>C# es el lenguaje en el que escribimos. .NET es la plataforma que lo compila y ejecuta, con librerías ya hechas. ASP.NET Core es la parte de .NET para hacer APIs, y EF Core la parte para la base de datos.</p></details>
+  <details><summary>¿Qué es una interfaz y por qué la usan?</summary><p>Un contrato con la lista de métodos, sin código. <code>ActivosAppService</code> implementa <code>IActivosAppService</code>. El controller depende del contrato, no de la clase, así se puede cambiar la implementación sin tocarlo.</p></details>
+  <details><summary>¿Qué es LINQ?</summary><p>Métodos de C# para consultar colecciones (<code>Where</code>, <code>Select</code>, <code>OrderBy</code>). Sobre las tablas de EF Core se traducen a SQL y se ejecutan en la base.</p></details>
+  <details><summary>¿Qué hace exactamente <code>[ApiController]</code>?</summary><p>Valida el DTO con sus data annotations antes de entrar al método y, si falla, responde 400 con el detalle de cada campo. También infiere que los objetos complejos vienen del cuerpo JSON.</p></details>
+  <details><summary>¿Cómo agregarían un campo nuevo?</summary><p>Columna en la base, propiedad en la entidad, propiedad con validación en el DTO, copiarla en el servicio, agregarla al DTO de respuesta y al formulario. El controller no cambia (ver la receta).</p></details>
+  <details><summary>¿Qué pasa si dos usuarios guardan a la vez?</summary><p>Cada pedido tiene su propio DbContext (Scoped) y SQL Server maneja la concurrencia. Gana el último que guarda; para este alcance no hace falta control optimista.</p></details>
 </section>
 
 <section id="glosario">
-  <h2><span class="n">22</span>Glosario</h2>
+  <h2><span class="n">36</span>Glosario</h2>
+  <h4>.NET y C#</h4>
+  <dl class="glosario">
+    <dt>.NET</dt><dd>Plataforma de Microsoft que ejecuta programas escritos en C#.</dd>
+    <dt>C#</dt><dd>Lenguaje de programación orientado a objetos que usamos en el backend.</dd>
+    <dt>SDK</dt><dd>Kit para programar: compilador, runtime y comando <code>dotnet</code>.</dd>
+    <dt>Compilar</dt><dd>Traducir el código C# a un <code>.dll</code> ejecutable, detectando errores antes de correr.</dd>
+    <dt>Solución / Proyecto</dt><dd><code>.slnx</code> agrupa proyectos; <code>.csproj</code> describe un programa y sus paquetes.</dd>
+    <dt>NuGet</dt><dd>Repositorio de librerías de .NET.</dd>
+    <dt>Variable / Tipo</dt><dd>Caja con nombre / qué se puede guardar en ella (<code>int</code>, <code>string</code>…).</dd>
+    <dt>null</dt><dd>“No hay valor”. <code>int?</code> acepta null.</dd>
+    <dt>Clase / Objeto</dt><dd>Molde / pieza concreta creada con <code>new</code>.</dd>
+    <dt>Propiedad</dt><dd>Dato de un objeto: <code>public string? Nombre { get; set; }</code>.</dd>
+    <dt>Método</dt><dd>Acción de una clase: recibe parámetros y puede devolver un valor.</dd>
+    <dt>Constructor</dt><dd>Método que se ejecuta al crear el objeto; recibe sus dependencias.</dd>
+    <dt>Herencia</dt><dd>Una clase “es una” otra y recibe lo que ella tiene (<code>: ControllerBase</code>).</dd>
+    <dt>Interfaz</dt><dd>Contrato: lista de métodos sin código que una clase se compromete a cumplir.</dd>
+    <dt>Atributo</dt><dd>Etiqueta <code>[...]</code> que lee el framework.</dd>
+    <dt>Genérico</dt><dd>Tipo con parámetro: <code>List&lt;Activo&gt;</code>.</dd>
+    <dt>Record</dt><dd>Clase compacta solo de datos.</dd>
+    <dt>Lambda</dt><dd>Función corta: <code>a =&gt; a.Nombre</code>.</dd>
+    <dt>LINQ</dt><dd>Métodos para consultar colecciones: <code>Where</code>, <code>Select</code>, <code>OrderBy</code>.</dd>
+    <dt>Excepción</dt><dd>Error que se lanza con <code>throw</code> y se atrapa con <code>catch</code>.</dd>
+    <dt>async / await / Task</dt><dd>Esperar operaciones lentas sin bloquear el servidor.</dd>
+  </dl>
+  <h4>Web y API</h4>
   <dl class="glosario">
     <dt>API</dt><dd>Contrato para que un programa use a otro.</dd>
     <dt>REST</dt><dd>Estilo de API sobre HTTP: recursos con URL y verbos para las acciones.</dd>
-    <dt>Endpoint</dt><dd>Combinación de verbo + ruta, por ejemplo <code>DELETE /api/app/activos/{id}</code>.</dd>
+    <dt>HTTP</dt><dd>Protocolo de pedidos y respuestas de la web.</dd>
+    <dt>Endpoint</dt><dd>Verbo + ruta, por ejemplo <code>DELETE /api/app/activos/{id}</code>.</dd>
     <dt>JSON</dt><dd>Formato de texto para intercambiar datos: <code>{ "nombre": "Compresor" }</code>.</dd>
+    <dt>Código de estado</dt><dd>Número que resume el resultado: 200, 201, 400, 401, 403, 404, 409, 500.</dd>
+    <dt>ASP.NET Core</dt><dd>Framework de .NET para hacer APIs y sitios web.</dd>
+    <dt>Kestrel</dt><dd>Servidor web incluido en ASP.NET Core.</dd>
     <dt>Controller</dt><dd>Clase que recibe pedidos HTTP y devuelve respuestas.</dd>
-    <dt>Service</dt><dd>Clase con la lógica de negocio.</dd>
+    <dt>Middleware</dt><dd>Paso del recorrido que procesa cada pedido.</dd>
+    <dt>DI</dt><dd>Inyección de dependencias: el framework entrega lo que cada clase pide en su constructor.</dd>
+    <dt>CORS</dt><dd>Permiso que da el servidor para que un sitio de otro dominio lo llame desde el navegador.</dd>
+    <dt>ProblemDetails</dt><dd>Formato estándar de errores HTTP (RFC 7807).</dd>
+    <dt>OpenAPI</dt><dd>Estándar para describir una API en un JSON.</dd>
+    <dt>Swagger UI / Scalar</dt><dd>Páginas web que leen el OpenAPI y permiten probar la API.</dd>
+  </dl>
+  <h4>Datos y seguridad</h4>
+  <dl class="glosario">
+    <dt>SQL Server</dt><dd>Motor de base de datos de Microsoft.</dd>
+    <dt>Tabla / Fila / Columna</dt><dd>Planilla / un registro / un dato del registro.</dd>
+    <dt>PK / FK</dt><dd>Clave primaria (identifica la fila) / clave foránea (apunta a otra tabla).</dd>
+    <dt>ORM / EF Core</dt><dd>Herramienta que traduce entre objetos y tablas.</dd>
+    <dt>DbContext / DbSet</dt><dd>La puerta a la base / una tabla dentro de ella.</dd>
+    <dt>Fluent API</dt><dd>Configurar el mapeo con métodos encadenados (<code>HasKey</code>, <code>HasOne</code>).</dd>
     <dt>Entidad</dt><dd>Clase que representa una tabla.</dd>
     <dt>DTO</dt><dd>Data Transfer Object: objeto que viaja por la API.</dd>
-    <dt>Data annotation</dt><dd>Atributo de validación sobre una propiedad: <code>[Required]</code>, <code>[Range]</code>.</dd>
-    <dt>ORM / EF Core</dt><dd>Herramienta que traduce entre objetos y tablas SQL.</dd>
-    <dt>DbContext / DbSet</dt><dd>La conexión a la base / una tabla dentro de ella.</dd>
-    <dt>LINQ</dt><dd>Consultas escritas en C# (<code>Where</code>, <code>Select</code>, <code>OrderBy</code>).</dd>
-    <dt>Fluent API</dt><dd>Forma de configurar el mapeo con métodos encadenados (<code>HasKey</code>, <code>HasOne</code>).</dd>
-    <dt>DI</dt><dd>Inyección de dependencias: el framework entrega las dependencias por constructor.</dd>
-    <dt>Middleware</dt><dd>Paso del pipeline que procesa cada pedido.</dd>
-    <dt>JWT</dt><dd>Token firmado que identifica al usuario en cada pedido.</dd>
-    <dt>Claim</dt><dd>Un dato dentro del token (id, email, rol).</dd>
+    <dt>Data annotation</dt><dd>Atributo de validación: <code>[Required]</code>, <code>[Range]</code>, <code>[StringLength]</code>.</dd>
     <dt>Hash</dt><dd>Transformación sin vuelta atrás; se usa para guardar claves.</dd>
-    <dt>Policy</dt><dd>Regla de autorización con nombre, por ejemplo “tiene activos.gestionar”.</dd>
-    <dt>ProblemDetails</dt><dd>Formato estándar de errores HTTP (RFC 7807).</dd>
-    <dt>OpenAPI</dt><dd>Estándar para describir una API en JSON.</dd>
-    <dt>Swagger UI / Scalar</dt><dd>Interfaces web que leen el OpenAPI y permiten probar la API.</dd>
-    <dt>CORS</dt><dd>Permiso que da el servidor para que un sitio de otro dominio lo llame desde el navegador.</dd>
+    <dt>JWT / Claim</dt><dd>Token firmado que identifica al usuario / un dato dentro del token.</dd>
+    <dt>Autenticación / Autorización</dt><dd>¿Quién sos? / ¿Podés hacer esto?</dd>
+    <dt>Policy</dt><dd>Regla de autorización con nombre (“tiene activos.gestionar”).</dd>
     <dt>Multi-tenant</dt><dd>Varias organizaciones comparten la base y cada una ve solo lo suyo.</dd>
     <dt>MTBF</dt><dd>Mean Time Between Failures: tiempo promedio entre fallas.</dd>
   </dl>
