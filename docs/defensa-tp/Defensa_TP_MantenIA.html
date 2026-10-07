@@ -200,6 +200,10 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
 .dg .nc{fill:var(--brand)} .dg .nt{fill:#16171a;font-size:11px;font-weight:700}
 .dg .pt{fill:var(--ink-2)} .dg .pt.bad{fill:var(--bad)} .dg .pt.ok{fill:var(--ok)} .dg .pt.inf{fill:var(--info)} .dg .pt.hueco{fill:var(--bg);stroke:var(--bad);stroke-width:2;stroke-dasharray:3 2}
 .dg .qr{fill:var(--ink)}
+
+.tabla table.db{font-family:var(--f-mono);font-size:12.5px}
+.tabla table.db td:first-child{font-weight:400}
+.tabla table.db tr.hl td{background:var(--brand-soft)}
 </style>
 </head>
 <body>
@@ -228,52 +232,56 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     <li><a href="#cs-linq"><span>09</span>C# 4: lambdas y LINQ</a></li>
     <li><a href="#cs-async"><span>10</span>C# 5: errores y async</a></li>
     <li><a href="#conceptos"><span>11</span>La web: HTTP y REST</a></li>
-    <li><a href="#base"><span>12</span>La base de datos</a></li>
-    <li><a href="#de-cero"><span>13</span>Armar el proyecto de cero</a></li>
+    <li><a href="#url"><span>12</span>Anatomía de una URL</a></li>
+    <li><a href="#donde-corre"><span>13</span>La app y la API: dónde corre</a></li>
+    <li><a href="#base"><span>14</span>La base de datos</a></li>
+    <li><a href="#de-cero"><span>15</span>Armar el proyecto de cero</a></li>
   </ol>
   <div class="parte">Parte 2 · El backend por dentro</div>
   <ol>
-    <li><a href="#estructura"><span>14</span>Estructura de carpetas</a></li>
-    <li><a href="#patrones"><span>15</span>Patrones de diseño</a></li>
-    <li><a href="#arranque"><span>16</span>Program.cs</a></li>
-    <li><a href="#di"><span>17</span>Inyección de dependencias</a></li>
-    <li><a href="#datos"><span>18</span>Capa de datos</a></li>
-    <li><a href="#dtos"><span>19</span>Entidades y DTOs</a></li>
-    <li><a href="#entidades-todas"><span>20</span>Todas las entidades</a></li>
-    <li><a href="#dtos-todos"><span>21</span>Todos los DTOs</a></li>
-    <li><a href="#negocio"><span>22</span>Capa de negocio</a></li>
-    <li><a href="#servicios-todos"><span>23</span>Todos los servicios</a></li>
-    <li><a href="#ordenes"><span>24</span>Órdenes y contexto</a></li>
-    <li><a href="#controllers"><span>25</span>Controllers</a></li>
-    <li><a href="#recorrido"><span>26</span>Un pedido de punta a punta</a></li>
-    <li><a href="#errores"><span>27</span>Manejo de errores</a></li>
-    <li><a href="#mtbf"><span>28</span>Indicadores: MTBF</a></li>
-    <li><a href="#swagger"><span>29</span>Swagger y OpenAPI</a></li>
+    <li><a href="#estructura"><span>16</span>Estructura de carpetas</a></li>
+    <li><a href="#patrones"><span>17</span>Patrones de diseño</a></li>
+    <li><a href="#arranque"><span>18</span>Program.cs</a></li>
+    <li><a href="#di"><span>19</span>Inyección de dependencias</a></li>
+    <li><a href="#datos"><span>20</span>Capa de datos</a></li>
+    <li><a href="#dtos"><span>21</span>Entidades y DTOs</a></li>
+    <li><a href="#entidades-todas"><span>22</span>Todas las entidades</a></li>
+    <li><a href="#dtos-todos"><span>23</span>Todos los DTOs</a></li>
+    <li><a href="#validacion"><span>24</span>Validación en 4 niveles</a></li>
+    <li><a href="#negocio"><span>25</span>Capa de negocio</a></li>
+    <li><a href="#servicios-todos"><span>26</span>Todos los servicios</a></li>
+    <li><a href="#ordenes"><span>27</span>Órdenes y contexto</a></li>
+    <li><a href="#controllers"><span>28</span>Controllers</a></li>
+    <li><a href="#recorrido"><span>29</span>Un pedido de punta a punta</a></li>
+    <li><a href="#errores"><span>30</span>Manejo de errores</a></li>
+    <li><a href="#mtbf"><span>31</span>Indicadores: MTBF</a></li>
+    <li><a href="#swagger"><span>32</span>Swagger y OpenAPI</a></li>
   </ol>
   <div class="parte">Parte 3 · Seguridad y funciones clave</div>
   <ol>
-    <li><a href="#seguridad"><span>30</span>Login y JWT: conceptos</a></li>
-    <li><a href="#jwt-paso"><span>31</span>JWT paso a paso</a></li>
-    <li><a href="#acciones"><span>32</span>Roles, actions y permisos</a></li>
-    <li><a href="#multitenant"><span>33</span>Aislar organizaciones</a></li>
-    <li><a href="#qr"><span>34</span>Cómo funciona el QR</a></li>
+    <li><a href="#seguridad"><span>33</span>Login y JWT: conceptos</a></li>
+    <li><a href="#jwt-paso"><span>34</span>JWT paso a paso</a></li>
+    <li><a href="#acciones"><span>35</span>Roles, actions y permisos</a></li>
+    <li><a href="#multitenant"><span>36</span>Aislar organizaciones</a></li>
+    <li><a href="#qr"><span>37</span>Cómo funciona el QR</a></li>
   </ol>
   <div class="parte">Parte 4 · Módulos y frontend</div>
   <ol>
-    <li><a href="#modulos"><span>35</span>Todos los módulos</a></li>
-    <li><a href="#react"><span>36</span>React desde cero</a></li>
-    <li><a href="#front"><span>37</span>Cómo la app llama a la API</a></li>
+    <li><a href="#modulos"><span>38</span>Todos los módulos</a></li>
+    <li><a href="#react"><span>39</span>React desde cero</a></li>
+    <li><a href="#front"><span>40</span>Cómo la app llama a la API</a></li>
   </ol>
   <div class="parte">Parte 5 · Consigna y defensa</div>
   <ol>
-    <li><a href="#funcionales"><span>38</span>Funcionales con capturas</a></li>
-    <li><a href="#diseno"><span>39</span>Requisitos de diseño</a></li>
-    <li><a href="#receta"><span>40</span>Receta: agregar un campo</a></li>
-    <li><a href="#depurar"><span>41</span>Depurar y errores comunes</a></li>
-    <li><a href="#demo"><span>42</span>Guion de la demo</a></li>
-    <li><a href="#pendientes"><span>43</span>Qué falta y cómo hacerlo</a></li>
-    <li><a href="#preguntas"><span>44</span>Preguntas probables</a></li>
-    <li><a href="#glosario"><span>45</span>Glosario</a></li>
+    <li><a href="#funcionales"><span>41</span>Funcionales con capturas</a></li>
+    <li><a href="#diseno"><span>42</span>Requisitos de diseño</a></li>
+    <li><a href="#mvc"><span>43</span>MVC, Layout y PartialView</a></li>
+    <li><a href="#receta"><span>44</span>Receta: agregar un campo</a></li>
+    <li><a href="#depurar"><span>45</span>Depurar y errores comunes</a></li>
+    <li><a href="#demo"><span>46</span>Guion de la demo</a></li>
+    <li><a href="#pendientes"><span>47</span>Qué falta y cómo hacerlo</a></li>
+    <li><a href="#preguntas"><span>48</span>Preguntas probables</a></li>
+    <li><a href="#glosario"><span>49</span>Glosario</a></li>
   </ol>
 </nav>
 
@@ -341,7 +349,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
     <div><b>5</b><span>cumplidos con matices (hay que saber argumentarlos)</span></div>
     <div><b>4</b><span>faltan en el código actual</span></div>
   </div>
-  <div class="nota bad"><p><b>Importante.</b> La consigna dice que <i>“no se aceptará que alguna funcionalidad o requisito técnico no se encuentre plasmado”</i>. Los 4 puntos en rojo hay que agregarlos antes de entregar. La sección <a href="#pendientes">43</a> trae el código de cada uno.</p></div>
+  <div class="nota bad"><p><b>Importante.</b> La consigna dice que <i>“no se aceptará que alguna funcionalidad o requisito técnico no se encuentre plasmado”</i>. Los 4 puntos en rojo hay que agregarlos antes de entregar. La sección <a href="#pendientes">47</a> trae el código de cada uno.</p></div>
 
   <h3>Requerimientos funcionales</h3>
   <div class="tabla"><table>
@@ -350,7 +358,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted)}
       <tr><td>1. Alta de la entidad</td><td><span class="pill ok">Cumple</span><br><span class="verbo POST">POST</span> <code>/api/app/activos</code> en <code>AppController.cs:67</code> → <code>ActivosAppService.CrearAsync</code>. Pantalla <code>/activos/nuevo</code>.</td></tr>
       <tr><td>2. Actualizar campos</td><td><span class="pill ok">Cumple</span><br><span class="verbo PUT">PUT</span> <code>/api/app/activos/{id}</code> en <code>AppController.cs:75</code> → <code>GuardarAsync</code>. Pantalla <code>/activos/:id/editar</code>.</td></tr>
       <tr><td>3. Eliminar</td><td><span class="pill ok">Cumple</span><br><span class="verbo DELETE">DELETE</span> <code>/api/app/activos/{id}</code> en <code>AppController.cs:84</code>. Si el activo tiene órdenes devuelve <b>409 Conflict</b> y no lo borra.</td></tr>
-      <tr><td>4. Listar con buscador de 2+ campos</td><td><span class="pill warn">Cumple con matiz</span><br><span class="verbo GET">GET</span> <code>/api/app/activos?buscar=&amp;filtro=</code>. El buscador mira <b>5 campos</b> (nombre, ID, cliente, marca y modelo) y hay filtro por estado. Pero es <b>un solo input</b>: conviene sumar un combo de categoría (ver <a href="#pendientes">43</a>).</td></tr>
+      <tr><td>4. Listar con buscador de 2+ campos</td><td><span class="pill warn">Cumple con matiz</span><br><span class="verbo GET">GET</span> <code>/api/app/activos?buscar=&amp;filtro=</code>. El buscador mira <b>5 campos</b> (nombre, ID, cliente, marca y modelo) y hay filtro por estado. Pero es <b>un solo input</b>: conviene sumar un combo de categoría (ver <a href="#pendientes">47</a>).</td></tr>
       <tr><td>5. Entidad de relación con alta y asociación</td><td><span class="pill ok">Cumple</span><br><b>Cliente</b>: se da de alta desde el formulario del activo (<span class="verbo POST">POST</span> <code>/api/app/clientes</code>) y queda asociado por la FK <code>Activo.IdCliente</code>. También <b>OrdenTrabajo</b> (FK <code>IdActivo</code>) con sus repuestos.</td></tr>
       <tr><td>6. Login</td><td><span class="pill ok">Cumple</span><br><span class="verbo POST">POST</span> <code>/api/auth/login</code> devuelve un <b>JWT</b>. Claves con hash PBKDF2. Rutas protegidas con <code>[Authorize]</code>.</td></tr>
     </tbody>
@@ -996,8 +1004,68 @@ activos.ToList()                                      <span class="c">// ejecuta
   <div class="recordar"><ul><li>Una API REST expone <b>recursos</b> (URLs) y la acción la indica el <b>verbo</b>: GET lee, POST crea, PUT modifica, DELETE borra.</li><li>Cada pedido tiene línea (verbo + ruta), headers y cuerpo JSON; la respuesta trae un <b>código de estado</b>.</li><li>2xx bien, 4xx error del que pidió (400 datos, 401 sin login, 403 sin permiso, 404 no existe, 409 regla de negocio), 5xx error del servidor.</li></ul></div>
 </section>
 
+<section id="url">
+  <h2><span class="n">12</span>Anatomía de una URL y cómo llega al método</h2>
+  <p>Cada pedido apunta a una URL. ASP.NET la desarma en partes para saber qué método de qué controller ejecutar y con qué datos.</p>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 920 270" role="img" aria-label="&lt;b&gt;Cómo ASP.NET decide qué método ejecutar.&lt;/b&gt; Junta la ruta de la clase con la del método y compara con la URL. Lo que va entre llaves (&lt;code&gt;{id}&lt;/code&gt;) se convierte en el parámetro del método; lo que va después de &lt;code&gt;?&lt;/code&gt; llega con &lt;code&gt;[FromQuery]&lt;/code&gt;." style="min-width:760px"><defs><marker id="g29-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g29-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g29-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g29-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g29-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="30" width="80.80000000000001" height="40" rx="10" class="b "/><text x="60.4" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">http://</text><text x="60.4" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">protocolo</text><rect x="104.80000000000001" y="30" width="97.60000000000001" height="40" rx="10" class="b "/><text x="153.6" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">localhost</text><text x="153.6" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">servidor</text><rect x="206.40000000000003" y="30" width="64.0" height="40" rx="10" class="b "/><text x="238.4" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">:5080</text><text x="238.4" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">puerto</text><rect x="274.40000000000003" y="30" width="156.4" height="40" rx="10" class="b acc"/><text x="352.6" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">/api/app/activos</text><text x="352.6" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">ruta</text><rect x="434.80000000000007" y="30" width="47.2" height="40" rx="10" class="b inf"/><text x="458.4" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">/15</text><text x="458.4" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">parámetro de ruta</text><rect x="486.00000000000006" y="30" width="248.8" height="40" rx="10" class="b ok"/><text x="610.4" y="50.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">?buscar=atlas&amp;filtro=riesgo</text><text x="610.4" y="88.0" class="lb" text-anchor="middle" dominant-baseline="middle">query string</text><text x="20.0" y="14.0" class="zl" text-anchor="start" dominant-baseline="middle">UNA URL, PARTE POR PARTE</text><rect x="120" y="150" width="300" height="40" rx="10" class="b acc"/><text x="270.0" y="170.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">[Route(&quot;api/app&quot;)]  (arriba de la clase)</text><rect x="440" y="150" width="300" height="40" rx="10" class="b acc"/><text x="590.0" y="170.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">[HttpGet(&quot;activos/{id:int}&quot;)]</text><rect x="300" y="214" width="320" height="40" rx="10" class="b ok"/><text x="460.0" y="234.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">public … Ficha(int id)   → id = 15</text><line x1="352.6" y1="100" x2="270" y2="148" class="l acc" marker-end="url(#g29-acc)"/><text x="254.4" y="118.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">api/app</text><line x1="382.6" y1="100" x2="560" y2="148" class="l acc" marker-end="url(#g29-acc)"/><text x="480.0" y="116.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">activos</text><line x1="458.4000000000001" y1="100" x2="680" y2="148" class="l inf" marker-end="url(#g29-inf)"/><text x="640.0" y="132.0" class="lb inf" text-anchor="start" dominant-baseline="middle">{id} = 15</text><line x1="590" y1="192" x2="520" y2="212" class="l ok" marker-end="url(#g29-ok)"/></svg></div><figcaption><b>Cómo ASP.NET decide qué método ejecutar.</b> Junta la ruta de la clase con la del método y compara con la URL. Lo que va entre llaves (<code>{id}</code>) se convierte en el parámetro del método; lo que va después de <code>?</code> llega con <code>[FromQuery]</code>.</figcaption></figure>
+  <div class="tabla"><table>
+    <thead><tr><th>Parte</th><th>Ejemplo</th><th>Qué es</th><th>Cómo llega al código</th></tr></thead>
+    <tbody>
+      <tr><td>Protocolo</td><td><code>http://</code></td><td>El “idioma” de la comunicación. <code>https</code> es la versión cifrada.</td><td>—</td></tr>
+      <tr><td>Servidor y puerto</td><td><code>localhost:5080</code></td><td>Qué máquina y qué “puerta” de esa máquina. <code>localhost</code> = esta misma computadora.</td><td>Lo define <code>launchSettings.json</code>.</td></tr>
+      <tr><td>Ruta</td><td><code>/api/app/activos</code></td><td>Qué recurso.</td><td><code>[Route("api/app")]</code> + <code>[HttpGet("activos")]</code></td></tr>
+      <tr><td>Parámetro de ruta</td><td><code>/15</code></td><td>Cuál de todos (el activo 15).</td><td><code>{id:int}</code> en la ruta → parámetro <code>int id</code></td></tr>
+      <tr><td>Query string</td><td><code>?buscar=atlas&amp;filtro=riesgo</code></td><td>Opciones extra, en pares nombre=valor separados por <code>&amp;</code>.</td><td><code>[FromQuery] string? buscar</code></td></tr>
+      <tr><td>Cuerpo (body)</td><td>el JSON del pedido</td><td>No va en la URL: va adentro del pedido (POST y PUT).</td><td><code>[FromBody] ActivoGuardarDto dto</code></td></tr>
+    </tbody>
+  </table></div>
+  <div class="recordar"><ul>
+    <li>Ruta de la clase + ruta del método = la URL que atiende.</li>
+    <li><code>{id}</code> en la ruta llega como parámetro; <code>?nombre=valor</code> llega con <code>[FromQuery]</code>; el JSON llega con <code>[FromBody]</code>.</li>
+  </ul></div>
+</section>
+
+<section id="donde-corre">
+  <h2><span class="n">13</span>La app y la API: quién corre dónde</h2>
+  <p>Esta sección explica una idea que aparece en toda la guía: cuando decimos que algo está “en la API” o “en la app”, hablamos de <b>dónde se ejecuta ese código</b>. Y eso cambia todo en seguridad.</p>
+  <h3>Cuatro palabras que significan casi lo mismo de a pares</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Palabra</th><th>Qué es</th><th>En MantenIA</th></tr></thead>
+    <tbody>
+      <tr><td>Frontend · cliente</td><td>Lo que ve y toca el usuario. Corre en <b>su</b> dispositivo.</td><td>La app React (<code>mantenia-app</code>), dentro del navegador del celular o la PC.</td></tr>
+      <tr><td>Backend · servidor</td><td>Lo que corre en <b>nuestra</b> máquina, lejos del usuario.</td><td>La API .NET (<code>Mantenia.Api</code>) y SQL Server.</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 300" role="img" aria-label="&lt;b&gt;Dos programas en dos lugares distintos.&lt;/b&gt; La app React corre en el teléfono o la PC del usuario: él la controla. La API corre en nuestro servidor, junto a la base: la controlamos nosotros. Por eso las reglas importantes van en la API." style="min-width:700px"><defs><marker id="g27-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g27-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g27-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g27-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g27-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="10" y="10" width="390" height="280" rx="14" class="zone"/><text x="24.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">DISPOSITIVO DEL USUARIO</text><rect x="500" y="10" width="390" height="280" rx="14" class="zone"/><text x="514.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">NUESTRO SERVIDOR</text><rect x="40" y="50" width="330" height="120" rx="10" class="b inf"/><text x="205.0" y="68.0" class="tt" text-anchor="middle" dominant-baseline="middle">Navegador (Chrome, Safari…)</text><rect x="64" y="86" width="282" height="70" rx="10" class="b "/><text x="205.0" y="106.0" class="tt" text-anchor="middle" dominant-baseline="middle">App React</text><text x="205.0" y="122.0" class="ts" text-anchor="middle" dominant-baseline="middle">el código se descarga al celular</text><text x="205.0" y="137.0" class="ts" text-anchor="middle" dominant-baseline="middle">y corre ahí</text><rect x="40" y="190" width="330" height="80" rx="10" class="b bad"/><text x="205.0" y="215.0" class="ts warnc" text-anchor="middle" dominant-baseline="middle">el usuario puede ver, cambiar</text><text x="205.0" y="230.0" class="ts warnc" text-anchor="middle" dominant-baseline="middle">o saltearse este código</text><text x="205.0" y="245.0" class="ts warnc" text-anchor="middle" dominant-baseline="middle">(no lo controlamos)</text><rect x="530" y="50" width="330" height="120" rx="10" class="b acc"/><text x="695.0" y="87.5" class="tt" text-anchor="middle" dominant-baseline="middle">API .NET (C#)</text><text x="695.0" y="103.5" class="ts" text-anchor="middle" dominant-baseline="middle">controllers · servicios</text><text x="695.0" y="118.5" class="ts" text-anchor="middle" dominant-baseline="middle">login · permisos · validaciones</text><text x="695.0" y="133.5" class="ts" text-anchor="middle" dominant-baseline="middle">(lo controlamos nosotros)</text><rect x="530" y="196" width="330" height="70" rx="10" class="b "/><text x="695.0" y="223.5" class="tt" text-anchor="middle" dominant-baseline="middle">SQL Server</text><text x="695.0" y="239.5" class="ts" text-anchor="middle" dominant-baseline="middle">los datos</text><line x1="372" y1="100" x2="528" y2="100" class="l acc" marker-end="url(#g27-acc)"/><text x="450.0" y="90.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">pedido HTTP</text><line x1="528" y1="130" x2="372" y2="130" class="l ok" marker-end="url(#g27-ok)"/><text x="450.0" y="146.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">respuesta JSON</text><text x="450.0" y="186.0" class="zl" text-anchor="middle" dominant-baseline="middle">internet</text><line x1="695" y1="172" x2="695" y2="194" class="l acc" marker-end="url(#g27-acc)"/></svg></div><figcaption><b>Dos programas en dos lugares distintos.</b> La app React corre en el teléfono o la PC del usuario: él la controla. La API corre en nuestro servidor, junto a la base: la controlamos nosotros. Por eso las reglas importantes van en la API.</figcaption></figure>
+  <h3>¿Por qué importa dónde corre?</h3>
+  <p>Cuando alguien abre la app, el navegador <b>descarga</b> el código de React y lo ejecuta en su dispositivo. Ese código está en manos del usuario: lo puede ver (con F12 en el navegador), modificar, o directamente no usarlo y hablarle a la API con otra herramienta, como Scalar, Postman o un programa propio.</p>
+  <p>En cambio, el código de la API corre en nuestro servidor. Nadie de afuera puede cambiarlo: solo puede mandarle pedidos y recibir respuestas.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🏦</span><div><b class="t">Ejemplo del día a día: el cajero del banco</b>
+    <p>El formulario que llenás en la mesa del banco (la app) te ayuda a no equivocarte, pero el que decide si te pagan es el cajero (la API), que revisa tu firma y tu saldo en su sistema. Si alguien trae un formulario fotocopiado o hecho en casa, el cajero igual lo revisa. Por eso el control no puede estar solo en el formulario.</p></div></div>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 280" role="img" aria-label="&lt;b&gt;Por qué los controles van “en la API”.&lt;/b&gt; Esconder un botón en la app no alcanza: cualquiera puede llamar a la API sin la app. Como el control está en el código de la API, vale para todos los caminos." style="min-width:720px"><defs><marker id="g28-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g28-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g28-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g28-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g28-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="30" width="170" height="64" rx="10" class="b inf"/><text x="105.0" y="54.5" class="tt" text-anchor="middle" dominant-baseline="middle">Ana</text><text x="105.0" y="70.5" class="ts" text-anchor="middle" dominant-baseline="middle">usa la app normal</text><rect x="20" y="180" width="170" height="64" rx="10" class="b bad"/><text x="105.0" y="197.0" class="tt" text-anchor="middle" dominant-baseline="middle">Alguien</text><text x="105.0" y="213.0" class="ts" text-anchor="middle" dominant-baseline="middle">usa Scalar / Postman</text><text x="105.0" y="228.0" class="ts" text-anchor="middle" dominant-baseline="middle">y llama a la API directo</text><rect x="270" y="30" width="190" height="64" rx="10" class="b "/><text x="365.0" y="47.0" class="tt" text-anchor="middle" dominant-baseline="middle">App React</text><text x="365.0" y="63.0" class="ts" text-anchor="middle" dominant-baseline="middle">esconde el botón</text><text x="365.0" y="78.0" class="ts" text-anchor="middle" dominant-baseline="middle">“Eliminar”</text><rect x="560" y="70" width="150" height="130" rx="10" class="b acc"/><text x="635.0" y="92.0" class="tt" text-anchor="middle" dominant-baseline="middle">API</text><text x="635.0" y="116.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">[Authorize(</text><text x="635.0" y="132.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">Policy = …)]</text><text x="635.0" y="160.0" class="ts" text-anchor="middle" dominant-baseline="middle">controla</text><text x="635.0" y="176.0" class="ts" text-anchor="middle" dominant-baseline="middle" style="font-weight:700">SIEMPRE</text><line x1="192" y1="62" x2="268" y2="62" class="l acc" marker-end="url(#g28-acc)"/><text x="230.0" y="52.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">toca botones</text><line x1="462" y1="62" x2="558" y2="100" class="l acc" marker-end="url(#g28-acc)"/><text x="505.0" y="66.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">DELETE</text><polyline points="192,212 558,172" class="l bad" marker-end="url(#g28-bad)"/><text x="375.0" y="180.0" class="lb bad" text-anchor="middle" dominant-baseline="middle">DELETE /activos/1 (sin pasar por la app)</text><rect x="780" y="40" width="100" height="50" rx="10" class="b ok"/><text x="830.0" y="57.5" class="tt" text-anchor="middle" dominant-baseline="middle">200</text><text x="830.0" y="73.5" class="ts" text-anchor="middle" dominant-baseline="middle">si tiene permiso</text><rect x="780" y="180" width="100" height="50" rx="10" class="b bad"/><text x="830.0" y="197.5" class="tt" text-anchor="middle" dominant-baseline="middle">403</text><text x="830.0" y="213.5" class="ts" text-anchor="middle" dominant-baseline="middle">si no tiene</text><line x1="712" y1="110" x2="778" y2="70" class="l ok" marker-end="url(#g28-ok)"/><line x1="712" y1="160" x2="778" y2="200" class="l bad" marker-end="url(#g28-bad)"/></svg></div><figcaption><b>Por qué los controles van “en la API”.</b> Esconder un botón en la app no alcanza: cualquiera puede llamar a la API sin la app. Como el control está en el código de la API, vale para todos los caminos.</figcaption></figure>
+  <h3>Qué significa entonces “se controla en la API”</h3>
+  <p>Significa que el control está escrito en el <b>código C# de la API</b>: en un atributo como <code>[Authorize]</code>, en una data annotation como <code>[Required]</code> o en un <code>if</code> dentro de un servicio. Como ese código corre en el servidor antes de tocar la base, <b>no hay forma de saltearlo</b>. Da igual si el pedido viene de nuestra app, de Scalar o de otro programa.</p>
+  <h3>Qué controla cada lado en MantenIA</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Control</th><th>En la app (React) · comodidad</th><th>En la API (.NET) · seguridad</th></tr></thead>
+    <tbody>
+      <tr><td>Estar logueado</td><td>Si no hay token, manda a la pantalla de login.</td><td><code>[Authorize]</code>: sin token válido responde 401.</td></tr>
+      <tr><td>Permisos</td><td>Esconde botones y rutas si el rol no tiene la acción.</td><td><code>[Authorize(Policy = ...)]</code>: responde 403.</td></tr>
+      <tr><td>Campos obligatorios</td><td>Deshabilita el botón “Crear” si falta el nombre.</td><td><code>[Required]</code>: responde 400.</td></tr>
+      <tr><td>Datos de otra organización</td><td>Los combos solo muestran lo propio.</td><td><code>ActivosQuery()</code> y validaciones del servicio: 404 o 409.</td></tr>
+      <tr><td>No borrar con historial</td><td>Muestra el mensaje de error.</td><td>El servicio cuenta las órdenes y lanza <code>ConflictException</code>: 409.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="decir">La app hace los controles para que el uso sea cómodo, pero todos los controles de seguridad están repetidos en la API, porque el código de la app corre en el dispositivo del usuario y se puede saltear. El de la API corre en nuestro servidor y no.</div>
+  <div class="recordar"><ul>
+    <li><b>Frontend</b> = la app React, corre en el dispositivo del usuario. <b>Backend</b> = la API .NET, corre en nuestro servidor.</li>
+    <li>“En la API” = escrito en el código C# del servidor: nadie lo puede saltear.</li>
+    <li>Lo que hace la app (esconder botones, deshabilitar) es comodidad; la seguridad está en la API.</li>
+  </ul></div>
+</section>
+
 <section id="base">
-  <h2><span class="n">12</span>La base de datos de MantenIA</h2>
+  <h2><span class="n">14</span>La base de datos de MantenIA</h2>
   <p>Los datos viven en <b>SQL Server</b>, un motor de base de datos relacional de Microsoft. La base se llama <code>ManteniaDB</code>.</p>
   <h3>Conceptos mínimos</h3>
   <div class="tabla"><table>
@@ -1072,7 +1140,7 @@ activos.ToList()                                      <span class="c">// ejecuta
 </section>
 
 <section id="de-cero">
-  <h2><span class="n">13</span>Cómo se arma este proyecto de cero</h2>
+  <h2><span class="n">15</span>Cómo se arma este proyecto de cero</h2>
   <p>Este es el orden en que se construye una API como la de MantenIA. Leelo como una receta: cada paso nombra el archivo que se crea y en qué sección de esta guía está explicado.</p>
   <ol class="secuencia">
     <li><div><b>Crear la solución y el proyecto</b>
@@ -1108,7 +1176,7 @@ dotnet add package Scalar.AspNetCore</code></pre>
 <div class="separador">Parte 2<b>El backend de MantenIA, archivo por archivo</b></div>
 
 <section id="estructura">
-  <h2><span class="n">14</span>Estructura de carpetas</h2>
+  <h2><span class="n">16</span>Estructura de carpetas</h2>
   <p>Cada carpeta de <code>Mantenia.Api</code> es una pieza con una única responsabilidad:</p>
 <pre><code>Mantenia.Api/
 ├── <span class="k">Program.cs</span>              <span class="c">← punto de entrada: arma y arranca la API</span>
@@ -1137,7 +1205,7 @@ dotnet add package Scalar.AspNetCore</code></pre>
 </section>
 
 <section id="patrones">
-  <h2><span class="n">15</span>Arquitectura y patrones de diseño</h2>
+  <h2><span class="n">17</span>Arquitectura y patrones de diseño</h2>
   <p>Un <b>patrón de diseño</b> es una solución conocida para un problema que se repite al programar. No es código que se baja: es una forma de organizarlo que otros programadores reconocen. Estos son los que usamos y por qué.</p>
 
   <h3>El patrón principal: arquitectura en capas (N capas)</h3>
@@ -1174,7 +1242,7 @@ dotnet add package Scalar.AspNetCore</code></pre>
 </section>
 
 <section id="arranque">
-  <h2><span class="n">16</span>Cómo arranca la API: <code>Program.cs</code></h2>
+  <h2><span class="n">18</span>Cómo arranca la API: <code>Program.cs</code></h2>
   <p>Es el primer archivo que se ejecuta. Tiene dos mitades: <b>armar</b> (registrar servicios) y <b>configurar el recorrido</b> que hace cada pedido.</p>
   <span class="ruta">Mantenia.Api/Program.cs</span>
 <pre><code><span class="o">1</span> var builder = WebApplication.CreateBuilder(args);
@@ -1202,16 +1270,18 @@ dotnet add package Scalar.AspNetCore</code></pre>
 <span class="o">9</span> app.Run();</code></pre>
   <ol class="anot">
     <li><div><b><code>CreateBuilder</code></b> lee la configuración (<code>appsettings.json</code>, <code>appsettings.Development.json</code>, variables de entorno) y prepara el contenedor de servicios.</div></li>
-    <li><div>Registramos lo que la API necesita con <b>métodos de extensión</b> propios (en <code>Extensions/ServiceCollectionExtensions.cs</code>), para que <code>Program.cs</code> quede corto y cada grupo ordenado. Los vemos en la sección <a href="#di">17</a>.</div></li>
+    <li><div>Registramos lo que la API necesita con <b>métodos de extensión</b> propios (en <code>Extensions/ServiceCollectionExtensions.cs</code>), para que <code>Program.cs</code> quede corto y cada grupo ordenado. Los vemos en la sección <a href="#di">19</a>.</div></li>
     <li><div><b>CORS</b>: el navegador bloquea que una página llame a otro dominio salvo que el servidor lo permita. Acá listamos los orígenes permitidos desde <code>Cors:Origenes</code>.</div></li>
     <li><div><b><code>Build()</code></b> crea la aplicación con todo lo registrado. A partir de acá ya no se agregan servicios.</div></li>
-    <li><div>Primer <b>middleware</b>: si algo explota más adelante, lo atrapa y lo convierte en una respuesta JSON prolija (sección <a href="#errores">27</a>).</div></li>
+    <li><div>Primer <b>middleware</b>: si algo explota más adelante, lo atrapa y lo convierte en una respuesta JSON prolija (sección <a href="#errores">30</a>).</div></li>
     <li><div>Solo en desarrollo publicamos el documento OpenAPI y la interfaz para probarlo. En producción no se expone.</div></li>
     <li><div>El orden importa: primero <b>autenticación</b> (¿quién sos? lee el token) y después <b>autorización</b> (¿podés hacer esto?).</div></li>
     <li><div>Conecta las rutas de todos los controllers (<code>[Route]</code>, <code>[HttpGet]</code>…).</div></li>
     <li><div>Arranca el servidor web (Kestrel) en <code>http://localhost:5080</code>, según <code>Properties/launchSettings.json</code>.</div></li>
   </ol>
 
+  <h3>¿Qué es CORS?</h3><p>Es una protección de los navegadores. Si una página de un sitio intenta llamar a una API de otro sitio, el navegador primero le pregunta a la API si ese sitio está autorizado. Así un sitio cualquiera no puede usar tu sesión para llamar a nuestra API.</p>
+<figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 220" role="img" aria-label="&lt;b&gt;CORS: quién puede llamar a la API desde un navegador.&lt;/b&gt; El navegador solo deja que una página use la respuesta si la API dice que ese origen está permitido. Lo configuramos en &lt;code&gt;Cors:Origenes&lt;/code&gt;." style="min-width:720px"><defs><marker id="g33-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g33-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g33-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g33-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g33-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="30" width="210" height="60" rx="10" class="b inf"/><text x="125.0" y="52.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Página en localhost:5173</text><text x="125.0" y="68.0" class="ts" text-anchor="middle" dominant-baseline="middle">(nuestra app)</text><rect x="20" y="130" width="210" height="60" rx="10" class="b bad"/><text x="125.0" y="152.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Página en sitio-raro.com</text><text x="125.0" y="168.0" class="ts" text-anchor="middle" dominant-baseline="middle">(otro sitio)</text><rect x="340" y="70" width="220" height="80" rx="10" class="b "/><text x="450.0" y="95.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Navegador</text><text x="450.0" y="110.5" class="ts" text-anchor="middle" dominant-baseline="middle">antes de dejar pasar la respuesta</text><text x="450.0" y="125.5" class="ts" text-anchor="middle" dominant-baseline="middle">pregunta: ¿este origen está permitido?</text><rect x="670" y="60" width="210" height="100" rx="10" class="b acc"/><text x="775.0" y="95.0" class="tt" text-anchor="middle" dominant-baseline="middle">API :5080</text><text x="775.0" y="111.0" class="ts" text-anchor="middle" dominant-baseline="middle">Cors:Origenes =</text><text x="775.0" y="126.0" class="ts" text-anchor="middle" dominant-baseline="middle">[ &quot;localhost:5173&quot; ]</text><line x1="232" y1="60" x2="338" y2="95" class="l acc" marker-end="url(#g33-acc)"/><line x1="232" y1="160" x2="338" y2="125" class="l bad" marker-end="url(#g33-bad)"/><line x1="562" y1="110" x2="668" y2="110" class="l acc" marker-end="url(#g33-acc)"/><text x="615.0" y="100.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">pide</text><text x="330.0" y="196.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">localhost:5173 → permitido ✓</text><text x="600.0" y="196.0" class="lb bad" text-anchor="middle" dominant-baseline="middle">sitio-raro.com → bloqueado ✗</text></svg></div><figcaption><b>CORS: quién puede llamar a la API desde un navegador.</b> El navegador solo deja que una página use la respuesta si la API dice que ese origen está permitido. Lo configuramos en <code>Cors:Origenes</code>.</figcaption></figure>
   <h3>El pipeline: el recorrido de cada pedido</h3>
   <p>Cada pedido pasa por los middlewares <b>en el orden en que se registraron</b>. Cualquiera puede cortar el recorrido y responder antes.</p>
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 980 240" role="img" aria-label="&lt;b&gt;El recorrido de cada pedido.&lt;/b&gt; Pasa por los middlewares en orden. Autenticación y autorización pueden cortarlo con 401 o 403 antes de llegar al controller. Si algo falla adentro, el manejador de errores lo convierte en JSON." style="min-width:760px"><defs><marker id="g9-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g9-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g9-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g9-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g9-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20.0" y="70" width="112" height="56" rx="10" class="b "/><text x="76.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Kestrel</text><text x="76.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">recibe</text><line x1="133.0" y1="98" x2="157.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="158.0" y="70" width="112" height="56" rx="10" class="b "/><text x="214.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">ExceptionHandler</text><text x="214.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">red de seguridad</text><line x1="271.0" y1="98" x2="295.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="296.0" y="70" width="112" height="56" rx="10" class="b "/><text x="352.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">HTTPS</text><text x="352.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">fuerza https</text><line x1="409.0" y1="98" x2="433.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="434.0" y="70" width="112" height="56" rx="10" class="b "/><text x="490.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">CORS</text><text x="490.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">¿origen ok?</text><line x1="547.0" y1="98" x2="571.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="572.0" y="70" width="112" height="56" rx="10" class="b acc"/><text x="628.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Authentication</text><text x="628.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">¿quién sos?</text><line x1="685.0" y1="98" x2="709.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="710.0" y="70" width="112" height="56" rx="10" class="b acc"/><text x="766.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Authorization</text><text x="766.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">¿podés?</text><line x1="823.0" y1="98" x2="847.0" y2="98" class="l " marker-end="url(#g9-n)"/><rect x="848.0" y="70" width="112" height="56" rx="10" class="b ok"/><text x="904.0" y="90.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Controller</text><text x="904.0" y="106.0" class="ts" text-anchor="middle" dominant-baseline="middle">tu método</text><line x1="628.0" y1="128" x2="628.0" y2="166" class="l bad" marker-end="url(#g9-bad)"/><text x="636.0" y="147.0" class="lb bad" text-anchor="start" dominant-baseline="middle">no</text><rect x="572.0" y="168" width="112" height="44" rx="10" class="b bad"/><text x="628.0" y="182.5" class="tt" text-anchor="middle" dominant-baseline="middle">401</text><text x="628.0" y="198.5" class="ts" text-anchor="middle" dominant-baseline="middle">token inválido</text><line x1="766.0" y1="128" x2="766.0" y2="166" class="l bad" marker-end="url(#g9-bad)"/><text x="774.0" y="147.0" class="lb bad" text-anchor="start" dominant-baseline="middle">no</text><rect x="710.0" y="168" width="112" height="44" rx="10" class="b bad"/><text x="766.0" y="182.5" class="tt" text-anchor="middle" dominant-baseline="middle">403</text><text x="766.0" y="198.5" class="ts" text-anchor="middle" dominant-baseline="middle">sin permiso</text><polyline points="904.0,68 904.0,34 214.0,34 214.0,68" class="l bad dash" marker-end="url(#g9-bad)"/><text x="559.0" y="24.0" class="lb bad" text-anchor="middle" dominant-baseline="middle">si algo explota más adelante, vuelve acá y se responde en JSON (409 / 500)</text><line x1="904.0" y1="128" x2="904.0" y2="166" class="l ok" marker-end="url(#g9-ok)"/><rect x="848.0" y="168" width="112" height="44" rx="10" class="b ok"/><text x="904.0" y="182.5" class="tt" text-anchor="middle" dominant-baseline="middle">200 / 201</text><text x="904.0" y="198.5" class="ts" text-anchor="middle" dominant-baseline="middle">respuesta</text></svg></div><figcaption><b>El recorrido de cada pedido.</b> Pasa por los middlewares en orden. Autenticación y autorización pueden cortarlo con 401 o 403 antes de llegar al controller. Si algo falla adentro, el manejador de errores lo convierte en JSON.</figcaption></figure>
@@ -1248,7 +1318,7 @@ dotnet add package Scalar.AspNetCore</code></pre>
 </section>
 
 <section id="di">
-  <h2><span class="n">17</span>Inyección de dependencias</h2>
+  <h2><span class="n">19</span>Inyección de dependencias</h2>
   <p>Ninguna clase hace <code>new</code> de las clases que necesita. Las <b>pide en el constructor</b> y ASP.NET se las entrega. Eso es la inyección de dependencias (DI).</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🔌</span><div><b class="t">Ejemplo del día a día: el enchufe</b>
     <p>Una lámpara no trae su propia central eléctrica: tiene un enchufe y la conectás a la pared. No le importa si la energía viene de una represa o de paneles solares, mientras el enchufe sea compatible. La <b>interfaz</b> (<code>IActivosAppService</code>) es la forma del enchufe; la <b>clase</b> (<code>ActivosAppService</code>) es la central; el <b>contenedor de DI</b> es la instalación eléctrica que los conecta.</p></div></div>
@@ -1284,6 +1354,7 @@ public static IServiceCollection AddAplicacion(this IServiceCollection services)
     <li><div>Formato estándar de errores (RFC 7807) y nuestro manejador global.</div></li>
     <li><div>Generación del documento OpenAPI, con un “transformador” propio que le agrega el candado de autenticación.</div></li>
   </ol>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 880 230" role="img" aria-label="&lt;b&gt;Scoped contra Singleton.&lt;/b&gt; Cada pedido recibe su propio &lt;code&gt;DbContext&lt;/code&gt; y sus propios servicios (Scoped), que se tiran al terminar. Los Singleton se crean una vez y los comparten todos." style="min-width:720px"><defs><marker id="g31-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g31-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g31-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g31-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g31-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><text x="20.0" y="20.0" class="zl" text-anchor="start" dominant-baseline="middle">TIEMPO →</text><text x="20.0" y="72.0" class="tt" text-anchor="start" dominant-baseline="middle">Pedido de Ana</text><rect x="150" y="50" width="420" height="46" rx="10" class="b inf"/><rect x="160" y="58" width="190" height="30" rx="10" class="b acc"/><text x="255.0" y="73.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">DbContext (nuevo)</text><rect x="360" y="58" width="200" height="30" rx="10" class="b acc"/><text x="460.0" y="73.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">ActivosAppService (nuevo)</text><text x="580.0" y="73.0" class="lb" text-anchor="start" dominant-baseline="middle">fin → se descartan</text><text x="20.0" y="152.0" class="tt" text-anchor="start" dominant-baseline="middle">Pedido de Beto</text><rect x="270" y="130" width="420" height="46" rx="10" class="b inf"/><rect x="280" y="138" width="190" height="30" rx="10" class="b acc"/><text x="375.0" y="153.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">DbContext (nuevo)</text><rect x="480" y="138" width="200" height="30" rx="10" class="b acc"/><text x="580.0" y="153.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">ActivosAppService (nuevo)</text><text x="700.0" y="153.0" class="lb" text-anchor="start" dominant-baseline="middle">fin → se descartan</text><rect x="150" y="196" width="690" height="28" rx="10" class="b ok"/><text x="495.0" y="210.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">TokenService · PasswordHasherService  (Singleton: uno solo, compartido por todos los pedidos)</text></svg></div><figcaption><b>Scoped contra Singleton.</b> Cada pedido recibe su propio <code>DbContext</code> y sus propios servicios (Scoped), que se tiran al terminar. Los Singleton se crean una vez y los comparten todos.</figcaption></figure>
   <h4>Los tres tiempos de vida</h4>
   <div class="tabla"><table>
     <thead><tr><th>Método</th><th>Cuántas instancias</th><th>Dónde lo usamos y por qué</th></tr></thead>
@@ -1304,7 +1375,7 @@ public static IServiceCollection AddAplicacion(this IServiceCollection services)
 </section>
 
 <section id="datos">
-  <h2><span class="n">18</span>Capa de datos: Entity Framework Core</h2>
+  <h2><span class="n">20</span>Capa de datos: Entity Framework Core</h2>
   <p><b>Entity Framework Core</b> es un <b>ORM</b> (Object-Relational Mapper): traduce entre objetos de C# y tablas de SQL. Escribimos LINQ sobre objetos y EF genera el SQL.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🗣️</span><div><b class="t">Ejemplo del día a día: un traductor</b>
     <p>Nosotros hablamos C# y SQL Server habla SQL. EF Core es el intérprete en el medio: le decimos “agregá este activo” y él le dice a la base <code>INSERT INTO dbo.Activo ...</code>.</p></div></div>
@@ -1392,7 +1463,7 @@ await db.SaveChangesAsync(ct);</code></pre></div>
 </section>
 
 <section id="dtos">
-  <h2><span class="n">19</span>Entidades y DTOs: dos tipos de objetos</h2>
+  <h2><span class="n">21</span>Entidades y DTOs: dos tipos de objetos</h2>
   <div class="lado">
     <div><div class="et">Entidad · Entities/Activo.cs · “cómo está en la base”</div>
 <pre><code>public class Activo
@@ -1454,7 +1525,7 @@ await db.SaveChangesAsync(ct);</code></pre></div>
 </section>
 
 <section id="entidades-todas">
-  <h2><span class="n">20</span>Todas las entidades, una por una</h2>
+  <h2><span class="n">22</span>Todas las entidades, una por una</h2>
   <p>Una <b>entidad</b> es una clase de C# que representa una tabla. Cada propiedad es una columna. Hay 23, todas en <code>Mantenia.Api/Entities/</code>, y cada una tiene su archivo de mapeo en <code>Data/Configurations/</code>.</p>
   <h4>¿Cómo las hicimos?</h4>
   <ol class="secuencia">
@@ -1494,7 +1565,7 @@ await db.SaveChangesAsync(ct);</code></pre></div>
 </section>
 
 <section id="dtos-todos">
-  <h2><span class="n">21</span>Todos los DTOs y para qué sirve cada uno</h2>
+  <h2><span class="n">23</span>Todos los DTOs y para qué sirve cada uno</h2>
   <p>Un <b>DTO</b> (Data Transfer Object, “objeto para transportar datos”) es una clase que define <b>exactamente</b> qué datos viajan por la API, en una dirección. No es la tabla: es el “formulario” de entrada o la “respuesta” de salida.</p>
   <h3>¿Por qué no devolvemos directamente las entidades?</h3>
   <ol class="anot">
@@ -1581,8 +1652,48 @@ await db.SaveChangesAsync(ct);</code></pre></div>
   <div class="decir">Mapeamos a mano porque son pocos campos, se lee claro y no agrega dependencias. Con <code>Select</code> dentro de la consulta, EF trae de la base solo las columnas que el DTO necesita.</div>
 </section>
 
+<section id="validacion">
+  <h2><span class="n">24</span>Validación: cómo se controla que los datos estén bien</h2>
+  <p><b>Validar</b> es revisar que un dato cumpla las reglas antes de guardarlo: que no esté vacío, que no sea demasiado largo, que un número esté en rango. En MantenIA se valida en cuatro niveles, uno detrás del otro.</p>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 940 250" role="img" aria-label="&lt;b&gt;La validación tiene cuatro niveles.&lt;/b&gt; Si un dato pasa la pantalla, igual lo revisa ASP.NET; si pasa ASP.NET, lo revisa el servicio; y la base es la última barrera." style="min-width:780px"><defs><marker id="g30-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g30-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g30-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g30-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g30-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20.0" y="40" width="190" height="80" rx="10" class="b inf"/><text x="115.0" y="65.0" class="tt" text-anchor="middle" dominant-baseline="middle">1 · Pantalla (React)</text><text x="115.0" y="81.0" class="ts" text-anchor="middle" dominant-baseline="middle">input type=&quot;number&quot;</text><text x="115.0" y="96.0" class="ts" text-anchor="middle" dominant-baseline="middle">botón deshabilitado</text><line x1="115.0" y1="122" x2="115.0" y2="160" class="l bad" marker-end="url(#g30-bad)"/><text x="123.0" y="141.0" class="lb bad" text-anchor="start" dominant-baseline="middle">falla</text><rect x="20.0" y="162" width="190" height="50" rx="10" class="b bad"/><text x="115.0" y="179.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">aviso en pantalla</text><text x="115.0" y="195.0" class="ts" text-anchor="middle" dominant-baseline="middle">no llega a la API</text><line x1="212.0" y1="80" x2="254.66666666666663" y2="80" class="l ok" marker-end="url(#g30-ok)"/><text x="233.3" y="70.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">pasa</text><rect x="256.66666666666663" y="40" width="190" height="80" rx="10" class="b acc"/><text x="351.7" y="65.0" class="tt" text-anchor="middle" dominant-baseline="middle">2 · ASP.NET</text><text x="351.7" y="81.0" class="ts" text-anchor="middle" dominant-baseline="middle">data annotations</text><text x="351.7" y="96.0" class="ts" text-anchor="middle" dominant-baseline="middle">[Required] [Range]</text><line x1="351.66666666666663" y1="122" x2="351.66666666666663" y2="160" class="l bad" marker-end="url(#g30-bad)"/><text x="359.7" y="141.0" class="lb bad" text-anchor="start" dominant-baseline="middle">falla</text><rect x="256.66666666666663" y="162" width="190" height="50" rx="10" class="b bad"/><text x="351.7" y="179.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">400 Bad Request</text><text x="351.7" y="195.0" class="ts" text-anchor="middle" dominant-baseline="middle">con el campo que falló</text><line x1="448.66666666666663" y1="80" x2="491.3333333333333" y2="80" class="l ok" marker-end="url(#g30-ok)"/><text x="470.0" y="70.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">pasa</text><rect x="493.3333333333333" y="40" width="190" height="80" rx="10" class="b acc"/><text x="588.3" y="65.0" class="tt" text-anchor="middle" dominant-baseline="middle">3 · Servicio</text><text x="588.3" y="81.0" class="ts" text-anchor="middle" dominant-baseline="middle">reglas de negocio</text><text x="588.3" y="96.0" class="ts" text-anchor="middle" dominant-baseline="middle">¿es de mi organización?</text><line x1="588.3333333333333" y1="122" x2="588.3333333333333" y2="160" class="l bad" marker-end="url(#g30-bad)"/><text x="596.3" y="141.0" class="lb bad" text-anchor="start" dominant-baseline="middle">falla</text><rect x="493.3333333333333" y="162" width="190" height="50" rx="10" class="b bad"/><text x="588.3" y="179.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">409 Conflict</text><text x="588.3" y="195.0" class="ts" text-anchor="middle" dominant-baseline="middle">ConflictException</text><line x1="685.3333333333333" y1="80" x2="728.0" y2="80" class="l ok" marker-end="url(#g30-ok)"/><text x="706.7" y="70.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">pasa</text><rect x="730.0" y="40" width="190" height="80" rx="10" class="b "/><text x="825.0" y="65.0" class="tt" text-anchor="middle" dominant-baseline="middle">4 · SQL Server</text><text x="825.0" y="81.0" class="ts" text-anchor="middle" dominant-baseline="middle">claves foráneas</text><text x="825.0" y="96.0" class="ts" text-anchor="middle" dominant-baseline="middle">tipos de columna</text><line x1="825.0" y1="122" x2="825.0" y2="160" class="l bad" marker-end="url(#g30-bad)"/><text x="833.0" y="141.0" class="lb bad" text-anchor="start" dominant-baseline="middle">falla</text><rect x="730.0" y="162" width="190" height="50" rx="10" class="b bad"/><text x="825.0" y="179.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">409</text><text x="825.0" y="195.0" class="ts" text-anchor="middle" dominant-baseline="middle">DbUpdateException</text><text x="470.0" y="18.0" class="zl" text-anchor="middle" dominant-baseline="middle">CADA NIVEL ATAJA LO QUE EL ANTERIOR NO PUEDE GARANTIZAR</text><text x="470.0" y="236.0" class="lb" text-anchor="middle" dominant-baseline="middle">el nivel 1 es comodidad (se puede saltear) · los niveles 2, 3 y 4 están en el servidor y no se pueden saltear</text></svg></div><figcaption><b>La validación tiene cuatro niveles.</b> Si un dato pasa la pantalla, igual lo revisa ASP.NET; si pasa ASP.NET, lo revisa el servicio; y la base es la última barrera.</figcaption></figure>
+  <h3>Nivel 2 en detalle: las data annotations</h3>
+  <p>Una <b>data annotation</b> es un atributo (una etiqueta entre corchetes) que se pone arriba de una propiedad del DTO para decir qué regla tiene que cumplir. Están en el espacio de nombres <code>System.ComponentModel.DataAnnotations</code>.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Annotation</th><th>Qué controla</th><th>Ejemplo en MantenIA</th></tr></thead>
+    <tbody>
+      <tr><td><code>[Required]</code></td><td>Que venga y no esté vacío.</td><td><code>ActivoGuardarDto.Nombre</code></td></tr>
+      <tr><td><code>[StringLength(150)]</code></td><td>Largo máximo del texto.</td><td><code>Nombre</code> (150), <code>Marca</code> (100)</td></tr>
+      <tr><td><code>[StringLength(100, MinimumLength = 8)]</code></td><td>Largo mínimo y máximo.</td><td><code>RegistroDto.Clave</code></td></tr>
+      <tr><td><code>[Range(1, int.MaxValue)]</code></td><td>Número dentro de un rango.</td><td><code>RepuestoInputDto.Cantidad</code> (al menos 1)</td></tr>
+      <tr><td><code>[EmailAddress]</code></td><td>Formato de email.</td><td><code>LoginDto.Email</code>, <code>ClienteCrearDto.Email</code></td></tr>
+      <tr><td><code>[DataType(DataType.Date)]</code></td><td>Indica que es una fecha (para mostrarla como fecha).</td><td>Se agrega con <code>FechaAlta</code> (ver pendientes)</td></tr>
+      <tr><td><code>IValidatableObject</code></td><td>Reglas propias que mezclan campos o necesitan lógica.</td><td>“La fecha no puede ser futura” (ver pendientes)</td></tr>
+    </tbody>
+  </table></div>
+  <h3>¿Quién ejecuta las annotations?</h3>
+  <ol class="secuencia">
+    <li><div>Llega el pedido con el JSON.</div></li>
+    <li><div>ASP.NET crea el objeto <code>ActivoGuardarDto</code> con esos datos (esto se llama <b>model binding</b>).</div></li>
+    <li><div>Recorre cada propiedad y revisa sus annotations.</div></li>
+    <li><div>Como el controller tiene <code>[ApiController]</code>, si algo falla responde <b>400</b> solo, con el detalle por campo. Nuestro método <b>no se llega a ejecutar</b>.</div></li>
+  </ol>
+<pre><code><span class="c">// Pedido con el nombre vacío → respuesta automática:</span>
+{
+  <span class="s">"title"</span>: <span class="s">"One or more validation errors occurred."</span>,
+  <span class="s">"status"</span>: <span class="m">400</span>,
+  <span class="s">"errors"</span>: { <span class="s">"Nombre"</span>: [ <span class="s">"The Nombre field is required."</span> ] }
+}</code></pre>
+  <p>El mensaje sale en inglés por defecto. Para que salga en castellano se escribe <code>[Required(ErrorMessage = "El nombre es obligatorio.")]</code>.</p>
+  <h3>Niveles 3 y 4</h3>
+  <p>Hay reglas que una annotation no puede saber, porque necesitan consultar la base: “¿este cliente es de mi organización?”, “¿este activo tiene órdenes?”. Esas van en el <b>servicio</b> y, si fallan, lanzan <code>ConflictException</code> (409). La <b>base</b> es la última barrera: si igual llegara un id que no existe, la clave foránea lo rechaza y el manejador de errores responde 409.</p>
+  <div class="recordar"><ul>
+    <li>Cuatro niveles: pantalla (comodidad), data annotations (400), servicio (409), base de datos (409).</li>
+    <li>Las data annotations van en el DTO y las ejecuta ASP.NET antes de llamar a nuestro método.</li>
+  </ul></div>
+</section>
+
 <section id="negocio">
-  <h2><span class="n">22</span>Capa de negocio: <code>ActivosAppService</code></h2>
+  <h2><span class="n">25</span>Capa de negocio: <code>ActivosAppService</code></h2>
   <p>Acá viven las reglas. Primero el <b>contrato</b> (interfaz) y después la implementación.</p>
   <span class="ruta">Mantenia.Api/Interfaces/IAppServices.cs</span>
 <pre><code>public interface IActivosAppService
@@ -1653,7 +1764,7 @@ await db.SaveChangesAsync(ct);</code></pre></div>
   <ol class="anot">
     <li><div>Si el usuario no tiene organización, no puede cargar activos.</div></li>
     <li><div><code>dto.IdCliente is int idCliente</code> es <b>pattern matching</b>: “si vino un cliente, guardalo en la variable <code>idCliente</code>”. Si es null, no valida nada (hoy es opcional).</div></li>
-    <li><div>Si alguien manda el id de un cliente de <b>otra empresa</b>, se rechaza con una excepción propia que termina como <b>409</b> (sección <a href="#errores">27</a>).</div></li>
+    <li><div>Si alguien manda el id de un cliente de <b>otra empresa</b>, se rechaza con una excepción propia que termina como <b>409</b> (sección <a href="#errores">30</a>).</div></li>
   </ol>
 
   <h3>Modificación</h3>
@@ -1770,7 +1881,7 @@ private static bool Contiene(string? campo, string texto)
 </section>
 
 <section id="servicios-todos">
-  <h2><span class="n">23</span>Todos los servicios y qué hace cada uno</h2>
+  <h2><span class="n">26</span>Todos los servicios y qué hace cada uno</h2>
   <p>Un <b>servicio</b> es una clase de la capa de negocio. Cada uno se ocupa de un tema, tiene su interfaz y se registra en la inyección de dependencias.</p>
   <div class="tabla"><table>
     <thead><tr><th>Servicio</th><th>Interfaz</th><th>Vida</th><th>Responsabilidad</th><th>Lo usa</th></tr></thead>
@@ -1816,7 +1927,7 @@ private static bool Contiene(string? campo, string texto)
 </section>
 
 <section id="ordenes">
-  <h2><span class="n">24</span>Órdenes de trabajo y contexto del usuario</h2>
+  <h2><span class="n">27</span>Órdenes de trabajo y contexto del usuario</h2>
   <p>Además de los activos, la API maneja las órdenes de trabajo (<code>OrdenesAppService</code>) y le dice a la app quién está logueado y qué puede hacer (<code>ContextoAppService</code>).</p>
 
   <h3>Crear una orden con sus repuestos</h3>
@@ -1870,6 +1981,7 @@ private static bool Contiene(string? campo, string texto)
   <div class="analogia"><span class="ico" aria-hidden="true">🧾</span><div><b class="t">Ejemplo del día a día: una factura con renglones</b>
     <p>La orden es la cabecera de la factura y los repuestos son los renglones. No tiene sentido guardar renglones sin cabecera ni una cabecera a medias: por eso se guardan juntos.</p></div></div>
 
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 250" role="img" aria-label="&lt;b&gt;Una transacción es “todo o nada”.&lt;/b&gt; EF guarda la orden y sus repuestos juntos. Si algo falla en el medio, se deshace todo y la base no queda con una orden a medias." style="min-width:620px"><defs><marker id="g32-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g32-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g32-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g32-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g32-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="40" width="150" height="46" rx="10" class="b acc"/><text x="95.0" y="55.5" class="tt" text-anchor="middle" dominant-baseline="middle">Orden</text><text x="95.0" y="71.5" class="ts" text-anchor="middle" dominant-baseline="middle">cabecera</text><rect x="20" y="96" width="150" height="32" rx="10" class="b "/><text x="95.0" y="112.0" class="ts" text-anchor="middle" dominant-baseline="middle">Repuesto 1</text><rect x="20" y="136" width="150" height="32" rx="10" class="b "/><text x="95.0" y="152.0" class="ts" text-anchor="middle" dominant-baseline="middle">Repuesto 2</text><rect x="20" y="176" width="150" height="32" rx="10" class="b "/><text x="95.0" y="192.0" class="ts" text-anchor="middle" dominant-baseline="middle">Repuesto 3</text><rect x="260" y="90" width="170" height="60" rx="10" class="b acc"/><text x="345.0" y="112.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">SaveChangesAsync()</text><text x="345.0" y="128.0" class="ts" text-anchor="middle" dominant-baseline="middle">una sola vez</text><line x1="172" y1="120" x2="258" y2="120" class="l acc" marker-end="url(#g32-acc)"/><text x="215.0" y="110.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">Add × 4</text><rect x="530" y="30" width="350" height="80" rx="10" class="b ok"/><text x="705.0" y="55.0" class="tt" text-anchor="middle" dominant-baseline="middle">Sale todo bien</text><text x="705.0" y="71.0" class="ts" text-anchor="middle" dominant-baseline="middle">se guardan la orden y los 3 repuestos</text><text x="705.0" y="86.0" class="ts" text-anchor="middle" dominant-baseline="middle">COMMIT</text><rect x="530" y="140" width="350" height="80" rx="10" class="b bad"/><text x="705.0" y="165.0" class="tt" text-anchor="middle" dominant-baseline="middle">Falla el repuesto 3</text><text x="705.0" y="181.0" class="ts" text-anchor="middle" dominant-baseline="middle">no se guarda NADA, ni la orden</text><text x="705.0" y="196.0" class="ts" text-anchor="middle" dominant-baseline="middle">ROLLBACK (vuelve atrás)</text><line x1="432" y1="110" x2="528" y2="70" class="l ok" marker-end="url(#g32-ok)"/><line x1="432" y1="130" x2="528" y2="180" class="l bad" marker-end="url(#g32-bad)"/></svg></div><figcaption><b>Una transacción es “todo o nada”.</b> EF guarda la orden y sus repuestos juntos. Si algo falla en el medio, se deshace todo y la base no queda con una orden a medias.</figcaption></figure>
   <h3>Cambiar el estado de una orden</h3>
 <pre><code>orden.IdEstadoOrden = estado.IdEstadoOrden;
 <span class="o">1</span> if (estado.EsFinal == true)
@@ -1897,13 +2009,13 @@ private static bool Contiene(string? campo, string texto)
     <li>Datos del usuario, su rol y su organización.</li>
     <li>El <b>perfil</b>: “planta” o “taller”. Si el tipo de organización contiene palabras como “taller” o “mecánico”, es taller, y la app muestra “Vehículos” en vez de “Activos” y “Patente” en vez de “ID”.</li>
     <li>Los <b>textos</b> configurables por tipo de organización (tabla <code>LabelTipoOrganizacionModulo</code>).</li>
-    <li>La lista de <b>permisos</b> del rol (por ejemplo <code>["activos.gestionar", "ordenes.crear"]</code>). La app la usa para esconder los botones que el usuario no puede usar. La API igual lo vuelve a controlar en cada pedido.</li>
+    <li>La lista de <b>permisos</b> del rol (por ejemplo <code>["activos.gestionar", "ordenes.crear"]</code>). La app la usa para esconder los botones que el usuario no puede usar. Eso es solo para que la pantalla sea clara: el control que de verdad protege es el de la API (ver “La app y la API: quién corre dónde”).</li>
   </ul>
   <div class="decir">La app esconde lo que el usuario no puede hacer, pero la seguridad real está en la API: aunque alguien fuerce el botón, el endpoint responde 403.</div>
 </section>
 
 <section id="controllers">
-  <h2><span class="n">25</span>Controllers: la puerta de entrada HTTP</h2>
+  <h2><span class="n">28</span>Controllers: la puerta de entrada HTTP</h2>
   <span class="ruta">Mantenia.Api/Controllers/AppController.cs</span>
 <pre><code><span class="o">1</span> [ApiController]
 <span class="o">2</span> [Authorize]
@@ -1947,7 +2059,7 @@ private static bool Contiene(string? campo, string texto)
   }</code></pre>
   <ol class="anot">
     <li><div><b><code>[ApiController]</code></b> activa comportamientos de API: si el DTO no cumple las data annotations, responde <b>400 automáticamente</b> sin entrar al método.</div></li>
-    <li><div><b><code>[Authorize]</code></b> a nivel de clase: todos los métodos exigen token. Sin token → 401.</div></li>
+    <li><div><b><code>[Authorize]</code></b> puesto arriba de la <b>clase</b>: vale para todos sus métodos, así que todos exigen token (sin token → 401). Un atributo puesto arriba de un <b>método</b> vale solo para ese método; por eso el login lleva <code>[AllowAnonymous]</code> para anular el de la clase.</div></li>
     <li><div><b><code>[Route]</code></b>: prefijo de todas las rutas de este controller.</div></li>
     <li><div><b><code>[HttpGet("activos")]</code></b>: responde a <code>GET /api/app/activos</code>.</div></li>
     <li><div><b><code>[FromQuery]</code></b>: los parámetros salen de la URL (<code>?buscar=atlas&amp;filtro=riesgo</code>).</div></li>
@@ -1981,7 +2093,7 @@ private static bool Contiene(string? campo, string texto)
 </section>
 
 <section id="recorrido">
-  <h2><span class="n">26</span>Un pedido de punta a punta</h2>
+  <h2><span class="n">29</span>Un pedido de punta a punta</h2>
   <p>Qué pasa, en orden, desde que el usuario toca <b>“Crear activo”</b> hasta que ve la ficha:</p>
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 940 516" role="img" aria-label="&lt;b&gt;Un alta de activo, mensaje por mensaje.&lt;/b&gt; Cada columna es una pieza del sistema y el tiempo corre hacia abajo. Las flechas punteadas son respuestas. Seguí los números." style="min-width:760px"><defs><marker id="g13-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g13-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g13-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g13-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g13-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="12" y="10" width="136" height="40" rx="10" class="b inf"/><text x="80.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">App React</text><line x1="80" y1="52" x2="80" y2="510" class="l vida"/><rect x="168" y="10" width="136" height="40" rx="10" class="b "/><text x="236.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Middleware</text><line x1="236" y1="52" x2="236" y2="510" class="l vida"/><rect x="324" y="10" width="136" height="40" rx="10" class="b acc"/><text x="392.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">AppController</text><line x1="392" y1="52" x2="392" y2="510" class="l vida"/><rect x="480" y="10" width="136" height="40" rx="10" class="b acc"/><text x="548.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">ActivosAppService</text><line x1="548" y1="52" x2="548" y2="510" class="l vida"/><rect x="636" y="10" width="136" height="40" rx="10" class="b "/><text x="704.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">EF Core</text><line x1="704" y1="52" x2="704" y2="510" class="l vida"/><rect x="792" y="10" width="136" height="40" rx="10" class="b "/><text x="860.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">SQL Server</text><line x1="860" y1="52" x2="860" y2="510" class="l vida"/><line x1="84" y1="84" x2="232" y2="84" class="l acc" marker-end="url(#g13-acc)"/><text x="108.0" y="73.0" class="lb acc" text-anchor="start" dominant-baseline="middle">POST /activos + token</text><circle cx="94" cy="84" r="10" class="nc"/><text x="94.0" y="84.5" class="nt" text-anchor="middle" dominant-baseline="middle">1</text><polyline points="236,110 270,110 270,124 240,124" class="l " marker-end="url(#g13-n)"/><text x="276.0" y="117.0" class="lb " text-anchor="start" dominant-baseline="middle">valida JWT y permiso</text><circle cx="220" cy="116" r="10" class="nc"/><text x="220.0" y="116.5" class="nt" text-anchor="middle" dominant-baseline="middle">2</text><line x1="240" y1="148" x2="388" y2="148" class="l acc" marker-end="url(#g13-acc)"/><text x="264.0" y="137.0" class="lb acc" text-anchor="start" dominant-baseline="middle">JSON → ActivoGuardarDto</text><circle cx="250" cy="148" r="10" class="nc"/><text x="250.0" y="148.5" class="nt" text-anchor="middle" dominant-baseline="middle">3</text><polyline points="392,174 426,174 426,188 396,188" class="l " marker-end="url(#g13-n)"/><text x="432.0" y="181.0" class="lb " text-anchor="start" dominant-baseline="middle">valida [Required]</text><circle cx="376" cy="180" r="10" class="nc"/><text x="376.0" y="180.5" class="nt" text-anchor="middle" dominant-baseline="middle">4</text><line x1="396" y1="212" x2="544" y2="212" class="l acc" marker-end="url(#g13-acc)"/><text x="420.0" y="201.0" class="lb acc" text-anchor="start" dominant-baseline="middle">CrearAsync(dto)</text><circle cx="406" cy="212" r="10" class="nc"/><text x="406.0" y="212.5" class="nt" text-anchor="middle" dominant-baseline="middle">5</text><line x1="552" y1="244" x2="700" y2="244" class="l acc" marker-end="url(#g13-acc)"/><text x="576.0" y="233.0" class="lb acc" text-anchor="start" dominant-baseline="middle">AnyAsync: ¿cliente y categoría son míos?</text><circle cx="562" cy="244" r="10" class="nc"/><text x="562.0" y="244.5" class="nt" text-anchor="middle" dominant-baseline="middle">6</text><line x1="708" y1="276" x2="856" y2="276" class="l acc" marker-end="url(#g13-acc)"/><text x="732.0" y="265.0" class="lb acc" text-anchor="start" dominant-baseline="middle">SELECT …</text><circle cx="718" cy="276" r="10" class="nc"/><text x="718.0" y="276.5" class="nt" text-anchor="middle" dominant-baseline="middle">7</text><polyline points="548,302 582,302 582,316 552,316" class="l " marker-end="url(#g13-n)"/><text x="588.0" y="309.0" class="lb " text-anchor="start" dominant-baseline="middle">new Activo + Aplicar(dto)</text><circle cx="532" cy="308" r="10" class="nc"/><text x="532.0" y="308.5" class="nt" text-anchor="middle" dominant-baseline="middle">8</text><line x1="552" y1="340" x2="700" y2="340" class="l acc" marker-end="url(#g13-acc)"/><text x="576.0" y="329.0" class="lb acc" text-anchor="start" dominant-baseline="middle">Add + SaveChangesAsync</text><circle cx="562" cy="340" r="10" class="nc"/><text x="562.0" y="340.5" class="nt" text-anchor="middle" dominant-baseline="middle">9</text><line x1="708" y1="372" x2="856" y2="372" class="l acc" marker-end="url(#g13-acc)"/><text x="732.0" y="361.0" class="lb acc" text-anchor="start" dominant-baseline="middle">INSERT</text><circle cx="718" cy="372" r="10" class="nc"/><text x="718.0" y="372.5" class="nt" text-anchor="middle" dominant-baseline="middle">10</text><line x1="856" y1="404" x2="708" y2="404" class="l ok dash" marker-end="url(#g13-ok)"/><text x="832.0" y="393.0" class="lb ok" text-anchor="end" dominant-baseline="middle">IdActivo = 6</text><circle cx="846" cy="404" r="10" class="nc"/><text x="846.0" y="404.5" class="nt" text-anchor="middle" dominant-baseline="middle">11</text><line x1="544" y1="436" x2="396" y2="436" class="l ok dash" marker-end="url(#g13-ok)"/><text x="520.0" y="425.0" class="lb ok" text-anchor="end" dominant-baseline="middle">ActivoEdicionDto</text><circle cx="534" cy="436" r="10" class="nc"/><text x="534.0" y="436.5" class="nt" text-anchor="middle" dominant-baseline="middle">12</text><line x1="388" y1="468" x2="84" y2="468" class="l ok dash" marker-end="url(#g13-ok)"/><text x="364.0" y="457.0" class="lb ok" text-anchor="end" dominant-baseline="middle">201 Created + JSON</text><circle cx="378" cy="468" r="10" class="nc"/><text x="378.0" y="468.5" class="nt" text-anchor="middle" dominant-baseline="middle">13</text></svg></div><figcaption><b>Un alta de activo, mensaje por mensaje.</b> Cada columna es una pieza del sistema y el tiempo corre hacia abajo. Las flechas punteadas son respuestas. Seguí los números.</figcaption></figure>
   <ol class="secuencia">
@@ -2001,8 +2113,8 @@ private static bool Contiene(string? campo, string texto)
 </section>
 
 <section id="errores">
-  <h2><span class="n">27</span>Manejo de errores</h2>
-  <p>Queremos que todos los errores lleguen a la app con <b>el mismo formato</b>, para mostrarlos sin casos especiales. Usamos el estándar <b>ProblemDetails</b> (RFC 7807).</p>
+  <h2><span class="n">30</span>Manejo de errores</h2>
+  <p>Queremos que todos los errores lleguen a la app con <b>el mismo formato</b>, para mostrarlos sin casos especiales. Usamos el estándar <b>ProblemDetails</b>, definido en el RFC 7807. Un <b>RFC</b> es un documento oficial donde se publican los estándares de internet (HTTP mismo está definido en RFCs). Seguir un estándar hace que cualquier programa sepa leer nuestros errores.</p>
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 210" role="img" aria-label="&lt;b&gt;Cómo un error de negocio llega a la pantalla.&lt;/b&gt; El servicio lanza una excepción, nadie la atrapa en el camino y el manejador global la convierte en un JSON con el código correcto." style="min-width:720px"><defs><marker id="g19-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g19-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g19-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g19-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g19-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20.0" y="40" width="180" height="110" rx="10" class="b bad"/><text x="110.0" y="72.5" class="tt" text-anchor="middle" dominant-baseline="middle">ActivosAppService</text><text x="110.0" y="88.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">if (ordenes &gt; 0)</text><text x="110.0" y="103.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">throw new</text><text x="110.0" y="118.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">ConflictException(…)</text><rect x="246.66666666666666" y="40" width="180" height="110" rx="10" class="b "/><text x="336.7" y="72.5" class="tt" text-anchor="middle" dominant-baseline="middle">AppController</text><text x="336.7" y="88.5" class="ts" text-anchor="middle" dominant-baseline="middle">no la atrapa:</text><text x="336.7" y="103.5" class="ts" text-anchor="middle" dominant-baseline="middle">la excepción sigue</text><text x="336.7" y="118.5" class="ts" text-anchor="middle" dominant-baseline="middle">subiendo</text><rect x="473.3333333333333" y="40" width="180" height="110" rx="10" class="b acc"/><text x="563.3" y="72.5" class="tt" text-anchor="middle" dominant-baseline="middle">GlobalExceptionHandler</text><text x="563.3" y="88.5" class="ts" text-anchor="middle" dominant-baseline="middle">ConflictException → 409</text><text x="563.3" y="103.5" class="ts" text-anchor="middle" dominant-baseline="middle">DbUpdateException → 409</text><text x="563.3" y="118.5" class="ts" text-anchor="middle" dominant-baseline="middle">cualquier otra → 500</text><rect x="700.0" y="40" width="180" height="110" rx="10" class="b inf"/><text x="790.0" y="72.5" class="tt" text-anchor="middle" dominant-baseline="middle">Respuesta JSON</text><text x="790.0" y="88.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">{ &quot;status&quot;: 409,</text><text x="790.0" y="103.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">&quot;title&quot;: &quot;Conflicto&quot;,</text><text x="790.0" y="118.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">&quot;detail&quot;: &quot;No se puede…&quot; }</text><line x1="202.0" y1="95" x2="244.66666666666666" y2="95" class="l bad" marker-end="url(#g19-bad)"/><text x="223.3" y="85.0" class="lb bad" text-anchor="middle" dominant-baseline="middle">lanza</text><line x1="428.66666666666663" y1="95" x2="471.3333333333333" y2="95" class="l bad" marker-end="url(#g19-bad)"/><text x="450.0" y="85.0" class="lb bad" text-anchor="middle" dominant-baseline="middle">sube</text><line x1="655.3333333333333" y1="95" x2="698.0" y2="95" class="l acc" marker-end="url(#g19-acc)"/><text x="676.7" y="85.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">escribe</text><text x="450.0" y="184.0" class="zl" text-anchor="middle" dominant-baseline="middle">un solo lugar decide el código HTTP de todos los errores</text></svg></div><figcaption><b>Cómo un error de negocio llega a la pantalla.</b> El servicio lanza una excepción, nadie la atrapa en el camino y el manejador global la convierte en un JSON con el código correcto.</figcaption></figure>
   <span class="ruta">Mantenia.Api/Common/ConflictException.cs</span>
 <pre><code><span class="c">/// Regla de negocio violada que se responde como HTTP 409.</span>
@@ -2054,7 +2166,7 @@ public sealed class ConflictException(string message) : Exception(message);</cod
 </section>
 
 <section id="mtbf">
-  <h2><span class="n">28</span>Lógica propia: el cálculo del MTBF</h2>
+  <h2><span class="n">31</span>Lógica propia: el cálculo del MTBF</h2>
   <p>La base no tiene columnas de “probabilidad de falla”: la API la calcula con el historial de órdenes en <code>Services/App/Indicadores.cs</code>.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🚗</span><div><b class="t">Ejemplo del día a día: el auto que se rompe seguido</b>
     <p>Si tu auto se quedó 2 veces en 90 días, en promedio se rompe cada 45 días. Si ya pasaron 39 días desde la última vez, es lógico pensar que está por fallar de nuevo. Eso es el MTBF (Mean Time Between Failures).</p></div></div>
@@ -2097,7 +2209,7 @@ public sealed class ConflictException(string message) : Exception(message);</cod
 </section>
 
 <section id="swagger">
-  <h2><span class="n">29</span>Investigación: Swagger y OpenAPI</h2>
+  <h2><span class="n">32</span>Investigación: Swagger y OpenAPI</h2>
   <h3>Tres nombres que se confunden</h3>
   <div class="tabla"><table>
     <thead><tr><th>Nombre</th><th>Qué es</th><th>Analogía</th></tr></thead>
@@ -2205,8 +2317,29 @@ public sealed class ActivoGuardarDto
 <div class="separador">Parte 3<b>Seguridad, organizaciones, permisos y QR</b></div>
 
 <section id="seguridad">
-  <h2><span class="n">30</span>Login, JWT y permisos</h2>
+  <h2><span class="n">33</span>Login, JWT y permisos</h2>
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 860 410" role="img" aria-label="&lt;b&gt;El login pasa una sola vez; el token viaja en todos los pedidos siguientes.&lt;/b&gt; La API no guarda sesiones: en cada pedido solo verifica la firma y el vencimiento del token." style="min-width:620px"><defs><marker id="g14-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g14-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g14-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g14-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g14-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="30" y="10" width="160" height="40" rx="10" class="b inf"/><text x="110.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">App React</text><line x1="110" y1="52" x2="110" y2="404" class="l vida"/><rect x="350" y="10" width="160" height="40" rx="10" class="b acc"/><text x="430.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">API (Auth)</text><line x1="430" y1="52" x2="430" y2="404" class="l vida"/><rect x="670" y="10" width="160" height="40" rx="10" class="b "/><text x="750.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Base de datos</text><line x1="750" y1="52" x2="750" y2="404" class="l vida"/><line x1="114" y1="84" x2="426" y2="84" class="l acc" marker-end="url(#g14-acc)"/><text x="138.0" y="73.0" class="lb acc" text-anchor="start" dominant-baseline="middle">POST /api/auth/login { email, clave }</text><circle cx="124" cy="84" r="10" class="nc"/><text x="124.0" y="84.5" class="nt" text-anchor="middle" dominant-baseline="middle">1</text><line x1="434" y1="116" x2="746" y2="116" class="l acc" marker-end="url(#g14-acc)"/><text x="458.0" y="105.0" class="lb acc" text-anchor="start" dominant-baseline="middle">busca usuario por email</text><circle cx="444" cy="116" r="10" class="nc"/><text x="444.0" y="116.5" class="nt" text-anchor="middle" dominant-baseline="middle">2</text><line x1="746" y1="148" x2="434" y2="148" class="l ok dash" marker-end="url(#g14-ok)"/><text x="722.0" y="137.0" class="lb ok" text-anchor="end" dominant-baseline="middle">Usuario + ClaveHash</text><circle cx="736" cy="148" r="10" class="nc"/><text x="736.0" y="148.5" class="nt" text-anchor="middle" dominant-baseline="middle">3</text><polyline points="430,174 464,174 464,188 434,188" class="l " marker-end="url(#g14-n)"/><text x="470.0" y="181.0" class="lb " text-anchor="start" dominant-baseline="middle">verifica hash · crea JWT</text><circle cx="414" cy="180" r="10" class="nc"/><text x="414.0" y="180.5" class="nt" text-anchor="middle" dominant-baseline="middle">4</text><line x1="426" y1="212" x2="114" y2="212" class="l ok dash" marker-end="url(#g14-ok)"/><text x="402.0" y="201.0" class="lb ok" text-anchor="end" dominant-baseline="middle">{ token, expiraUtc }</text><circle cx="416" cy="212" r="10" class="nc"/><text x="416.0" y="212.5" class="nt" text-anchor="middle" dominant-baseline="middle">5</text><polyline points="110,238 144,238 144,252 114,252" class="l " marker-end="url(#g14-n)"/><text x="150.0" y="245.0" class="lb " text-anchor="start" dominant-baseline="middle">guarda el token</text><circle cx="94" cy="244" r="10" class="nc"/><text x="94.0" y="244.5" class="nt" text-anchor="middle" dominant-baseline="middle">6</text><line x1="20" y1="276" x2="840" y2="276" class="l dash"/><text x="430.0" y="276.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">después, en CADA pedido</text><line x1="114" y1="308" x2="426" y2="308" class="l acc" marker-end="url(#g14-acc)"/><text x="138.0" y="297.0" class="lb acc" text-anchor="start" dominant-baseline="middle">GET /activos · Authorization: Bearer eyJ…</text><circle cx="124" cy="308" r="10" class="nc"/><text x="124.0" y="308.5" class="nt" text-anchor="middle" dominant-baseline="middle">7</text><polyline points="430,334 464,334 464,348 434,348" class="l " marker-end="url(#g14-n)"/><text x="470.0" y="341.0" class="lb " text-anchor="start" dominant-baseline="middle">valida firma, emisor y vencimiento</text><circle cx="414" cy="340" r="10" class="nc"/><text x="414.0" y="340.5" class="nt" text-anchor="middle" dominant-baseline="middle">8</text><line x1="426" y1="372" x2="114" y2="372" class="l ok dash" marker-end="url(#g14-ok)"/><text x="402.0" y="361.0" class="lb ok" text-anchor="end" dominant-baseline="middle">200 + datos (o 401 si no es válido)</text><circle cx="416" cy="372" r="10" class="nc"/><text x="416.0" y="372.5" class="nt" text-anchor="middle" dominant-baseline="middle">9</text></svg></div><figcaption><b>El login pasa una sola vez; el token viaja en todos los pedidos siguientes.</b> La API no guarda sesiones: en cada pedido solo verifica la firma y el vencimiento del token.</figcaption></figure>
+  <h3>Palabras que vas a ver en esta sección</h3>
+<div class="tabla"><table>
+  <thead><tr><th>Palabra</th><th>Qué significa, en simple</th></tr></thead>
+  <tbody>
+    <tr><td>Autenticación</td><td>Comprobar <b>quién sos</b> (login). Si falla: 401.</td></tr>
+    <tr><td>Autorización</td><td>Comprobar <b>qué podés hacer</b> (permisos). Si falla: 403.</td></tr>
+    <tr><td>Token</td><td>Un texto que la API te da al loguearte y que funciona como credencial: lo mostrás en cada pedido.</td></tr>
+    <tr><td>JWT</td><td>“JSON Web Token”: un formato estándar de token, con datos adentro y una firma.</td></tr>
+    <tr><td>Claim</td><td>Cada dato que va dentro del token: tu id, tu email, tu rol.</td></tr>
+    <tr><td>Firma</td><td>Un código calculado con una clave secreta que solo tiene la API. Si alguien cambia un dato del token, la firma deja de coincidir.</td></tr>
+    <tr><td>HMAC-SHA256</td><td>El método matemático que usamos para calcular esa firma. No hace falta saber la matemática: es un estándar seguro y muy usado.</td></tr>
+    <tr><td>Base64</td><td>Una forma de escribir datos solo con letras y números para que viajen bien por internet. <b>No es secreto</b>: cualquiera lo puede volver a leer.</td></tr>
+    <tr><td>Hash</td><td>Una transformación de una sola dirección: de la clave sale el hash, pero del hash no se puede volver a la clave.</td></tr>
+    <tr><td>Sal (salt)</td><td>Un valor al azar que se mezcla con la clave antes del hash, distinto para cada usuario.</td></tr>
+    <tr><td>PBKDF2</td><td>El algoritmo de hash para claves que usamos. Repite el cálculo 100.000 veces para que adivinar claves sea lentísimo.</td></tr>
+    <tr><td>Header <code>Authorization</code></td><td>Un renglón del pedido HTTP donde va el token.</td></tr>
+    <tr><td>Bearer</td><td>Significa “portador”: “dejá pasar a quien porte este token”. Por eso el header es <code>Authorization: Bearer &lt;token&gt;</code>.</td></tr>
+    <tr><td>localStorage</td><td>Un pequeño espacio de guardado que tiene cada sitio dentro del navegador. Ahí la app guarda el token para no pedir login cada vez que se abre.</td></tr>
+  </tbody>
+</table></div>
+
   <h3>Paso 1 · Guardar la clave de forma segura</h3>
   <p>Nunca guardamos la contraseña. Guardamos un <b>hash</b>: el resultado de pasarla por una función que no tiene vuelta atrás.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🥤</span><div><b class="t">Ejemplo del día a día: la licuadora</b>
@@ -2377,7 +2510,7 @@ public sealed class PasswordHasherService : IPasswordHasherService
 </section>
 
 <section id="jwt-paso">
-  <h2><span class="n">31</span>Cómo metimos JWT, paso a paso</h2>
+  <h2><span class="n">34</span>Cómo metimos JWT, paso a paso</h2>
   <p>En la sección de seguridad vimos qué es un JWT. Acá está el orden exacto en que lo incorporamos al proyecto.</p>
   <h3>¿Por qué JWT y no sesiones?</h3><figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 220" role="img" aria-label="&lt;b&gt;La diferencia clave.&lt;/b&gt; Con sesiones, el servidor tiene que recordar a cada usuario. Con JWT, el usuario lleva su “credencial” firmada y el servidor solo comprueba que la firma sea auténtica." style="min-width:700px"><defs><marker id="g24-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g24-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g24-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g24-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g24-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="10" y="10" width="430" height="196" rx="14" class="zone"/><text x="24.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">SESIÓN CON COOKIE (no la usamos)</text><rect x="30" y="60" width="130" height="100" rx="10" class="b inf"/><text x="95.0" y="95.0" class="tt" text-anchor="middle" dominant-baseline="middle">App</text><text x="95.0" y="111.0" class="ts" text-anchor="middle" dominant-baseline="middle">cookie</text><text x="95.0" y="126.0" class="ts" text-anchor="middle" dominant-baseline="middle">sesion=abc123</text><rect x="270" y="50" width="150" height="120" rx="10" class="b "/><text x="345.0" y="87.5" class="tt" text-anchor="middle" dominant-baseline="middle">Servidor</text><text x="345.0" y="103.5" class="ts" text-anchor="middle" dominant-baseline="middle">guarda sesiones:</text><text x="345.0" y="118.5" class="ts" text-anchor="middle" dominant-baseline="middle">abc123 → Ana</text><text x="345.0" y="133.5" class="ts" text-anchor="middle" dominant-baseline="middle">def456 → Beto</text><line x1="162" y1="110" x2="268" y2="110" class="l acc" marker-end="url(#g24-acc)"/><text x="215.0" y="100.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">cookie</text><rect x="460" y="10" width="430" height="196" rx="14" class="zone"/><text x="474.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">JWT (la usamos)</text><rect x="480" y="60" width="130" height="100" rx="10" class="b inf"/><text x="545.0" y="95.0" class="tt" text-anchor="middle" dominant-baseline="middle">App</text><text x="545.0" y="111.0" class="ts" text-anchor="middle" dominant-baseline="middle">localStorage</text><text x="545.0" y="126.0" class="ts" text-anchor="middle" dominant-baseline="middle">token firmado</text><rect x="720" y="50" width="150" height="120" rx="10" class="b ok"/><text x="795.0" y="87.5" class="tt" text-anchor="middle" dominant-baseline="middle">Servidor</text><text x="795.0" y="103.5" class="ts" text-anchor="middle" dominant-baseline="middle">no guarda nada</text><text x="795.0" y="118.5" class="ts" text-anchor="middle" dominant-baseline="middle">verifica la firma</text><text x="795.0" y="133.5" class="ts" text-anchor="middle" dominant-baseline="middle">con Jwt:Key</text><line x1="612" y1="110" x2="718" y2="110" class="l acc" marker-end="url(#g24-acc)"/><text x="665.0" y="100.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">Bearer token</text></svg></div><figcaption><b>La diferencia clave.</b> Con sesiones, el servidor tiene que recordar a cada usuario. Con JWT, el usuario lleva su “credencial” firmada y el servidor solo comprueba que la firma sea auténtica.</figcaption></figure>
   
@@ -2431,26 +2564,58 @@ services.AddOptions&lt;JwtBearerOptions&gt;(JwtBearerDefaults.AuthenticationSche
 </section>
 
 <section id="acciones">
-  <h2><span class="n">32</span>Roles, actions y permisos</h2>
-  <p>No todos los usuarios pueden hacer todo. Un técnico puede cambiar el estado de una orden pero no borrar activos. Lo armamos con datos en la base, para poder cambiar permisos <b>sin tocar código</b>.</p>
-  <h3>El modelo en la base</h3>
-  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 880 190" role="img" aria-label="&lt;b&gt;Un permiso es una fila en RolAccion.&lt;/b&gt; Ana tiene el rol 2; si existe la fila (rol 2, acción “activos.gestionar”), puede crear, editar y borrar activos." style="min-width:620px"><defs><marker id="g17-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g17-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g17-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g17-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g17-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20.0" y="50" width="140" height="74" rx="10" class="b inf"/><text x="90.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">Usuario</text><text x="90.0" y="88.0" class="ts" text-anchor="middle" dominant-baseline="middle">Ana</text><text x="90.0" y="103.0" class="ts" text-anchor="middle" dominant-baseline="middle">IdRol = 2</text><rect x="195.0" y="50" width="140" height="74" rx="10" class="b "/><text x="265.0" y="79.5" class="tt" text-anchor="middle" dominant-baseline="middle">Rol</text><text x="265.0" y="95.5" class="ts" text-anchor="middle" dominant-baseline="middle">2 · Administrador</text><rect x="370.0" y="50" width="140" height="74" rx="10" class="b acc"/><text x="440.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">RolAccion</text><text x="440.0" y="88.0" class="ts" text-anchor="middle" dominant-baseline="middle">IdRol · IdAccion</text><text x="440.0" y="103.0" class="ts" text-anchor="middle" dominant-baseline="middle">(tabla intermedia)</text><rect x="545.0" y="50" width="140" height="74" rx="10" class="b "/><text x="615.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">Accion</text><text x="615.0" y="88.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">Clave:</text><text x="615.0" y="103.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">activos.gestionar</text><rect x="720.0" y="50" width="140" height="74" rx="10" class="b "/><text x="790.0" y="79.5" class="tt" text-anchor="middle" dominant-baseline="middle">Modulo</text><text x="790.0" y="95.5" class="ts" text-anchor="middle" dominant-baseline="middle">Activos</text><line x1="160.0" y1="87" x2="195.0" y2="87" class="l "/><text x="169.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="186.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><line x1="335.0" y1="87" x2="370.0" y2="87" class="l "/><text x="344.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><text x="361.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><line x1="510.0" y1="87" x2="545.0" y2="87" class="l "/><text x="519.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="536.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><line x1="685.0" y1="87" x2="720.0" y2="87" class="l "/><text x="694.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="711.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><polyline points="265.0,126 265.0,160 615.0,160 615.0,126" class="l acc dash"/><text x="440.0" y="172.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">muchos a muchos: un rol tiene muchas acciones y una acción está en muchos roles</text><text x="440.0" y="22.0" class="zl" text-anchor="middle" dominant-baseline="middle">CÓMO SE GUARDA UN PERMISO</text></svg></div><figcaption><b>Un permiso es una fila en RolAccion.</b> Ana tiene el rol 2; si existe la fila (rol 2, acción “activos.gestionar”), puede crear, editar y borrar activos.</figcaption></figure>
-  <p>Un rol tiene muchas acciones y una acción puede estar en muchos roles: es una relación <b>muchos a muchos</b>, por eso existe la tabla intermedia <code>RolAccion</code>.</p>
+  <h2><span class="n">35</span>Roles, actions y permisos, de punta a punta</h2>
+  <p>Esta es una de las partes con más piezas del proyecto. Vamos de a una: primero qué problema resuelve, después cómo se guarda en la base, después cada pieza del código, y al final un caso completo paso a paso.</p>
+
+  <h3>1 · El problema</h3>
+  <p>En un taller trabajan personas con tareas distintas. El administrador da de alta vehículos; el técnico solo carga trabajos y cambia su estado. Si todos pudieran hacer todo, un técnico podría borrar un vehículo por error. Necesitamos decir <b>qué puede hacer cada tipo de usuario</b> y que el sistema lo respete.</p>
+  <div class="analogia"><span class="ico" aria-hidden="true">🎫</span><div><b class="t">Ejemplo del día a día: las pulseras de un evento</b>
+    <p>En un festival hay pulseras de colores: la verde entra al campo, la dorada además entra al VIP y al backstage. El color es el <b>rol</b>. Cada puerta (campo, VIP, backstage) es una <b>acción</b>. La lista que dice “dorada → campo, VIP, backstage” es la tabla <b>RolAccion</b>. Y el guardia de cada puerta que mira la pulsera es el <b>handler</b> de permisos.</p></div></div>
+
+  <h3>2 · Las palabras, una por una</h3>
   <div class="tabla"><table>
-    <thead><tr><th>Clave de la acción</th><th>Módulo</th><th>Qué habilita</th><th>Dónde se exige</th></tr></thead>
+    <thead><tr><th>Palabra</th><th>Qué es</th><th>Ejemplo</th></tr></thead>
     <tbody>
-      <tr><td><code>escanear.qr</code></td><td>Escanear</td><td>Buscar un activo por su QR</td><td><code>GET /activos/codigo/{codigo}</code></td></tr>
-      <tr><td><code>ordenes.crear</code></td><td>Trabajos</td><td>Crear órdenes</td><td><code>POST /ordenes</code></td></tr>
-      <tr><td><code>ordenes.gestionar</code></td><td>Trabajos</td><td>Cambiar estado y cargar repuestos</td><td><code>PUT /ordenes/{id}/estado</code> y repuestos</td></tr>
-      <tr><td><code>activos.gestionar</code></td><td>Activos</td><td>Alta, edición y baja de activos y alta de clientes</td><td><code>POST/PUT/DELETE /activos</code>, <code>POST /clientes</code></td></tr>
-      <tr><td><code>reportes.exportar</code></td><td>Reportes</td><td>Exportar el reporte a PDF</td><td>Botón en la app</td></tr>
+      <tr><td>Rol</td><td>Un tipo de usuario. Cada usuario tiene un rol.</td><td>Administrador, Técnico, Sistemas</td></tr>
+      <tr><td>Acción (action)</td><td>Algo puntual que se puede permitir o no. Es un <b>permiso</b>.</td><td>“Crear, editar y eliminar activos”</td></tr>
+      <tr><td>Clave de la acción</td><td>Un código fijo que identifica la acción dentro del programa.</td><td><code>activos.gestionar</code></td></tr>
+      <tr><td>Módulo</td><td>La sección de la app a la que pertenece la acción. Sirve para agruparlas en pantalla.</td><td>Activos, Trabajos, Reportes</td></tr>
+      <tr><td>RolAccion</td><td>La tabla que dice qué acciones tiene cada rol.</td><td>(Administrador, activos.gestionar)</td></tr>
+      <tr><td>Política (policy)</td><td>Una regla con nombre que ASP.NET sabe evaluar.</td><td><code>Permiso:activos.gestionar</code></td></tr>
+      <tr><td>Requisito (requirement)</td><td>Lo que la política exige, como un objeto con datos.</td><td><code>PermisoRequerido("activos.gestionar")</code></td></tr>
+      <tr><td>Handler (manejador)</td><td>La clase con el código que decide si el usuario cumple el requisito.</td><td><code>PermisoRequeridoHandler</code></td></tr>
+      <tr><td><code>[Authorize(Policy = …)]</code></td><td>El atributo que se pone arriba de un endpoint para exigir una política.</td><td>Arriba de <code>CrearActivo</code></td></tr>
     </tbody>
   </table></div>
-  <h4>¿Por qué una “Clave” y no el nombre de la acción?</h4>
-  <p>La descripción (“Crear Nueva Orden”) es un texto para personas y alguien la puede renombrar. La <b>Clave</b> (<code>ordenes.crear</code>) es un código fijo que usa el programa. El script le puso un índice único para que no se repita.</p>
 
-  <h3>Paso 1 · Las claves como constantes en C#</h3>
-  <span class="ruta">Mantenia.Api/Services/App/Permisos.cs</span>
+  <h3>3 · Cómo se guarda en la base</h3>
+  <p>Son tres tablas. Así se ven con datos de ejemplo:</p>
+  <div class="lado">
+    <div><div class="et">Tabla Rol</div>
+      <div class="tabla"><table class="db" style="min-width:0"><thead><tr><th>IdRol</th><th>Descripcion</th></tr></thead><tbody>
+        <tr><td>1</td><td>Sistemas</td></tr><tr><td>2</td><td>Administrador</td></tr><tr><td>3</td><td>Técnico</td></tr></tbody></table></div></div>
+    <div><div class="et">Tabla Accion</div>
+      <div class="tabla"><table class="db" style="min-width:0"><thead><tr><th>IdAccion</th><th>Clave</th><th>Módulo</th></tr></thead><tbody>
+        <tr><td>1</td><td>escanear.qr</td><td>Escanear</td></tr><tr><td>2</td><td>ordenes.crear</td><td>Trabajos</td></tr><tr><td>3</td><td>ordenes.gestionar</td><td>Trabajos</td></tr><tr><td>4</td><td>activos.gestionar</td><td>Activos</td></tr><tr><td>5</td><td>reportes.exportar</td><td>Reportes</td></tr></tbody></table></div></div>
+  </div>
+  <div class="et" style="font-family:var(--f-mono);font-size:12px;color:var(--muted)">Tabla RolAccion: cada fila es “este rol tiene esta acción”</div>
+  <div class="tabla"><table class="db" style="min-width:0"><thead><tr><th>IdRolAccion</th><th>IdRol</th><th>IdAccion</th><th>Se lee</th></tr></thead><tbody>
+    <tr><td>1</td><td>2</td><td>1</td><td>Administrador puede escanear QR</td></tr>
+    <tr><td>2</td><td>2</td><td>2</td><td>Administrador puede crear órdenes</td></tr>
+    <tr><td>3</td><td>2</td><td>3</td><td>Administrador puede gestionar órdenes</td></tr>
+    <tr class="hl"><td>4</td><td>2</td><td>4</td><td>Administrador puede gestionar activos</td></tr>
+    <tr><td>5</td><td>2</td><td>5</td><td>Administrador puede exportar reportes</td></tr>
+    <tr><td>6</td><td>3</td><td>3</td><td>Técnico puede gestionar órdenes</td></tr>
+  </tbody></table></div>
+  <p>El Técnico (rol 3) tiene <b>una sola fila</b>: puede gestionar órdenes, pero no tiene <code>activos.gestionar</code>. El rol Sistemas (1) no tiene filas porque el código le da todo (ver el paso 4).</p>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 880 190" role="img" aria-label="&lt;b&gt;Un permiso es una fila en RolAccion.&lt;/b&gt; Ana tiene el rol 2; si existe la fila (rol 2, acción “activos.gestionar”), puede crear, editar y borrar activos." style="min-width:620px"><defs><marker id="g17-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g17-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g17-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g17-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g17-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20.0" y="50" width="140" height="74" rx="10" class="b inf"/><text x="90.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">Usuario</text><text x="90.0" y="88.0" class="ts" text-anchor="middle" dominant-baseline="middle">Ana</text><text x="90.0" y="103.0" class="ts" text-anchor="middle" dominant-baseline="middle">IdRol = 2</text><rect x="195.0" y="50" width="140" height="74" rx="10" class="b "/><text x="265.0" y="79.5" class="tt" text-anchor="middle" dominant-baseline="middle">Rol</text><text x="265.0" y="95.5" class="ts" text-anchor="middle" dominant-baseline="middle">2 · Administrador</text><rect x="370.0" y="50" width="140" height="74" rx="10" class="b acc"/><text x="440.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">RolAccion</text><text x="440.0" y="88.0" class="ts" text-anchor="middle" dominant-baseline="middle">IdRol · IdAccion</text><text x="440.0" y="103.0" class="ts" text-anchor="middle" dominant-baseline="middle">(tabla intermedia)</text><rect x="545.0" y="50" width="140" height="74" rx="10" class="b "/><text x="615.0" y="72.0" class="tt" text-anchor="middle" dominant-baseline="middle">Accion</text><text x="615.0" y="88.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">Clave:</text><text x="615.0" y="103.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">activos.gestionar</text><rect x="720.0" y="50" width="140" height="74" rx="10" class="b "/><text x="790.0" y="79.5" class="tt" text-anchor="middle" dominant-baseline="middle">Modulo</text><text x="790.0" y="95.5" class="ts" text-anchor="middle" dominant-baseline="middle">Activos</text><line x1="160.0" y1="87" x2="195.0" y2="87" class="l "/><text x="169.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="186.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><line x1="335.0" y1="87" x2="370.0" y2="87" class="l "/><text x="344.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><text x="361.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><line x1="510.0" y1="87" x2="545.0" y2="87" class="l "/><text x="519.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="536.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><line x1="685.0" y1="87" x2="720.0" y2="87" class="l "/><text x="694.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">N</text><text x="711.0" y="76.0" class="lb acc" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">1</text><polyline points="265.0,126 265.0,160 615.0,160 615.0,126" class="l acc dash"/><text x="440.0" y="172.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">muchos a muchos: un rol tiene muchas acciones y una acción está en muchos roles</text><text x="440.0" y="22.0" class="zl" text-anchor="middle" dominant-baseline="middle">CÓMO SE GUARDA UN PERMISO</text></svg></div><figcaption><b>Un permiso es una fila en RolAccion.</b> Ana tiene el rol 2; si existe la fila (rol 2, acción “activos.gestionar”), puede crear, editar y borrar activos.</figcaption></figure>
+  <p><b>¿Por qué existe la tabla RolAccion?</b> Porque un rol tiene muchas acciones y una acción la pueden tener muchos roles. Esa relación “muchos a muchos” no se puede guardar con una sola clave foránea: hace falta una tabla en el medio, donde cada fila une un rol con una acción.</p>
+  <p><b>¿Por qué una “Clave” además del nombre?</b> La descripción (“Crear, editar y eliminar activos”) es para personas y alguien la puede cambiar. La clave (<code>activos.gestionar</code>) es la que usa el código, y si cambiara, el código dejaría de encontrarla. Por eso es fija y el script <code>Activo_Organizacion_y_Permisos.sql</code> le puso un índice único: no puede haber dos acciones con la misma clave.</p>
+
+  <h3>4 · Las piezas del código, en el orden en que actúan</h3>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 960 330" role="img" aria-label="&lt;b&gt;Dos momentos distintos.&lt;/b&gt; Arriba: al arrancar, la API crea una política por cada clave. Abajo: en cada pedido, ASP.NET ve qué política pide el endpoint y ejecuta el handler, que consulta la base para decidir." style="min-width:800px"><defs><marker id="g34-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g34-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g34-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g34-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g34-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="10" y="10" width="940" height="130" rx="14" class="zone"/><text x="24.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">AL ARRANCAR LA API · UNA SOLA VEZ (Program.cs)</text><rect x="30" y="38" width="250" height="94" rx="10" class="b "/><text x="155.0" y="55.0" class="tt" text-anchor="middle" dominant-baseline="middle">Acciones.Todas</text><text x="155.0" y="71.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">escanear.qr · ordenes.crear</text><text x="155.0" y="86.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">ordenes.gestionar</text><text x="155.0" y="101.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">activos.gestionar</text><text x="155.0" y="116.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">reportes.exportar</text><rect x="350" y="56" width="220" height="56" rx="10" class="b acc"/><text x="460.0" y="76.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">foreach + AddPolicy</text><text x="460.0" y="92.0" class="ts" text-anchor="middle" dominant-baseline="middle">una política por clave</text><rect x="660" y="40" width="270" height="88" rx="10" class="b ok"/><text x="795.0" y="61.5" class="tt" text-anchor="middle" dominant-baseline="middle">Políticas registradas</text><text x="795.0" y="77.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">Permiso:escanear.qr</text><text x="795.0" y="92.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">Permiso:activos.gestionar</text><text x="795.0" y="107.5" class="ts mono" text-anchor="middle" dominant-baseline="middle">… (5 en total)</text><line x1="282" y1="84" x2="348" y2="84" class="l acc" marker-end="url(#g34-acc)"/><line x1="572" y1="84" x2="658" y2="84" class="l acc" marker-end="url(#g34-acc)"/><rect x="10" y="160" width="940" height="160" rx="14" class="zone"/><text x="24.0" y="176.0" class="zl" text-anchor="start" dominant-baseline="middle">EN CADA PEDIDO A UN ENDPOINT PROTEGIDO</text><rect x="30" y="200" width="230" height="76" rx="10" class="b inf"/><text x="145.0" y="223.0" class="tt" text-anchor="middle" dominant-baseline="middle">Endpoint</text><text x="145.0" y="239.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">[Authorize(Policy =</text><text x="145.0" y="254.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">Politicas.GestionarActivos)]</text><rect x="350" y="200" width="220" height="76" rx="10" class="b acc"/><text x="460.0" y="223.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">PermisoRequeridoHandler</text><text x="460.0" y="238.5" class="ts" text-anchor="middle" dominant-baseline="middle">lee el rol del usuario</text><text x="460.0" y="253.5" class="ts" text-anchor="middle" dominant-baseline="middle">y busca en RolAccion</text><rect x="660" y="194" width="130" height="40" rx="10" class="b ok"/><text x="725.0" y="214.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Succeed → pasa</text><rect x="660" y="244" width="130" height="40" rx="10" class="b bad"/><text x="725.0" y="264.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">no → 403</text><rect x="810" y="194" width="120" height="90" rx="10" class="b "/><text x="870.0" y="216.5" class="tt" text-anchor="middle" dominant-baseline="middle">SQL Server</text><text x="870.0" y="232.5" class="ts" text-anchor="middle" dominant-baseline="middle">Rol</text><text x="870.0" y="247.5" class="ts" text-anchor="middle" dominant-baseline="middle">Accion</text><text x="870.0" y="262.5" class="ts" text-anchor="middle" dominant-baseline="middle">RolAccion</text><line x1="262" y1="238" x2="348" y2="238" class="l acc" marker-end="url(#g34-acc)"/><text x="305.0" y="228.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">ASP.NET llama</text><line x1="572" y1="225" x2="658" y2="214" class="l ok" marker-end="url(#g34-ok)"/><line x1="572" y1="250" x2="658" y2="264" class="l bad" marker-end="url(#g34-bad)"/><polyline points="460,278 460,300 870,300 870,286" class="l " marker-end="url(#g34-n)"/><text x="660.0" y="292.0" class="lb " text-anchor="middle" dominant-baseline="middle">consulta</text><polyline points="795,130 795,150 460,150 460,198" class="l acc dash" marker-end="url(#g34-acc)"/><text x="628.0" y="150.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">busca la política por su nombre</text></svg></div><figcaption><b>Dos momentos distintos.</b> Arriba: al arrancar, la API crea una política por cada clave. Abajo: en cada pedido, ASP.NET ve qué política pide el endpoint y ejecuta el handler, que consulta la base para decidir.</figcaption></figure>
+
+  <h4>Pieza A · Las claves como constantes (<code>Services/App/Permisos.cs</code>)</h4>
 <pre><code>public static class Acciones
 {
     public const string EscanearQr = <span class="s">"escanear.qr"</span>;
@@ -2458,19 +2623,38 @@ services.AddOptions&lt;JwtBearerOptions&gt;(JwtBearerDefaults.AuthenticationSche
     public const string GestionarOrdenes = <span class="s">"ordenes.gestionar"</span>;
     public const string GestionarActivos = <span class="s">"activos.gestionar"</span>;
     public const string ExportarReportes = <span class="s">"reportes.exportar"</span>;
+
     public static readonly string[] Todas = [EscanearQr, CrearOrden, GestionarOrdenes, GestionarActivos, ExportarReportes];
-}</code></pre>
-  <p>Así no escribimos el texto suelto en varios lugares: si nos equivocamos en una letra, el compilador avisa.</p>
+}
 
-  <h3>Paso 2 · Una política por acción</h3>
-<pre><code>foreach (var clave in Acciones.Todas)
+public static class Politicas
 {
-    options.AddPolicy(<span class="s">"Permiso:"</span> + clave, p =&gt; p.RequireAuthenticatedUser()
-        .AddRequirements(new PermisoRequerido(clave)));
+    public const string Prefijo = <span class="s">"Permiso:"</span>;
+    public const string GestionarActivos = Prefijo + Acciones.GestionarActivos;   <span class="c">// "Permiso:activos.gestionar"</span>
+    ...
 }</code></pre>
-  <p>Se crean las políticas <code>Permiso:escanear.qr</code>, <code>Permiso:ordenes.crear</code>, etc. Cada una dice: “tiene que estar logueado y cumplir el requisito <code>PermisoRequerido</code> con esta clave”.</p>
+  <p>Son los mismos textos que la columna <code>Clave</code> de la base, escritos una sola vez como <code>const</code>. Así en el resto del código escribimos <code>Acciones.GestionarActivos</code> y no el texto suelto: si alguien se equivoca en una letra, el compilador avisa.</p>
 
-  <h3>Paso 3 · El requisito y quien lo evalúa</h3>
+  <h4>Pieza B · Crear las políticas al arrancar (<code>Extensions/ServiceCollectionExtensions.cs</code>)</h4>
+<pre><code>services.AddAuthorization(options =&gt;
+{
+<span class="o">1</span> foreach (var clave in Acciones.Todas)
+    {
+<span class="o">2</span>     options.AddPolicy(Politicas.Prefijo + clave, p =&gt; p
+<span class="o">3</span>         .RequireAuthenticatedUser()
+<span class="o">4</span>         .AddRequirements(new PermisoRequerido(clave)));
+    }
+});
+<span class="o">5</span> services.AddScoped&lt;IAuthorizationHandler, PermisoRequeridoHandler&gt;();</code></pre>
+  <ol class="anot">
+    <li><div>Recorre las 5 claves. Esto pasa <b>una sola vez</b>, cuando arranca la API.</div></li>
+    <li><div>Registra una política con nombre, por ejemplo <code>"Permiso:activos.gestionar"</code>. Queda guardada en ASP.NET como en una agenda.</div></li>
+    <li><div>Primera condición de la política: el usuario tiene que estar logueado.</div></li>
+    <li><div>Segunda condición: cumplir el requisito <code>PermisoRequerido</code> con esa clave.</div></li>
+    <li><div>Le dice a ASP.NET quién sabe evaluar ese requisito: el handler. Se registra en la inyección de dependencias como cualquier servicio.</div></li>
+  </ol>
+
+  <h4>Pieza C · El requisito y el handler (<code>Services/App/Permisos.cs</code>)</h4>
 <pre><code><span class="o">1</span> public sealed class PermisoRequerido(string clave) : IAuthorizationRequirement
   {
       public string Clave { get; } = clave;
@@ -2480,59 +2664,118 @@ services.AddOptions&lt;JwtBearerOptions&gt;(JwtBearerDefaults.AuthenticationSche
   {
       protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, PermisoRequerido requirement)
       {
-          <span class="c">// id del token → rol desde la base → ¿Sistemas o tiene la acción en RolAccion?</span>
-<span class="o">3</span>       if (Roles.EsSistemas(rol) || await db.RolesAcciones.AnyAsync(ra =&gt;
-                  ra.IdRol == usuario.IdRol &amp;&amp; ra.Accion!.Clave == requirement.Clave))
-              context.Succeed(requirement);
+<span class="o">3</span>       if (!int.TryParse(context.User.FindFirst(AppClaims.IdUsuario)?.Value, out var idUsuario))
+              return;
+
+<span class="o">4</span>       var usuario = await db.Usuarios.AsNoTracking()
+              .Where(u =&gt; u.IdUsuario == idUsuario &amp;&amp; u.Activo != false)
+              .Select(u =&gt; new { u.IdRol, Rol = u.Rol!.Descripcion })
+              .FirstOrDefaultAsync();
+          if (usuario is null)
+              return;
+
+<span class="o">5</span>       if (Roles.EsSistemas(usuario.Rol?.Trim())
+<span class="o">6</span>           || await db.RolesAcciones.AnyAsync(ra =&gt; ra.IdRol == usuario.IdRol &amp;&amp; ra.Accion!.Clave == requirement.Clave))
+          {
+<span class="o">7</span>           context.Succeed(requirement);
+          }
       }
   }</code></pre>
   <ol class="anot">
-    <li><div>El <b>requisito</b> solo guarda qué clave se necesita.</div></li>
-    <li><div>El <b>handler</b> (manejador) decide si se cumple. ASP.NET lo llama solo cuando un endpoint pide esa política. Está registrado en DI: <code>services.AddScoped&lt;IAuthorizationHandler, PermisoRequeridoHandler&gt;()</code>.</div></li>
-    <li><div>El rol Sistemas tiene todo; el resto, si existe la fila en <code>RolAccion</code>. Si no se llama a <code>Succeed</code>, la respuesta es 403.</div></li>
+    <li><div>El <b>requisito</b> es solo una cajita con la clave que se exige. <code>IAuthorizationRequirement</code> es la interfaz que le avisa a ASP.NET que esto es un requisito de autorización.</div></li>
+    <li><div>El <b>handler</b> hereda de <code>AuthorizationHandler&lt;PermisoRequerido&gt;</code>: “yo sé evaluar requisitos <code>PermisoRequerido</code>”. Recibe la base por inyección de dependencias.</div></li>
+    <li><div><code>context.User</code> es el usuario que armó el middleware de autenticación a partir del token. Buscamos el claim <code>sub</code> (el id). Si no hay id, salimos sin aprobar.</div></li>
+    <li><div>Leemos de la base el rol del usuario (y que siga activo). En SQL es aproximadamente: <code>SELECT IdRol, Rol.Descripcion FROM Usuario JOIN Rol … WHERE IdUsuario = 9 AND Activo &lt;&gt; 0</code>.</div></li>
+    <li><div>Si el rol es Sistemas, tiene todo.</div></li>
+    <li><div>Si no, preguntamos si existe la fila en RolAccion: <code>SELECT CASE WHEN EXISTS (SELECT 1 FROM RolAccion ra JOIN Accion a … WHERE ra.IdRol = 3 AND a.Clave = 'activos.gestionar') …</code>.</div></li>
+    <li><div><code>Succeed</code> = “aprobado”. Si el método termina sin llamarlo, el requisito queda sin cumplir y ASP.NET responde <b>403 Forbidden</b>.</div></li>
   </ol>
 
-  <h3>Paso 4 · Pedir el permiso en el endpoint</h3>
-<pre><code>[HttpPost(<span class="s">"activos"</span>)]
-[Authorize(Policy = Politicas.GestionarActivos)]     <span class="c">// = "Permiso:activos.gestionar"</span>
-public async Task&lt;ActionResult&lt;ActivoEdicionDto&gt;&gt; CrearActivo(...)</code></pre>
+  <h4>Pieza D · Pedir el permiso en el endpoint (<code>Controllers/AppController.cs</code>)</h4>
+<pre><code>[HttpDelete(<span class="s">"activos/{id:int}"</span>)]
+[Authorize(Policy = Politicas.GestionarActivos)]      <span class="c">// "Permiso:activos.gestionar"</span>
+public async Task&lt;IActionResult&gt; EliminarActivo(int id, CancellationToken ct) =&gt; ...</code></pre>
+  <p>Esta línea es todo lo que hace falta en cada endpoint. Cuando llega un pedido, el middleware de autorización (<code>app.UseAuthorization()</code> en <code>Program.cs</code>) ve el atributo, busca la política por su nombre y ejecuta el handler. Recién si aprueba, se ejecuta <code>EliminarActivo</code>.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Endpoint</th><th>Política que exige</th></tr></thead>
+    <tbody>
+      <tr><td><span class="verbo POST">POST</span> <span class="verbo PUT">PUT</span> <span class="verbo DELETE">DELETE</span> <code>/api/app/activos</code>, <span class="verbo POST">POST</span> <code>/api/app/clientes</code></td><td><code>Permiso:activos.gestionar</code></td></tr>
+      <tr><td><span class="verbo POST">POST</span> <code>/api/app/ordenes</code></td><td><code>Permiso:ordenes.crear</code></td></tr>
+      <tr><td><span class="verbo PUT">PUT</span> <code>/ordenes/{id}/estado</code> y repuestos</td><td><code>Permiso:ordenes.gestionar</code></td></tr>
+      <tr><td><span class="verbo GET">GET</span> <code>/api/app/activos/codigo/{codigo}</code></td><td><code>Permiso:escanear.qr</code></td></tr>
+      <tr><td>Todo <code>/api/app/ajustes</code></td><td><code>AjustesOrganizacion</code> (rol Administrador o Sistemas)</td></tr>
+      <tr><td>Todo <code>/api/app/sistemas</code></td><td><code>Sistemas</code> (solo rol Sistemas)</td></tr>
+    </tbody>
+  </table></div>
+  <p><code>reportes.exportar</code> no tiene endpoint: el PDF lo genera el navegador. Esa acción solo muestra u oculta el botón.</p>
 
-  <h3>Paso 5 · La app esconde lo que no podés usar</h3>
-  <p><code>GET /api/app/contexto</code> devuelve la lista de claves del rol. En React:</p>
-<pre><code>puede: (permiso) =&gt; contexto?.permisos.includes(permiso) ?? false
+  <h3>5 · Un caso completo: Juan intenta borrar un activo</h3>
+  <p>Juan es Técnico (rol 3). Abre Scalar, se loguea y manda <span class="verbo DELETE">DELETE</span> <code>/api/app/activos/1</code>. Los ids de este ejemplo son ilustrativos.</p>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 980 414" role="img" aria-label="&lt;b&gt;Juan es Técnico e intenta borrar un activo.&lt;/b&gt; El handler busca en la base si su rol tiene la acción. Como no la tiene, ASP.NET responde 403 y el método del controller ni siquiera arranca." style="min-width:820px"><defs><marker id="g35-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g35-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g35-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g35-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g35-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="16" y="10" width="148" height="40" rx="10" class="b inf"/><text x="90.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Juan (Técnico)</text><line x1="90" y1="52" x2="90" y2="408" class="l vida"/><rect x="206" y="10" width="148" height="40" rx="10" class="b "/><text x="280.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">ASP.NET</text><line x1="280" y1="52" x2="280" y2="408" class="l vida"/><rect x="426" y="10" width="148" height="40" rx="10" class="b acc"/><text x="500.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">PermisoRequeridoHandler</text><line x1="500" y1="52" x2="500" y2="408" class="l vida"/><rect x="646" y="10" width="148" height="40" rx="10" class="b "/><text x="720.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">SQL Server</text><line x1="720" y1="52" x2="720" y2="408" class="l vida"/><rect x="826" y="10" width="148" height="40" rx="10" class="b ok"/><text x="900.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">AppController</text><line x1="900" y1="52" x2="900" y2="408" class="l vida"/><line x1="94" y1="84" x2="276" y2="84" class="l acc" marker-end="url(#g35-acc)"/><text x="118.0" y="73.0" class="lb acc" text-anchor="start" dominant-baseline="middle">DELETE /api/app/activos/1 + token</text><circle cx="104" cy="84" r="10" class="nc"/><text x="104.0" y="84.5" class="nt" text-anchor="middle" dominant-baseline="middle">1</text><polyline points="280,110 314,110 314,124 284,124" class="l " marker-end="url(#g35-n)"/><text x="320.0" y="117.0" class="lb " text-anchor="start" dominant-baseline="middle">token válido · ve [Authorize(Policy = activos.gestionar)]</text><circle cx="264" cy="116" r="10" class="nc"/><text x="264.0" y="116.5" class="nt" text-anchor="middle" dominant-baseline="middle">2</text><line x1="284" y1="148" x2="496" y2="148" class="l acc" marker-end="url(#g35-acc)"/><text x="308.0" y="137.0" class="lb acc" text-anchor="start" dominant-baseline="middle">evaluá “activos.gestionar” para Juan</text><circle cx="294" cy="148" r="10" class="nc"/><text x="294.0" y="148.5" class="nt" text-anchor="middle" dominant-baseline="middle">3</text><line x1="504" y1="180" x2="716" y2="180" class="l acc" marker-end="url(#g35-acc)"/><text x="528.0" y="169.0" class="lb acc" text-anchor="start" dominant-baseline="middle">rol de Juan (IdUsuario 9)</text><circle cx="514" cy="180" r="10" class="nc"/><text x="514.0" y="180.5" class="nt" text-anchor="middle" dominant-baseline="middle">4</text><line x1="716" y1="212" x2="504" y2="212" class="l ok dash" marker-end="url(#g35-ok)"/><text x="692.0" y="201.0" class="lb ok" text-anchor="end" dominant-baseline="middle">Técnico (IdRol 3)</text><circle cx="706" cy="212" r="10" class="nc"/><text x="706.0" y="212.5" class="nt" text-anchor="middle" dominant-baseline="middle">5</text><line x1="504" y1="244" x2="716" y2="244" class="l acc" marker-end="url(#g35-acc)"/><text x="528.0" y="233.0" class="lb acc" text-anchor="start" dominant-baseline="middle">¿existe RolAccion (3, activos.gestionar)?</text><circle cx="514" cy="244" r="10" class="nc"/><text x="514.0" y="244.5" class="nt" text-anchor="middle" dominant-baseline="middle">6</text><line x1="716" y1="276" x2="504" y2="276" class="l bad dash" marker-end="url(#g35-bad)"/><text x="692.0" y="265.0" class="lb bad" text-anchor="end" dominant-baseline="middle">no</text><circle cx="706" cy="276" r="10" class="nc"/><text x="706.0" y="276.5" class="nt" text-anchor="middle" dominant-baseline="middle">7</text><line x1="496" y1="308" x2="284" y2="308" class="l bad dash" marker-end="url(#g35-bad)"/><text x="472.0" y="297.0" class="lb bad" text-anchor="end" dominant-baseline="middle">no llama a Succeed</text><circle cx="486" cy="308" r="10" class="nc"/><text x="486.0" y="308.5" class="nt" text-anchor="middle" dominant-baseline="middle">8</text><line x1="276" y1="340" x2="94" y2="340" class="l bad dash" marker-end="url(#g35-bad)"/><text x="252.0" y="329.0" class="lb bad" text-anchor="end" dominant-baseline="middle">403 Forbidden</text><circle cx="266" cy="340" r="10" class="nc"/><text x="266.0" y="340.5" class="nt" text-anchor="middle" dominant-baseline="middle">9</text><line x1="891" y1="363" x2="909" y2="381" class="l bad" style="stroke-width:3"/><line x1="909" y1="363" x2="891" y2="381" class="l bad" style="stroke-width:3"/><text x="884.0" y="372.0" class="lb bad" text-anchor="end" dominant-baseline="middle">EliminarActivo nunca se ejecuta</text></svg></div><figcaption><b>Juan es Técnico e intenta borrar un activo.</b> El handler busca en la base si su rol tiene la acción. Como no la tiene, ASP.NET responde 403 y el método del controller ni siquiera arranca.</figcaption></figure>
+  <p>Si el mismo pedido lo manda <b>Ana (Administrador, rol 2)</b>, en el paso 6 la base encuentra la fila (2, 4), el handler llama a <code>Succeed</code> y se ejecuta <code>EliminarActivo</code>.</p>
 
-{puede(<span class="s">"activos.gestionar"</span>) &amp;&amp; &lt;Link to=<span class="s">"/activos/nuevo"</span>&gt;+&lt;/Link&gt;}       <span class="c">// botón solo si puede</span>
-&lt;Route element={&lt;RequierePermiso permiso=<span class="s">"activos.gestionar"</span> /&gt;}&gt; ...      <span class="c">// ruta protegida</span></code></pre>
-  <p>Esto es solo comodidad visual: la seguridad real es el paso 4.</p>
+  <h3>6 · ¿Y la app qué hace con los permisos?</h3>
+  <p>Al entrar, la app llama a <span class="verbo GET">GET</span> <code>/api/app/contexto</code>. La respuesta trae la lista de claves del rol: para Juan, <code>"permisos": ["ordenes.gestionar"]</code>. Con esa lista:</p>
+<pre><code><span class="c">// auth/AuthContext.tsx: ¿está la clave en la lista?</span>
+puede: (permiso) =&gt; contexto?.permisos.includes(permiso) ?? false
 
-  <h3>Roles especiales y pantalla de Sistemas</h3>
+<span class="c">// pages/Activos.tsx: el botón “+” solo se dibuja si puede</span>
+{puede(<span class="s">"activos.gestionar"</span>) &amp;&amp; &lt;Link to=<span class="s">"/activos/nuevo"</span>&gt;+&lt;/Link&gt;}
+
+<span class="c">// App.tsx: si entra escribiendo la URL a mano, lo manda al inicio</span>
+&lt;Route element={&lt;RequierePermiso permiso=<span class="s">"activos.gestionar"</span> /&gt;}&gt; ...</code></pre>
+  <p>Juan no ve el botón “+” ni “Eliminar”. Esto es para que la pantalla sea clara. Si igual lo intenta por otro lado, como en el caso de arriba, la API lo frena. Ver “La app y la API: quién corre dónde”.</p>
+
+  <h3>7 · Roles especiales: Sistemas y Administrador</h3>
+  <div class="tabla"><table>
+    <thead><tr><th></th><th>Permisos por acción (RolAccion)</th><th>Permisos por rol fijo</th></tr></thead>
+    <tbody>
+      <tr><td>Qué controla</td><td>Acciones del día a día: activos, órdenes, QR, reportes.</td><td>Pantallas de configuración: Ajustes y Sistemas.</td></tr>
+      <tr><td>Cómo se configura</td><td>Desde la pantalla Sistemas, sin tocar código.</td><td>En el código: política <code>RolRequerido</code> con el nombre del rol.</td></tr>
+      <tr><td>Clases</td><td><code>PermisoRequerido</code> + <code>PermisoRequeridoHandler</code></td><td><code>RolRequerido</code> + <code>RolRequeridoHandler</code></td></tr>
+    </tbody>
+  </table></div>
   <ul>
-    <li><b>Sistemas</b>: el equipo que administra MantenIA. Tiene todos los permisos sin necesitar filas en <code>RolAccion</code> y es el único que entra a <code>/api/app/sistemas</code> (política <code>RolRequerido</code>).</li>
-    <li><b>Administrador</b>: administra los catálogos de su organización en <code>/api/app/ajustes</code>.</li>
-    <li>Ambos están <b>protegidos</b>: no se pueden renombrar ni borrar, porque el código depende de esos nombres.</li>
+    <li><b>Sistemas</b>: el equipo que administra MantenIA. Tiene todas las acciones sin necesitar filas y es el único que entra a <code>/api/app/sistemas</code>.</li>
+    <li><b>Administrador</b>: entra a <code>/api/app/ajustes</code> para configurar las categorías, estados y tipos de trabajo de su organización.</li>
+    <li>Los dos están <b>protegidos</b>: <code>SistemasAppService</code> no deja renombrarlos ni borrarlos, porque el código los busca por nombre.</li>
   </ul>
-  <p>Desde la pantalla Sistemas se tildan los permisos de cada rol y se llama a <span class="verbo PUT">PUT</span> <code>/api/app/sistemas/roles/{id}/permisos</code> con <code>{ "idsAccion": [1, 3, 5] }</code>:</p>
-<pre><code>var deseadas = dto.IdsAccion.Distinct().ToHashSet();
-var actuales = await db.RolesAcciones.Where(ra =&gt; ra.IdRol == idRol).ToListAsync(ct);
+
+  <h3>8 · Cómo se cambian los permisos</h3>
+  <p><b>Desde la app:</b> el usuario Sistemas entra a la pantalla Sistemas → Roles, tilda o destilda acciones y guarda. La app manda <span class="verbo PUT">PUT</span> <code>/api/app/sistemas/roles/3/permisos</code> con <code>{ "idsAccion": [3, 2] }</code>, y el servicio:</p>
+<pre><code>var deseadas = dto.IdsAccion.Distinct().ToHashSet();                          <span class="c">// {3, 2}</span>
+var actuales = await db.RolesAcciones.Where(ra =&gt; ra.IdRol == idRol).ToListAsync(ct);   <span class="c">// filas actuales del rol</span>
 <span class="o">1</span> db.RolesAcciones.RemoveRange(actuales.Where(ra =&gt; ra.IdAccion is not int a || !deseadas.Contains(a)));
 <span class="o">2</span> foreach (var idAccion in deseadas.Where(a =&gt; actuales.All(ra =&gt; ra.IdAccion != a)))
       db.RolesAcciones.Add(new RolAccion { IdRol = idRol, IdAccion = idAccion });
-  await db.SaveChangesAsync(ct);</code></pre>
+<span class="o">3</span> await db.SaveChangesAsync(ct);</code></pre>
   <ol class="anot">
-    <li><div>Borra las filas de acciones que se destildaron.</div></li>
-    <li><div>Agrega solo las nuevas. Las que ya estaban no se tocan. Todo se guarda junto.</div></li>
+    <li><div>Borra las filas de acciones que ya no están tildadas.</div></li>
+    <li><div>Agrega las que se tildaron y no existían. En el ejemplo, agrega (3, 2): el Técnico ahora puede crear órdenes.</div></li>
+    <li><div>Guarda todo junto. Desde el <b>siguiente pedido</b> de Juan ya aplica, porque el handler lee la base cada vez.</div></li>
   </ol>
-  <h4>Cómo agregar un permiso nuevo (por ejemplo <code>clientes.borrar</code>)</h4>
+  <p><b>Desde SQL</b> (equivalente): <code>INSERT INTO dbo.RolAccion (IdRol, IdAccion) VALUES (3, 2);</code></p>
+
+  <h3>9 · Cómo se agrega un permiso nuevo (ejemplo: <code>clientes.borrar</code>)</h3>
   <ol class="secuencia">
-    <li><div>Insertar la fila en <code>Accion</code> con su <code>Clave</code>.</div></li>
-    <li><div>Agregar la constante en <code>Acciones</code> y sumarla a <code>Todas</code> (la política se crea sola).</div></li>
-    <li><div>Agregar la constante en <code>Politicas</code> y ponerla en el endpoint con <code>[Authorize(Policy = ...)]</code>.</div></li>
-    <li><div>Asignarla a los roles desde Sistemas.</div></li>
+    <li><div><span class="quien">Base</span> <code>INSERT INTO dbo.Accion (IdModulo, Descripcion, Version, Clave) VALUES (…, 'Borrar clientes', 'v1.0', 'clientes.borrar');</code></div></li>
+    <li><div><span class="quien">C#</span> En <code>Acciones</code>: <code>public const string BorrarClientes = "clientes.borrar";</code> y sumarla a <code>Todas</code>. La política <code>Permiso:clientes.borrar</code> se crea sola al arrancar (pieza B).</div></li>
+    <li><div><span class="quien">C#</span> En <code>Politicas</code>: <code>public const string BorrarClientes = Prefijo + Acciones.BorrarClientes;</code></div></li>
+    <li><div><span class="quien">C#</span> En el endpoint nuevo: <code>[Authorize(Policy = Politicas.BorrarClientes)]</code>.</div></li>
+    <li><div><span class="quien">App</span> Esconder el botón con <code>puede("clientes.borrar")</code>.</div></li>
+    <li><div><span class="quien">Sistemas</span> Asignarla a los roles que correspondan.</div></li>
   </ol>
+  <div class="decir">Los permisos son datos: la tabla RolAccion dice qué acciones tiene cada rol. Al arrancar, la API crea una política por acción; cada endpoint pide la suya con <code>[Authorize(Policy)]</code>; y en cada pedido un handler consulta la base y aprueba o responde 403. La app solo esconde botones, la seguridad está en la API.</div>
+  <div class="recordar"><ul>
+    <li>Rol → (RolAccion) → Acción con su Clave fija.</li>
+    <li>Al arrancar: una política por clave. En cada pedido: el handler consulta la base.</li>
+    <li>Sin permiso → 403 y el método del controller no se ejecuta.</li>
+    <li>Se cambian sin tocar código, desde la pantalla Sistemas, y aplican en el siguiente pedido.</li>
+  </ul></div>
 </section>
 
 <section id="multitenant">
-  <h2><span class="n">33</span>Cómo evitamos que se vean activos de otras organizaciones</h2>
+  <h2><span class="n">36</span>Cómo evitamos que se vean activos de otras organizaciones</h2>
   <p>MantenIA es <b>multi-organización</b> (multi-tenant): varias empresas usan el mismo sistema y la misma base. Un taller de Morón no puede ver los vehículos de un taller de Ramos Mejía. Lo resolvimos en cuatro piezas.</p>
 
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 900 330" role="img" aria-label="&lt;b&gt;Todas las consultas pasan por un único filtro.&lt;/b&gt; La tabla tiene activos de varias organizaciones; &lt;code&gt;ActivosQuery()&lt;/code&gt; agrega &lt;code&gt;WHERE IdOrganizacion = 1&lt;/code&gt; y Ana solo recibe los suyos. Si pide uno ajeno por id, la respuesta es 404." style="min-width:700px"><defs><marker id="g18-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g18-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g18-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g18-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g18-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="104" width="160" height="76" rx="10" class="b inf"/><text x="100.0" y="127.0" class="tt" text-anchor="middle" dominant-baseline="middle">Ana</text><text x="100.0" y="143.0" class="ts" text-anchor="middle" dominant-baseline="middle">usuario de Org 1</text><text x="100.0" y="158.0" class="ts" text-anchor="middle" dominant-baseline="middle">(leído de la base)</text><rect x="320" y="100" width="210" height="84" rx="10" class="b acc"/><text x="425.0" y="134.5" class="tt" text-anchor="middle" dominant-baseline="middle">ActivosQuery()</text><text x="425.0" y="150.5" class="ts" text-anchor="middle" dominant-baseline="middle">WHERE IdOrganizacion = 1</text><rect x="650" y="20" width="230" height="292" rx="10" class="b "/><text x="765.0" y="40.0" class="tt" text-anchor="middle" dominant-baseline="middle">dbo.Activo</text><rect x="666" y="58" width="198" height="32" rx="10" class="b ok"/><text x="765.0" y="74.0" class="ts okc" text-anchor="middle" dominant-baseline="middle">C-02 · Org 1</text><rect x="666" y="98" width="198" height="32" rx="10" class="b ok"/><text x="765.0" y="114.0" class="ts okc" text-anchor="middle" dominant-baseline="middle">B-11 · Org 1</text><rect x="666" y="138" width="198" height="32" rx="10" class="b bad"/><text x="765.0" y="154.0" class="ts badc" text-anchor="middle" dominant-baseline="middle">X-77 · Org 2</text><rect x="666" y="178" width="198" height="32" rx="10" class="b ok"/><text x="765.0" y="194.0" class="ts okc" text-anchor="middle" dominant-baseline="middle">T-04 · Org 1</text><rect x="666" y="218" width="198" height="32" rx="10" class="b bad"/><text x="765.0" y="234.0" class="ts badc" text-anchor="middle" dominant-baseline="middle">Z-10 · Org 2</text><rect x="666" y="258" width="198" height="32" rx="10" class="b ok"/><text x="765.0" y="274.0" class="ts okc" text-anchor="middle" dominant-baseline="middle">K-01 · Org 1</text><line x1="182" y1="128" x2="318" y2="128" class="l acc" marker-end="url(#g18-acc)"/><text x="250.0" y="118.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">GET /activos</text><line x1="532" y1="128" x2="648" y2="128" class="l acc" marker-end="url(#g18-acc)"/><text x="590.0" y="118.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">consulta filtrada</text><line x1="648" y1="160" x2="532" y2="160" class="l ok" marker-end="url(#g18-ok)"/><text x="590.0" y="176.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">solo Org 1</text><line x1="318" y1="160" x2="182" y2="160" class="l ok" marker-end="url(#g18-ok)"/><text x="250.0" y="176.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">4 activos</text><rect x="20" y="236" width="330" height="50" rx="10" class="b bad"/><text x="185.0" y="253.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">GET /activos/X-77 (de Org 2)</text><text x="185.0" y="269.0" class="ts warnc" text-anchor="middle" dominant-baseline="middle">→ 404: para Ana no existe</text><line x1="185" y1="182" x2="185" y2="234" class="l bad dash" marker-end="url(#g18-bad)"/></svg></div><figcaption><b>Todas las consultas pasan por un único filtro.</b> La tabla tiene activos de varias organizaciones; <code>ActivosQuery()</code> agrega <code>WHERE IdOrganizacion = 1</code> y Ana solo recibe los suyos. Si pide uno ajeno por id, la respuesta es 404.</figcaption></figure>
@@ -2611,7 +2854,7 @@ var actuales = await db.RolesAcciones.Where(ra =&gt; ra.IdRol == idRol).ToListAs
 </section>
 
 <section id="qr">
-  <h2><span class="n">34</span>Cómo funciona el QR</h2>
+  <h2><span class="n">37</span>Cómo funciona el QR</h2>
   <p>Cada activo puede tener una etiqueta con un código QR. El operario lo escanea con el celular y la app abre la ficha de ese equipo. Así no tiene que buscarlo a mano.</p>
   <div class="analogia"><span class="ico" aria-hidden="true">🏷️</span><div><b class="t">Ejemplo del día a día: el código de barras del súper</b>
     <p>La cajera no escribe el nombre del producto: pasa el código y el sistema lo encuentra. El QR es lo mismo, pero puede guardar texto. En MantenIA guarda el <b>Identificador</b> del activo (por ejemplo <code>C-02</code> o la patente <code>AE789KL</code>).</p></div></div>
@@ -2691,7 +2934,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 <div class="separador">Parte 4<b>Los módulos y la app React</b></div>
 
 <section id="modulos">
-  <h2><span class="n">35</span>Todos los módulos de la app</h2>
+  <h2><span class="n">38</span>Todos los módulos de la app</h2>
   <p>Cada módulo es una parte del sistema con su pantalla, sus endpoints y su servicio. Este mapa sirve para responder “¿y eso cómo funciona?” sobre cualquier botón.</p>
   <div class="tabla"><table>
     <thead><tr><th>Módulo</th><th>Pantalla (React)</th><th>Endpoints</th><th>Servicio</th><th>Permiso</th></tr></thead>
@@ -2738,7 +2981,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 </section>
 
 <section id="react">
-  <h2><span class="n">36</span>El frontend en React, desde cero</h2>
+  <h2><span class="n">39</span>El frontend en React, desde cero</h2>
   <p>La app que usa el operario está hecha con <b>React</b>, una librería de JavaScript para armar pantallas, y <b>TypeScript</b>, que es JavaScript con tipos (como C#). Corre en el navegador y no toca la base: todo lo pide a la API.</p>
   <div class="tabla"><table>
     <thead><tr><th>Concepto de React</th><th>Qué es</th><th>Ejemplo en MantenIA</th></tr></thead>
@@ -2752,6 +2995,22 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
   </table></div>
 
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 880 270" role="img" aria-label="&lt;b&gt;Cómo se arma una pantalla y de dónde saca los datos.&lt;/b&gt; A la izquierda, los componentes uno dentro del otro. Abajo, el camino de los datos: hook → &lt;code&gt;api()&lt;/code&gt; → API, y la respuesta vuelve para redibujar." style="min-width:700px"><defs><marker id="g23-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g23-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g23-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g23-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g23-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="14" width="200" height="46" rx="10" class="b "/><text x="120.0" y="29.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">main.tsx</text><text x="120.0" y="45.0" class="ts" text-anchor="middle" dominant-baseline="middle">arranca la app</text><line x1="120" y1="62" x2="120" y2="74" class="l " marker-end="url(#g23-n)"/><text x="130.0" y="68.0" class="lb " text-anchor="start" dominant-baseline="middle">contiene</text><rect x="20" y="76" width="200" height="46" rx="10" class="b "/><text x="120.0" y="91.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">App.tsx</text><text x="120.0" y="107.0" class="ts" text-anchor="middle" dominant-baseline="middle">rutas: URL → pantalla</text><line x1="120" y1="124" x2="120" y2="136" class="l " marker-end="url(#g23-n)"/><text x="130.0" y="130.0" class="lb " text-anchor="start" dominant-baseline="middle">contiene</text><rect x="20" y="138" width="200" height="46" rx="10" class="b "/><text x="120.0" y="153.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">LayoutConNav</text><text x="120.0" y="169.0" class="ts" text-anchor="middle" dominant-baseline="middle">barra inferior + Outlet</text><line x1="120" y1="186" x2="120" y2="198" class="l " marker-end="url(#g23-n)"/><text x="130.0" y="192.0" class="lb " text-anchor="start" dominant-baseline="middle">contiene</text><rect x="20" y="200" width="200" height="46" rx="10" class="b inf"/><text x="120.0" y="215.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Activos.tsx</text><text x="120.0" y="231.0" class="ts" text-anchor="middle" dominant-baseline="middle">la pantalla</text><rect x="300" y="200" width="160" height="46" rx="10" class="b inf"/><text x="380.0" y="215.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">useActivos()</text><text x="380.0" y="231.0" class="ts" text-anchor="middle" dominant-baseline="middle">TanStack Query</text><rect x="540" y="200" width="140" height="46" rx="10" class="b "/><text x="610.0" y="215.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">api()</text><text x="610.0" y="231.0" class="ts" text-anchor="middle" dominant-baseline="middle">client.ts · token</text><rect x="760" y="200" width="110" height="46" rx="10" class="b acc"/><text x="815.0" y="215.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">API .NET</text><text x="815.0" y="231.0" class="ts" text-anchor="middle" dominant-baseline="middle">/api/app/activos</text><line x1="222" y1="214" x2="298" y2="214" class="l acc" marker-end="url(#g23-acc)"/><text x="260.0" y="204.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">pide datos</text><line x1="462" y1="214" x2="538" y2="214" class="l acc" marker-end="url(#g23-acc)"/><text x="500.0" y="204.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">buscar=atlas</text><line x1="682" y1="214" x2="758" y2="214" class="l acc" marker-end="url(#g23-acc)"/><text x="720.0" y="204.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">fetch + Bearer</text><polyline points="815,248 815,262 380,262 380,248" class="l ok" marker-end="url(#g23-ok)"/><text x="600.0" y="254.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">JSON → data → React redibuja la lista</text><rect x="300" y="40" width="300" height="110" rx="10" class="b  dash"/><text x="450.0" y="60.0" class="tt" text-anchor="middle" dominant-baseline="middle">Cada componente es una función</text><text x="450.0" y="82.0" class="ts" text-anchor="middle" dominant-baseline="middle">que devuelve un pedazo de pantalla.</text><text x="450.0" y="100.0" class="ts" text-anchor="middle" dominant-baseline="middle">Cuando su estado cambia,</text><text x="450.0" y="118.0" class="ts" text-anchor="middle" dominant-baseline="middle">React la vuelve a dibujar.</text></svg></div><figcaption><b>Cómo se arma una pantalla y de dónde saca los datos.</b> A la izquierda, los componentes uno dentro del otro. Abajo, el camino de los datos: hook → <code>api()</code> → API, y la respuesta vuelve para redibujar.</figcaption></figure>
+  <h3>Las herramientas del frontend, una por una</h3>
+<div class="tabla"><table>
+  <thead><tr><th>Herramienta</th><th>Qué es</th><th>Para qué la usamos</th></tr></thead>
+  <tbody>
+    <tr><td>Node.js</td><td>Un programa que ejecuta JavaScript fuera del navegador.</td><td>Correr las herramientas de desarrollo (no corre en el celular del usuario).</td></tr>
+    <tr><td>npm</td><td>El “NuGet” de JavaScript: descarga librerías. La lista está en <code>package.json</code>.</td><td><code>npm install</code> baja todo; <code>npm run dev</code> levanta la app.</td></tr>
+    <tr><td>Vite</td><td>Servidor de desarrollo y empaquetador.</td><td>Muestra la app en <code>localhost:5173</code> y la recarga al guardar; reenvía <code>/api</code> a la API.</td></tr>
+    <tr><td>TypeScript</td><td>JavaScript con tipos, como C#. Archivos <code>.ts</code> y <code>.tsx</code>.</td><td>Que el editor avise errores antes de ejecutar.</td></tr>
+    <tr><td>React</td><td>Librería para armar pantallas con componentes.</td><td>Todas las pantallas.</td></tr>
+    <tr><td>React Router</td><td>Decide qué componente mostrar según la URL.</td><td><code>App.tsx</code>.</td></tr>
+    <tr><td>TanStack Query</td><td>Librería para pedir datos: hace el pedido, guarda la respuesta en memoria (caché) y la vuelve a pedir cuando hace falta.</td><td><code>api/hooks.ts</code>.</td></tr>
+    <tr><td>Tailwind</td><td>Estilos escritos como clases cortas (<code>mt-5</code> = margen arriba).</td><td>El diseño visual.</td></tr>
+  </tbody>
+</table></div>
+<p><b>¿Qué es un “hook”?</b> En React, una función que empieza con <code>use</code> (<code>useState</code>, <code>useActivos</code>) y le da a un componente algo extra: memoria (estado), datos de la API, etc. <b>¿Qué es la “caché”?</b> Guardar una respuesta en memoria para no pedirla de nuevo enseguida: si volvés al listado, se muestra al instante.</p>
+
   <h3>Rutas: qué pantalla corresponde a cada URL</h3>
   <span class="ruta">mantenia-app/src/App.tsx (resumido)</span>
 <pre><code>&lt;Routes&gt;
@@ -2822,7 +3081,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 </section>
 
 <section id="front">
-  <h2><span class="n">37</span>Cómo la usa la app</h2>
+  <h2><span class="n">40</span>Cómo la usa la app</h2>
   <p>La app React no sabe nada de SQL ni de C#. Solo conoce las URLs y el formato JSON. Todo pasa por una función:</p>
   <span class="ruta">mantenia-app/src/api/client.ts</span>
 <pre><code>export async function api&lt;T&gt;(path: string, options = {}): Promise&lt;T&gt; {
@@ -2842,7 +3101,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
   return (await res.json()) as T;
 }</code></pre>
   <ol class="anot">
-    <li><div>Lee el token guardado en el navegador después del login.</div></li>
+    <li><div>Lee el token que se guardó en el <code>localStorage</code> del navegador (un espacio de guardado que cada sitio tiene dentro del navegador) después del login.</div></li>
     <li><div>Lo agrega en cada pedido: es el “mostrar la pulsera”.</div></li>
     <li><div>Convierte el objeto de JavaScript a texto JSON.</div></li>
     <li><div>Si la API responde 401 (token vencido), borra la sesión y manda al login.</div></li>
@@ -2854,7 +3113,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 <div class="separador">Parte 5<b>Consigna y defensa</b></div>
 
 <section id="funcionales">
-  <h2><span class="n">38</span>Requerimientos funcionales con capturas</h2>
+  <h2><span class="n">41</span>Requerimientos funcionales con capturas</h2>
   <p class="sub">Capturas de la app real con datos de ejemplo, en el orden en que conviene mostrarlas.</p>
   <h3>6 · Login</h3>
   <div class="capturas">
@@ -2896,7 +3155,7 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 </section>
 
 <section id="diseno">
-  <h2><span class="n">39</span>Requisitos de diseño</h2>
+  <h2><span class="n">42</span>Requisitos de diseño</h2>
   <h3>Campos de Activo hoy</h3>
   <div class="tabla"><table>
     <thead><tr><th>Campo</th><th>Tipo SQL</th><th>Control</th><th>Obligatorio</th></tr></thead>
@@ -2928,8 +3187,76 @@ public async Task&lt;ActionResult&lt;CodigoEncontradoDto&gt;&gt; PorCodigo(strin
 }</code></pre>
 </section>
 
+<section id="mvc">
+  <h2><span class="n">43</span>MVC, Razor, Layout y PartialView (lo que pide la consigna)</h2>
+  <p>La consigna nombra tres cosas que son de <b>ASP.NET MVC</b>, el estilo que se ve en clase: Layout, PartialView y validación con data annotations. MantenIA usa otro estilo (API + React). Para defender el TP hay que entender las dos cosas y saber explicar la equivalencia.</p>
+  <h3>¿Qué es MVC?</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Letra</th><th>Qué es</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr><td><b>M</b>odel</td><td>Los datos que se muestran o se reciben.</td><td>Una clase <code>Activo</code> o un ViewModel.</td></tr>
+      <tr><td><b>V</b>iew</td><td>La página: un archivo <code>.cshtml</code> que mezcla HTML con C# (eso es <b>Razor</b>).</td><td><code>Views/Activos/Index.cshtml</code></td></tr>
+      <tr><td><b>C</b>ontroller</td><td>Recibe el pedido, busca los datos y elige qué vista mostrar.</td><td><code>ActivosController.Index()</code> → <code>return View(activos);</code></td></tr>
+    </tbody>
+  </table></div>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 1000 280" role="img" aria-label="&lt;b&gt;La diferencia entre MVC y nuestra arquitectura.&lt;/b&gt; En MVC el servidor arma la página HTML con una vista Razor. En MantenIA el servidor devuelve solo datos (JSON) y React arma la página en el navegador." style="min-width:800px"><defs><marker id="g36-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g36-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g36-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g36-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g36-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="10" y="10" width="980" height="120" rx="14" class="zone"/><text x="24.0" y="26.0" class="zl" text-anchor="start" dominant-baseline="middle">ASP.NET MVC CLÁSICO (lo que se ve en clase)</text><rect x="10" y="150" width="980" height="120" rx="14" class="zone"/><text x="24.0" y="166.0" class="zl" text-anchor="start" dominant-baseline="middle">MANTENIA (API + React)</text><rect x="30.0" y="48" width="140" height="56" rx="10" class="b inf"/><text x="100.0" y="68.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Navegador</text><text x="100.0" y="84.0" class="ts" text-anchor="middle" dominant-baseline="middle">pide la página</text><rect x="230.0" y="48" width="140" height="56" rx="10" class="b acc"/><text x="300.0" y="68.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Controller</text><text x="300.0" y="84.0" class="ts" text-anchor="middle" dominant-baseline="middle">ActivosController</text><rect x="430.0" y="48" width="140" height="56" rx="10" class="b acc"/><text x="500.0" y="68.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Vista Razor</text><text x="500.0" y="84.0" class="ts" text-anchor="middle" dominant-baseline="middle">Index.cshtml</text><rect x="630.0" y="48" width="140" height="56" rx="10" class="b ok"/><text x="700.0" y="68.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">HTML completo</text><text x="700.0" y="84.0" class="ts" text-anchor="middle" dominant-baseline="middle">lo arma el servidor</text><rect x="830.0" y="48" width="140" height="56" rx="10" class="b inf"/><text x="900.0" y="68.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Navegador</text><text x="900.0" y="84.0" class="ts" text-anchor="middle" dominant-baseline="middle">muestra</text><line x1="172.0" y1="76" x2="228.0" y2="76" class="l acc" marker-end="url(#g36-acc)"/><text x="200.0" y="66.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">pide</text><line x1="372.0" y1="76" x2="428.0" y2="76" class="l acc" marker-end="url(#g36-acc)"/><text x="400.0" y="66.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">View()</text><line x1="572.0" y1="76" x2="628.0" y2="76" class="l acc" marker-end="url(#g36-acc)"/><text x="600.0" y="66.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">genera</text><line x1="772.0" y1="76" x2="828.0" y2="76" class="l ok" marker-end="url(#g36-ok)"/><text x="800.0" y="66.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">envía</text><rect x="30.0" y="188" width="140" height="56" rx="10" class="b inf"/><text x="100.0" y="208.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">React</text><text x="100.0" y="224.0" class="ts" text-anchor="middle" dominant-baseline="middle">en el navegador</text><rect x="230.0" y="188" width="140" height="56" rx="10" class="b acc"/><text x="300.0" y="208.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Controller</text><text x="300.0" y="224.0" class="ts" text-anchor="middle" dominant-baseline="middle">AppController</text><rect x="430.0" y="188" width="140" height="56" rx="10" class="b ok"/><text x="500.0" y="208.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">JSON</text><text x="500.0" y="224.0" class="ts" text-anchor="middle" dominant-baseline="middle">solo datos</text><rect x="630.0" y="188" width="140" height="56" rx="10" class="b inf"/><text x="700.0" y="208.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">React</text><text x="700.0" y="224.0" class="ts" text-anchor="middle" dominant-baseline="middle">arma el HTML</text><rect x="830.0" y="188" width="140" height="56" rx="10" class="b inf"/><text x="900.0" y="208.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Pantalla</text><text x="900.0" y="224.0" class="ts" text-anchor="middle" dominant-baseline="middle">muestra</text><line x1="172.0" y1="216" x2="228.0" y2="216" class="l acc" marker-end="url(#g36-acc)"/><text x="200.0" y="206.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">pide</text><line x1="372.0" y1="216" x2="428.0" y2="216" class="l acc" marker-end="url(#g36-acc)"/><text x="400.0" y="206.0" class="lb acc" text-anchor="middle" dominant-baseline="middle">Ok(dto)</text><line x1="572.0" y1="216" x2="628.0" y2="216" class="l ok" marker-end="url(#g36-ok)"/><text x="600.0" y="206.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">recibe</text><line x1="772.0" y1="216" x2="828.0" y2="216" class="l ok" marker-end="url(#g36-ok)"/><text x="800.0" y="206.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">dibuja</text></svg></div><figcaption><b>La diferencia entre MVC y nuestra arquitectura.</b> En MVC el servidor arma la página HTML con una vista Razor. En MantenIA el servidor devuelve solo datos (JSON) y React arma la página en el navegador.</figcaption></figure>
+  <p>Fijate que el <b>Controller existe en los dos estilos</b>. La diferencia es qué devuelve: en MVC devuelve <code>View(...)</code> (una página HTML ya armada); en nuestra API devuelve <code>Ok(...)</code> (datos en JSON).</p>
+
+  <h3>Layout</h3>
+  <p>Un <b>Layout</b> es el “marco” que comparten todas las páginas: el menú, el logo, el pie. Se escribe una vez en <code>Views/Shared/_Layout.cshtml</code> y cada página se dibuja en el hueco <code>@RenderBody()</code>.</p>
+  <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 940 360" role="img" aria-label="&lt;b&gt;Layout y PartialView en ASP.NET MVC.&lt;/b&gt; El Layout es el marco común (menú, pie) y cada página se dibuja en su &lt;code&gt;@RenderBody()&lt;/code&gt;. Una PartialView es un pedazo reutilizable: el formulario se escribe una vez y lo usan Alta y Edición." style="min-width:800px"><defs><marker id="g37-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g37-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g37-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g37-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g37-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="20" width="400" height="320" rx="10" class="b "/><text x="220.0" y="40.0" class="tt" text-anchor="middle" dominant-baseline="middle">_Layout.cshtml (el marco de TODAS las páginas)</text><rect x="40" y="58" width="360" height="44" rx="10" class="b inf"/><text x="220.0" y="72.5" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Menú · logo</text><text x="220.0" y="88.0" class="ts" text-anchor="middle" dominant-baseline="middle">igual en todas las páginas</text><rect x="40" y="116" width="360" height="160" rx="10" class="b acc dash"/><text x="220.0" y="180.0" class="tt mono" text-anchor="middle" dominant-baseline="middle">@RenderBody()</text><text x="220.0" y="202.0" class="ts" text-anchor="middle" dominant-baseline="middle">acá se dibuja la página pedida</text><rect x="40" y="290" width="360" height="36" rx="10" class="b inf"/><text x="220.0" y="308.0" class="ts" text-anchor="middle" dominant-baseline="middle">pie de página</text><rect x="520" y="40" width="190" height="70" rx="10" class="b "/><text x="615.0" y="60.0" class="tt" text-anchor="middle" dominant-baseline="middle">Create.cshtml</text><text x="615.0" y="76.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">&lt;partial name=</text><text x="615.0" y="91.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">&quot;_FormActivo&quot; /&gt;</text><rect x="730" y="40" width="190" height="70" rx="10" class="b "/><text x="825.0" y="60.0" class="tt" text-anchor="middle" dominant-baseline="middle">Edit.cshtml</text><text x="825.0" y="76.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">&lt;partial name=</text><text x="825.0" y="91.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">&quot;_FormActivo&quot; /&gt;</text><rect x="600" y="220" width="240" height="90" rx="10" class="b ok"/><text x="720.0" y="242.5" class="tt" text-anchor="middle" dominant-baseline="middle">_FormActivo.cshtml</text><text x="720.0" y="258.5" class="ts" text-anchor="middle" dominant-baseline="middle">PartialView: los campos</text><text x="720.0" y="273.5" class="ts" text-anchor="middle" dominant-baseline="middle">del formulario, escritos</text><text x="720.0" y="288.5" class="ts" text-anchor="middle" dominant-baseline="middle">UNA sola vez</text><line x1="615" y1="112" x2="680" y2="218" class="l ok" marker-end="url(#g37-ok)"/><text x="630.0" y="170.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">usa</text><line x1="825" y1="112" x2="760" y2="218" class="l ok" marker-end="url(#g37-ok)"/><text x="810.0" y="170.0" class="lb ok" text-anchor="middle" dominant-baseline="middle">usa</text><polyline points="520,75 460,75 460,196 402,196" class="l acc" marker-end="url(#g37-acc)"/><text x="470.0" y="214.0" class="lb acc" text-anchor="start" dominant-baseline="middle">se dibuja en @RenderBody()</text></svg></div><figcaption><b>Layout y PartialView en ASP.NET MVC.</b> El Layout es el marco común (menú, pie) y cada página se dibuja en su <code>@RenderBody()</code>. Una PartialView es un pedazo reutilizable: el formulario se escribe una vez y lo usan Alta y Edición.</figcaption></figure>
+<pre><code>&lt;!-- Views/Shared/_Layout.cshtml --&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;nav&gt;MantenIA · Activos · Órdenes&lt;/nav&gt;        <span class="c">&lt;!-- igual en todas las páginas --&gt;</span>
+    &lt;main&gt;@RenderBody()&lt;/main&gt;                     <span class="c">&lt;!-- acá va cada página --&gt;</span>
+    &lt;footer&gt;UNLaM · 2026&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <h3>PartialView</h3>
+  <p>Una <b>PartialView</b> es un pedazo de vista reutilizable. Por convención su nombre empieza con guion bajo. El ejemplo típico es el formulario: Alta y Edición muestran los mismos campos, así que se escriben una vez en <code>_FormActivo.cshtml</code> y las dos páginas lo incluyen.</p>
+  <div class="lado">
+    <div><div class="et">Views/Activos/_FormActivo.cshtml (la parcial)</div>
+<pre><code>@model ActivoGuardarDto
+&lt;label asp-for=<span class="s">"Nombre"</span>&gt;&lt;/label&gt;
+&lt;input asp-for=<span class="s">"Nombre"</span> /&gt;
+&lt;span asp-validation-for=<span class="s">"Nombre"</span>&gt;&lt;/span&gt;
+
+&lt;select asp-for=<span class="s">"IdCategoriaActivo"</span>
+        asp-items=<span class="s">"ViewBag.Categorias"</span>&gt;&lt;/select&gt;
+...</code></pre></div>
+    <div><div class="et">Views/Activos/Create.cshtml (la usa)</div>
+<pre><code>@model ActivoGuardarDto
+&lt;h1&gt;Nuevo activo&lt;/h1&gt;
+&lt;form asp-action=<span class="s">"Create"</span>&gt;
+    &lt;partial name=<span class="s">"_FormActivo"</span> /&gt;
+    &lt;button&gt;Crear&lt;/button&gt;
+&lt;/form&gt;</code></pre></div>
+  </div>
+  <p><code>asp-for="Nombre"</code> conecta el input con la propiedad del modelo; <code>asp-validation-for</code> muestra el mensaje de la data annotation <code>[Required]</code> debajo del campo. Son las mismas annotations que ya usa nuestra API.</p>
+
+  <h3>Las equivalencias en MantenIA</h3>
+  <div class="tabla"><table>
+    <thead><tr><th>Concepto MVC</th><th>En MantenIA hoy</th><th>¿Cumple?</th></tr></thead>
+    <tbody>
+      <tr><td>Controller</td><td><code>AppController</code> (devuelve JSON)</td><td><span class="pill ok">Sí</span></td></tr>
+      <tr><td>Model / ViewModel</td><td>Entidades y DTOs</td><td><span class="pill ok">Sí</span></td></tr>
+      <tr><td>Validación con data annotations</td><td>En los DTOs; ASP.NET responde 400</td><td><span class="pill warn">Parcial: falta que todos los campos sean obligatorios</span></td></tr>
+      <tr><td><code>_Layout.cshtml</code> + <code>@RenderBody()</code></td><td><code>Layout.tsx</code> + <code>&lt;Outlet /&gt;</code></td><td><span class="pill warn">Mismo concepto, otra tecnología</span></td></tr>
+      <tr><td>PartialView</td><td>Componentes reutilizables (<code>Campo</code>, <code>Fila</code>)</td><td><span class="pill bad">No hay vistas Razor</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="decir">MantenIA usa ASP.NET para la API y React para las pantallas. El Controller es el mismo concepto; en vez de devolver una vista Razor devuelve JSON. El Layout de React (<code>Layout.tsx</code> con <code>&lt;Outlet /&gt;</code>) cumple el mismo papel que <code>_Layout.cshtml</code> con <code>@RenderBody()</code>.</div>
+  <p>Como la consigna pide PartialView explícitamente, en “Qué falta y cómo hacerlo” están las dos opciones para agregarla.</p>
+  <div class="recordar"><ul>
+    <li>MVC: el Controller elige una View (Razor, <code>.cshtml</code>) y el servidor manda HTML. Nuestra API manda JSON y React arma el HTML.</li>
+    <li>Layout = marco común con <code>@RenderBody()</code>. PartialView = pedazo reutilizable con <code>&lt;partial name="..." /&gt;</code>.</li>
+  </ul></div>
+</section>
+
 <section id="receta">
-  <h2><span class="n">40</span>Receta: agregar un campo de punta a punta</h2>
+  <h2><span class="n">44</span>Receta: agregar un campo de punta a punta</h2>
   <p>La mejor forma de demostrar que entendemos el proyecto es saber modificarlo. Esta receta agrega <b>FechaAlta</b> (fecha validada) y <b>VidaUtilMeses</b> (número de 1 a 1000) al activo. Son justo dos requisitos que faltan, y el recorrido pasa por <b>todas las capas</b>.</p>
   <figure class="dg"><div class="dg-scroll"><svg viewBox="0 0 860 342" role="img" aria-label="&lt;b&gt;Agregar un campo atraviesa todas las capas, de abajo hacia arriba.&lt;/b&gt; A la izquierda la capa; a la derecha el cambio concreto. El controller no se toca." style="min-width:620px"><defs><marker id="g26-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk "/></marker><marker id="g26-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk ok"/></marker><marker id="g26-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk bad"/></marker><marker id="g26-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk acc"/></marker><marker id="g26-inf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk inf"/></marker></defs><rect x="20" y="12" width="210" height="36" rx="10" class="b "/><text x="125.0" y="30.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Base de datos</text><circle cx="38" cy="30" r="11" class="nc"/><text x="38.0" y="30.5" class="nt" text-anchor="middle" dominant-baseline="middle">1</text><rect x="270" y="12" width="570" height="36" rx="10" class="b "/><text x="555.0" y="30.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">ALTER TABLE dbo.Activo ADD FechaAlta …</text><line x1="232" y1="30" x2="268" y2="30" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="49" x2="125" y2="57" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="58" width="210" height="36" rx="10" class="b "/><text x="125.0" y="76.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Entidad</text><circle cx="38" cy="76" r="11" class="nc"/><text x="38.0" y="76.5" class="nt" text-anchor="middle" dominant-baseline="middle">2</text><rect x="270" y="58" width="570" height="36" rx="10" class="b "/><text x="555.0" y="76.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">public DateTime? FechaAlta { get; set; }</text><line x1="232" y1="76" x2="268" y2="76" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="95" x2="125" y2="103" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="104" width="210" height="36" rx="10" class="b acc"/><text x="125.0" y="122.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">DTO de entrada</text><circle cx="38" cy="122" r="11" class="nc"/><text x="38.0" y="122.5" class="nt" text-anchor="middle" dominant-baseline="middle">3</text><rect x="270" y="104" width="570" height="36" rx="10" class="b "/><text x="555.0" y="122.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">[Required] [Range(1, 1000)] VidaUtilMeses</text><line x1="232" y1="122" x2="268" y2="122" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="141" x2="125" y2="149" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="150" width="210" height="36" rx="10" class="b "/><text x="125.0" y="168.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Servicio</text><circle cx="38" cy="168" r="11" class="nc"/><text x="38.0" y="168.5" class="nt" text-anchor="middle" dominant-baseline="middle">4</text><rect x="270" y="150" width="570" height="36" rx="10" class="b "/><text x="555.0" y="168.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">activo.FechaAlta = dto.FechaAlta;</text><line x1="232" y1="168" x2="268" y2="168" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="187" x2="125" y2="195" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="196" width="210" height="36" rx="10" class="b "/><text x="125.0" y="214.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">DTO de salida</text><circle cx="38" cy="214" r="11" class="nc"/><text x="38.0" y="214.5" class="nt" text-anchor="middle" dominant-baseline="middle">5</text><rect x="270" y="196" width="570" height="36" rx="10" class="b "/><text x="555.0" y="214.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">ActivoEdicionDto(…, FechaAlta, VidaUtilMeses)</text><line x1="232" y1="214" x2="268" y2="214" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="233" x2="125" y2="241" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="242" width="210" height="36" rx="10" class="b inf"/><text x="125.0" y="260.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Pantalla</text><circle cx="38" cy="260" r="11" class="nc"/><text x="38.0" y="260.5" class="nt" text-anchor="middle" dominant-baseline="middle">6</text><rect x="270" y="242" width="570" height="36" rx="10" class="b "/><text x="555.0" y="260.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">&lt;input type=&quot;date&quot;&gt; &lt;input type=&quot;number&quot;&gt;</text><line x1="232" y1="260" x2="268" y2="260" class="l " marker-end="url(#g26-n)"/><line x1="125" y1="279" x2="125" y2="287" class="l acc" marker-end="url(#g26-acc)"/><rect x="20" y="288" width="210" height="36" rx="10" class="b ok"/><text x="125.0" y="306.0" class="tt" text-anchor="middle" dominant-baseline="middle" style="font-size:12px">Probar</text><circle cx="38" cy="306" r="11" class="nc"/><text x="38.0" y="306.5" class="nt" text-anchor="middle" dominant-baseline="middle">7</text><rect x="270" y="288" width="570" height="36" rx="10" class="b "/><text x="555.0" y="306.0" class="ts mono" text-anchor="middle" dominant-baseline="middle">Scalar: 5000 → 400 · datos ok → 201</text><line x1="232" y1="306" x2="268" y2="306" class="l " marker-end="url(#g26-n)"/></svg></div><figcaption><b>Agregar un campo atraviesa todas las capas, de abajo hacia arriba.</b> A la izquierda la capa; a la derecha el cambio concreto. El controller no se toca.</figcaption></figure>
   <ol class="secuencia">
@@ -2969,7 +3296,7 @@ activo.VidaUtilMeses = dto.VidaUtilMeses;</code></pre></div></li>
 </section>
 
 <section id="depurar">
-  <h2><span class="n">41</span>Cómo depurar y errores comunes</h2>
+  <h2><span class="n">45</span>Cómo depurar y errores comunes</h2>
   <h3>Pausar el programa en una línea</h3>
   <ol class="secuencia">
     <li><div>En Visual Studio, abrir <code>ActivosAppService.cs</code> y hacer clic en el margen izquierdo de la línea <code>await ValidarReferenciasAsync(dto, ct);</code>. Aparece un punto rojo: un <b>punto de interrupción</b> (o <b>F9</b>).</div></li>
@@ -2995,15 +3322,15 @@ activo.VidaUtilMeses = dto.VidaUtilMeses;</code></pre></div></li>
 </section>
 
 <section id="demo">
-  <h2><span class="n">42</span>Guion de la demo</h2>
+  <h2><span class="n">46</span>Guion de la demo</h2>
   <p class="sub">Unos 12 minutos. Se evalúa la participación de cada uno, así que conviene que cada integrante tenga un bloque y lo explique con el código abierto.</p>
   <div class="tabla"><table>
     <thead><tr><th>Bloque</th><th>Qué mostrar</th><th>Apoyo</th></tr></thead>
     <tbody>
-      <tr><td>Integrante 1 · Arquitectura</td><td>Carpetas, capas, <code>Program.cs</code>, inyección de dependencias.</td><td><a href="#estructura">14</a>–<a href="#di">17</a></td></tr>
-      <tr><td>Integrante 2 · Datos y negocio</td><td>Entidad, DTO, DbContext, mapeo, <code>ActivosAppService</code> (alta y baja con regla).</td><td><a href="#datos">18</a>–<a href="#negocio">22</a></td></tr>
-      <tr><td>Integrante 3 · API y Swagger</td><td>Controller, códigos HTTP, Scalar/Swagger: login, autorizar, GET, POST con 400, DELETE con 409.</td><td><a href="#controllers">25</a>, <a href="#swagger">29</a></td></tr>
-      <tr><td>Integrante 4 · Seguridad y app</td><td>Hash, JWT, permisos; demo en la app: login, búsqueda, alta con cliente nuevo, edición, baja.</td><td><a href="#seguridad">30</a>, <a href="#funcionales">38</a></td></tr>
+      <tr><td>Integrante 1 · Arquitectura</td><td>Carpetas, capas, <code>Program.cs</code>, inyección de dependencias.</td><td><a href="#estructura">16</a>–<a href="#di">19</a></td></tr>
+      <tr><td>Integrante 2 · Datos y negocio</td><td>Entidad, DTO, DbContext, mapeo, <code>ActivosAppService</code> (alta y baja con regla).</td><td><a href="#datos">20</a>–<a href="#negocio">25</a></td></tr>
+      <tr><td>Integrante 3 · API y Swagger</td><td>Controller, códigos HTTP, Scalar/Swagger: login, autorizar, GET, POST con 400, DELETE con 409.</td><td><a href="#controllers">28</a>, <a href="#swagger">32</a></td></tr>
+      <tr><td>Integrante 4 · Seguridad y app</td><td>Hash, JWT, permisos; demo en la app: login, búsqueda, alta con cliente nuevo, edición, baja.</td><td><a href="#seguridad">33</a>, <a href="#funcionales">41</a></td></tr>
     </tbody>
   </table></div>
   <h4>Antes de la defensa</h4>
@@ -3016,7 +3343,7 @@ activo.VidaUtilMeses = dto.VidaUtilMeses;</code></pre></div></li>
 </section>
 
 <section id="pendientes">
-  <h2><span class="n">43</span>Qué falta y cómo hacerlo</h2>
+  <h2><span class="n">47</span>Qué falta y cómo hacerlo</h2>
   <p class="sub">Cambios mínimos para que todo quede en verde, por prioridad.</p>
   <details open>
     <summary><span class="pill bad">Falta</span> Campo fecha y numérico 1–1000 (y con eso, 10 campos cargables)</summary>
@@ -3072,7 +3399,7 @@ app.MapScalarApiReference();</code></pre>
 </section>
 
 <section id="preguntas">
-  <h2><span class="n">44</span>Preguntas probables en la defensa</h2>
+  <h2><span class="n">48</span>Preguntas probables en la defensa</h2>
   <p class="sub">Agrupadas por tema. Tocá cada pregunta para ver la respuesta. Practiquen respondiéndolas en voz alta antes de abrirlas.</p>
 
   <h3>Arquitectura y diseño</h3>
@@ -3165,7 +3492,7 @@ app.MapScalarApiReference();</code></pre>
 </section>
 
 <section id="glosario">
-  <h2><span class="n">45</span>Glosario</h2>
+  <h2><span class="n">49</span>Glosario</h2>
   <h4>.NET y C#</h4>
   <dl class="glosario">
     <dt>.NET</dt><dd>Plataforma de Microsoft que ejecuta programas escritos en C#.</dd>
