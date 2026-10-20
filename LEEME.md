@@ -2,7 +2,6 @@
 
 TP de Programación Avanzada II. Varios talleres mecánicos usan el mismo sistema y **cada taller ve solo lo suyo**.
 ABM de **Vehículos** (entidad principal) con **Trabajos** (entidad de relación) que además usan **Mecánicos** y **Tipos de trabajo**.
-El manual completo (PDF) se entrega aparte (`Manual del Backend - TallerApp.pdf`).
 
 ## Cómo correrlo
 
@@ -128,8 +127,4 @@ Todos menos login y registro exigen el token (`Authorization: Bearer ...`).
 | Partial | `ListaTrabajos.jsx`, `EstadoTrabajo.jsx` y `Campo.jsx` (trozos reutilizables) |
 | Arquitectura en capas | Carpetas `Controllers` (Presentación), `Models` (Entidades), `Services` (Negocio) y `Repositories` + `Data` (Datos) |
 
-## Notas para la defensa
 
-- Vite reenvía `/api` a la API (`Frontend/vite.config.js`), así que no hace falta configurar CORS.
-- La clave se guarda con SHA-256 para que sea corto de explicar; en producción se usa PBKDF2 o BCrypt con sal.
-- `appsettings.Development.json` tiene la clave de la base local: está en `.gitignore` y **no se sube al repositorio**.
