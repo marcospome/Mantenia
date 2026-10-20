@@ -1,0 +1,12 @@
+# Compilados y dependencias
+bin/
+obj/
+node_modules/
+dist/
+.vs/
+
+# Configuración local con claves (cada integrante tiene la suya)
+appsettings.Development.json
+
+# Documentos generados
+*.pdf

@@ -1,0 +1,101 @@
+/* Estilos propios encima de Bootstrap. Solo apariencia: no hay lógica acá. */
+:root {
+  --marca: #4f46e5;
+  --marca-oscuro: #3730a3;
+  --fondo: #f1f4fb;
+  --tarjeta: #ffffff;
+  --suave: #6b7280;
+}
+[data-bs-theme='dark'] {
+  --fondo: #0f1220;
+  --tarjeta: #181c2f;
+  --suave: #9aa3b8;
+}
+
+body { background: var(--fondo); font-family: Inter, 'Segoe UI', system-ui, sans-serif; transition: background 0.3s; }
+
+/* Barra superior con menú */
+.barra { background: linear-gradient(120deg, #1e1b4b, var(--marca)); box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3); }
+.marca { font-weight: 800; letter-spacing: 0.3px; color: #fff; font-size: 1.15rem; }
+.menu { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.menu button { background: transparent; border: 0; color: rgba(255, 255, 255, 0.75); padding: 0.4rem 0.9rem; border-radius: 20px; transition: all 0.2s; }
+.menu button:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.menu button.activo { background: #fff; color: var(--marca-oscuro); font-weight: 600; }
+
+/* Animación al cambiar de pantalla */
+.aparecer { animation: aparecer 0.35s ease; }
+@keyframes aparecer { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* Tarjetas */
+.tarjeta { background: var(--tarjeta); border-radius: 16px; box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07); padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+.mecanico { display: flex; align-items: center; gap: 1rem; padding: 1.1rem; }
+.mecanico:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(79, 70, 229, 0.18); }
+.avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #06b6d4); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 1.2rem; }
+
+/* Cifras de resumen */
+.resumen { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.resumen .dato { flex: 1; min-width: 150px; color: #fff; border-radius: 16px; padding: 1rem 1.25rem; transition: transform 0.2s; }
+.resumen .dato:hover { transform: translateY(-3px); }
+.resumen .dato b { display: block; font-size: 1.7rem; line-height: 1.15; }
+.resumen .dato span { opacity: 0.85; font-size: 0.85rem; }
+.dato.a { background: linear-gradient(135deg, #6366f1, #4338ca); }
+.dato.b { background: linear-gradient(135deg, #14b8a6, #0f766e); }
+.dato.c { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.dato.d { background: linear-gradient(135deg, #ec4899, #be185d); }
+
+/* Botones y campos */
+.btn-marca { background: var(--marca); border-color: var(--marca); color: #fff; border-radius: 10px; }
+.btn-marca:hover { background: var(--marca-oscuro); border-color: var(--marca-oscuro); color: #fff; }
+.btn, .form-control, .form-select { border-radius: 10px; }
+.form-control:focus, .form-select:focus { border-color: var(--marca); box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.18); }
+
+/* Tabla */
+.tabla { --bs-table-bg: transparent; }
+.tabla th { color: var(--suave); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.tabla tbody tr:hover { background: rgba(99, 102, 241, 0.07); }
+.patente { display: inline-block; font-family: ui-monospace, Consolas, monospace; font-weight: 700; border: 2px solid currentColor; border-radius: 6px; padding: 1px 8px; }
+
+/* Etiquetas */
+.etiqueta { padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+.comb-Nafta { background: #fee2e2; color: #b91c1c; }
+.comb-Diésel { background: #e0e7ff; color: #3730a3; }
+.comb-GNC { background: #dcfce7; color: #166534; }
+.comb-Eléctrico { background: #cffafe; color: #0e7490; }
+.comb-Híbrido { background: #fef3c7; color: #92400e; }
+.est-pendiente { background: #fef3c7; color: #92400e; }
+.est-curso { background: #dbeafe; color: #1d4ed8; }
+.est-final { background: #dcfce7; color: #166534; }
+
+/* Panel: barra de estados y barras por tipo */
+.barra-estados { display: flex; height: 14px; border-radius: 10px; overflow: hidden; background: rgba(128, 128, 128, 0.2); }
+.barra-estados > div { transition: width 0.6s; }
+.e-pendiente { background: #f59e0b; }
+.e-curso { background: #3b82f6; }
+.e-final { background: #22c55e; }
+.barrita { height: 8px; border-radius: 8px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+.barrita > div { height: 100%; background: linear-gradient(90deg, #6366f1, #06b6d4); border-radius: 8px; transition: width 0.6s; }
+.ultimo { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0.5rem; border-bottom: 1px solid rgba(128, 128, 128, 0.2); cursor: pointer; border-radius: 8px; }
+.ultimo:hover { background: rgba(99, 102, 241, 0.08); }
+.ultimo:last-child { border-bottom: 0; }
+
+/* Aviso flotante */
+.aviso { position: fixed; right: 20px; bottom: 20px; padding: 0.8rem 1.2rem; border-radius: 12px; color: #fff; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); animation: aparecer 0.3s ease; z-index: 10; }
+.aviso-ok { background: #16a34a; }
+.aviso-error { background: #dc2626; }
+
+/* Login */
+.fondo-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e1b4b, var(--marca) 60%, #06b6d4); }
+.caja-login { width: 100%; max-width: 380px; animation: aparecer 0.5s ease; }
+.caja-login .icono { font-size: 2.6rem; }
+
+/* Estado vacío */
+.vacio { text-align: center; color: var(--suave); padding: 2.5rem 0; }
+.vacio .icono { font-size: 2.5rem; display: block; }
+
+/* Celular: el menú pasa a una fila propia y más compacta */
+@media (max-width: 576px) {
+  .menu { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; }
+  .menu button { padding: 0.3rem 0.6rem; font-size: 0.85rem; white-space: nowrap; }
+  .marca { flex-grow: 1; }
+  .resumen .dato { min-width: 45%; }
+}
