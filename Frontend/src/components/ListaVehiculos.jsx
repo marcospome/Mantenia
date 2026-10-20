@@ -1,77 +1,79 @@
 import { useEffect, useState } from 'react'
+import { Search, Plus, Pencil, Trash2, Gauge, User, Wrench, Car, Fuel } from 'lucide-react'
 import { api } from '../api'
+import { Esqueleto, Hoja, Patente, Vacio } from './Ui'
+
+const COLORES = { rojo: '#ef4444', gris: '#9ca3af', blanco: '#f8fafc', negro: '#111827', azul: '#3b82f6', verde: '#22c55e', amarillo: '#facc15', plata: '#cbd5e1' }
 
 export default function ListaVehiculos({ ir, avisar }) {
-  const [vehiculos, setVehiculos] = useState([])
-  const [patente, setPatente] = useState('')          // buscador campo 1
-  const [propietario, setPropietario] = useState('')  // buscador campo 2
+  const [vehiculos, setVehiculos] = useState(null)      // null = todavía cargando
+  const [patente, setPatente] = useState('')            // buscador campo 1
+  const [propietario, setPropietario] = useState('')    // buscador campo 2
+  const [aBorrar, setABorrar] = useState(null)          // vehículo que se está por eliminar
 
-  const cargar = () => api.listar(patente, propietario).then(setVehiculos)
-  useEffect(() => { cargar() }, [])                   // al abrir la pantalla
+  // Busca solo, 300 ms después de que se deja de escribir
+  useEffect(() => {
+    const espera = setTimeout(() => api.listar(patente, propietario).then(setVehiculos), 300)
+    return () => clearTimeout(espera)
+  }, [patente, propietario])
 
-  async function eliminar(v) {
-    if (!confirm(`¿Eliminar ${v.patente}?`)) return
-    await api.eliminar(v.id)
-    avisar("Vehículo eliminado")
-    cargar()
+  async function eliminar() {
+    await api.eliminar(aBorrar.id)
+    avisar('Vehículo eliminado')
+    setABorrar(null)
+    api.listar(patente, propietario).then(setVehiculos)
   }
-
-  function limpiar() {
-    setPatente(''); setPropietario('')
-    api.listar('', '').then(setVehiculos)
-  }
-
-  // Cifras del resumen, calculadas con los vehículos que se están mostrando
-  const potenciaPromedio = vehiculos.length
-    ? Math.round(vehiculos.reduce((suma, v) => suma + v.potenciaHp, 0) / vehiculos.length)
-    : 0
 
   return (
     <>
-      <div className="resumen">
-        <div className="dato a"><b>{vehiculos.length}</b><span>Vehículos</span></div>
-        <div className="dato b"><b>{new Set(vehiculos.map((v) => v.propietario)).size}</b><span>Propietarios</span></div>
-        <div className="dato c"><b>{potenciaPromedio} HP</b><span>Potencia promedio</span></div>
+      <div className="cab-pantalla">
+        <div>
+          <h1>Vehículos</h1>
+          <p>{vehiculos ? `${vehiculos.length} ${vehiculos.length === 1 ? 'vehículo' : 'vehículos'}` : 'Cargando...'}</p>
+        </div>
       </div>
 
-      <div className="tarjeta">
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h4 className="mb-0">Vehículos</h4>
-          <button className="btn btn-marca" onClick={() => ir('nuevo')}>+ Nuevo vehículo</button>
-        </div>
+      <div className="buscador">
+        <div className="buscar-campo"><Search size={19} /><input placeholder="Buscar por patente" value={patente} onChange={(e) => setPatente(e.target.value)} aria-label="Buscar por patente" /></div>
+        <div className="buscar-campo"><User size={19} /><input placeholder="Buscar por propietario" value={propietario} onChange={(e) => setPropietario(e.target.value)} aria-label="Buscar por propietario" /></div>
+      </div>
 
-        <div className="row g-2 mb-3">
-          <div className="col-md-4"><input className="form-control" placeholder="🔍 Buscar por patente" value={patente} onChange={(e) => setPatente(e.target.value)} /></div>
-          <div className="col-md-4"><input className="form-control" placeholder="🔍 Buscar por propietario" value={propietario} onChange={(e) => setPropietario(e.target.value)} /></div>
-          <div className="col-md-4">
-            <button className="btn btn-marca me-2" onClick={cargar}>Buscar</button>
-            <button className="btn btn-outline-secondary" onClick={limpiar}>Limpiar</button>
+      {vehiculos === null && <div className="lista">{[0, 1, 2].map((i) => <Esqueleto key={i} alto={150} />)}</div>}
+      {vehiculos?.length === 0 && <Vacio icono={<Car size={38} />} texto="No hay vehículos para mostrar" />}
+
+      <div className="lista dos tres">
+        {vehiculos?.map((v, i) => (
+          <article className="tarjeta vehiculo item" key={v.id} style={{ '--i': i }} onClick={() => ir('detalle', v.id)}>
+            <div className="veh-fila">
+              <Patente valor={v.patente} />
+              <span className={`chip chip-${v.combustible}`}><Fuel size={13} />{v.combustible}</span>
+            </div>
+            <h3>{v.marca} {v.modelo}</h3>
+            <div className="meta">
+              <span><i className="color-punto" style={{ '--c': COLORES[v.color?.toLowerCase()] }} />{v.color}</span>
+              <span><Gauge size={15} />{v.potenciaHp} HP</span>
+              <span><User size={15} />{v.propietario}</span>
+            </div>
+            <div className="acciones" onClick={(e) => e.stopPropagation()}>
+              <button className="btn btn-suave btn-chico" onClick={() => ir('detalle', v.id)}><Wrench size={16} /> Trabajos</button>
+              <button className="icono-btn" onClick={() => ir('editar', v.id)} aria-label={`Editar ${v.patente}`}><Pencil size={19} /></button>
+              <button className="icono-btn peligro" onClick={() => setABorrar(v)} aria-label={`Eliminar ${v.patente}`}><Trash2 size={19} /></button>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <button className="fab" onClick={() => ir('nuevo')}><Plus size={22} /><span>Nuevo</span></button>
+
+      {aBorrar && (
+        <Hoja titulo="¿Eliminar vehículo?" alCerrar={() => setABorrar(null)}>
+          <p>Se va a eliminar <b>{aBorrar.patente}</b> junto con todos sus trabajos. Esta acción no se puede deshacer.</p>
+          <div className="hoja-botones">
+            <button className="btn btn-suave" onClick={() => setABorrar(null)}>Cancelar</button>
+            <button className="btn btn-peligro" onClick={eliminar}>Eliminar</button>
           </div>
-        </div>
-
-        <div className="table-responsive">
-          <table className="table tabla align-middle">
-            <thead><tr><th>Patente</th><th>Vehículo</th><th>Combustible</th><th>HP</th><th>Propietario</th><th></th></tr></thead>
-            <tbody>
-              {vehiculos.map((v) => (
-                <tr key={v.id}>
-                  <td><span className="patente">{v.patente}</span></td>
-                  <td>{v.marca} {v.modelo} <span className="text-muted">· {v.color}</span></td>
-                  <td><span className={`etiqueta comb-${v.combustible}`}>{v.combustible}</span></td>
-                  <td>{v.potenciaHp}</td>
-                  <td>{v.propietario}</td>
-                  <td className="text-end text-nowrap">
-                    <button className="btn btn-sm btn-outline-primary me-1" onClick={() => ir('detalle', v.id)}>Trabajos</button>
-                    <button className="btn btn-sm btn-outline-secondary me-1" onClick={() => ir('editar', v.id)}>Editar</button>
-                    <button className="btn btn-sm btn-outline-danger" onClick={() => eliminar(v)}>Eliminar</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          {vehiculos.length === 0 && <div className="vacio"><span className="icono">🚗</span>No hay vehículos para mostrar</div>}
-        </div>
-      </div>
+        </Hoja>
+      )}
     </>
   )
 }

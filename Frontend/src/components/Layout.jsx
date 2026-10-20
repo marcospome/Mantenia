@@ -1,46 +1,79 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { CheckCircle2, TriangleAlert, LayoutDashboard, Car, UserCog, Moon, Sun, LogOut, Wrench } from 'lucide-react'
 import { borrarSesion, leerSesion } from '../api'
 
 const MENU = [
-  { clave: 'panel', texto: '📊 Panel' },
-  { clave: 'lista', texto: '🚗 Vehículos' },
-  { clave: 'mecanicos', texto: '🧰 Mecánicos' },
+  { clave: 'panel', texto: 'Panel', Icono: LayoutDashboard },
+  { clave: 'lista', texto: 'Vehículos', Icono: Car },
+  { clave: 'mecanicos', texto: 'Mecánicos', Icono: UserCog },
 ]
 
-// LAYOUT: la barra de arriba se repite en todas las pantallas; el contenido va en "children"
+// LAYOUT: lo que se repite en todas las pantallas.
+//  · Celular: barra de arriba (con el nombre del taller) y menú abajo.
+//  · Escritorio: menú lateral a la izquierda.
+// El contenido de cada pantalla entra en "children".
 export default function Layout({ children, pantalla, ir, aviso }) {
-  const [oscuro, setOscuro] = useState(localStorage.getItem('tema') === 'oscuro')
+  const [oscuro, setOscuro] = useState(() => {
+    const guardado = localStorage.getItem('tema')
+    return guardado ? guardado === 'oscuro' : window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
 
-  // Bootstrap 5.3 cambia todos sus colores con este atributo
-  document.documentElement.dataset.bsTheme = oscuro ? 'dark' : 'light'
-  function cambiarTema() {
-    localStorage.setItem('tema', oscuro ? 'claro' : 'oscuro')
-    setOscuro(!oscuro)
-  }
+  // CSS cambia todos los colores con este atributo
+  useEffect(() => { document.documentElement.dataset.tema = oscuro ? 'oscuro' : 'claro' }, [oscuro])
+  const cambiarTema = () => { localStorage.setItem('tema', oscuro ? 'claro' : 'oscuro'); setOscuro(!oscuro) }
+  const salir = () => { borrarSesion(); location.reload() }
 
-  function salir() { borrarSesion(); location.reload() }
-
-  // "nuevo", "editar" y "detalle" pertenecen a la sección Vehículos
+  const sesion = leerSesion()
+  // «nuevo», «editar» y «detalle» pertenecen a la sección Vehículos
   const seccion = ['nuevo', 'editar', 'detalle'].includes(pantalla) ? 'lista' : pantalla
+  const enFormulario = pantalla === 'nuevo' || pantalla === 'editar'
 
   return (
-    <>
-      <nav className="barra mb-4">
-        <div className="container d-flex align-items-center gap-3 flex-wrap py-2">
-          <span className="marca">🔧 {leerSesion()?.taller}</span>
-          <div className="menu flex-grow-1">
-            {MENU.map((m) => (
-              <button key={m.clave} className={seccion === m.clave ? 'activo' : ''} onClick={() => ir(m.clave)}>{m.texto}</button>
-            ))}
-          </div>
-          <button className="btn btn-sm btn-outline-light" onClick={cambiarTema} title="Cambiar tema">{oscuro ? '☀️' : '🌙'}</button>
-          <button className="btn btn-sm btn-outline-light" onClick={salir}>Salir</button>
+    <div className="app">
+      {/* Menú lateral (solo se ve en pantallas grandes) */}
+      <aside className="lateral">
+        <div className="marca-lat">
+          <div className="logo"><Wrench size={20} /></div>
+          <div><b>{sesion?.taller}</b><small>{sesion?.usuario}</small></div>
         </div>
-      </nav>
+        {MENU.map(({ clave, texto, Icono }) => (
+          <button key={clave} className={'nav' + (seccion === clave ? ' activo' : '')} onClick={() => ir(clave)}>
+            <Icono size={20} /> {texto}
+          </button>
+        ))}
+        <div className="pie">
+          <button className="btn btn-suave btn-chico" onClick={cambiarTema}>{oscuro ? <Sun size={17} /> : <Moon size={17} />}</button>
+          <button className="btn btn-suave btn-chico" onClick={salir}><LogOut size={17} /> Salir</button>
+        </div>
+      </aside>
 
-      <div className="container pb-5 aparecer" key={pantalla}>{children}</div>
+      {/* Barra de arriba (celular) */}
+      <header className="barra-sup">
+        <div className="logo"><Wrench size={20} /></div>
+        <div className="titulo-sup"><small>Taller mecánico</small><b>{sesion?.taller}</b></div>
+        <button className="icono-btn" onClick={cambiarTema} aria-label="Cambiar tema">{oscuro ? <Sun size={21} /> : <Moon size={21} />}</button>
+        <button className="icono-btn" onClick={salir} aria-label="Salir"><LogOut size={21} /></button>
+      </header>
 
-      {aviso && <div className={`aviso aviso-${aviso.tipo}`}>{aviso.tipo === 'ok' ? '✅' : '⚠️'} {aviso.texto}</div>}
-    </>
+      <main className="contenido" key={pantalla}>{children}</main>
+
+      {/* Menú de abajo (celular). En los formularios se oculta para dejar lugar a los botones */}
+      {!enFormulario && (
+        <nav className="tabs" aria-label="Secciones">
+          {MENU.map(({ clave, texto, Icono }) => (
+            <button key={clave} className={seccion === clave ? 'activo' : ''} onClick={() => ir(clave)}>
+              <Icono size={23} />
+              {texto}
+            </button>
+          ))}
+        </nav>
+      )}
+
+      {aviso && (
+        <div className={`aviso aviso-${aviso.tipo}`} role="status" key={aviso.texto}>
+          {aviso.tipo === 'ok' ? <CheckCircle2 size={22} /> : <TriangleAlert size={22} />} {aviso.texto}
+        </div>
+      )}
+    </div>
   )
 }

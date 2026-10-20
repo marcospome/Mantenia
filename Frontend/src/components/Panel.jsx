@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { api, pesos } from '../api'
+import { Car, UserCog, Wrench, Banknote, Plus, ChevronRight } from 'lucide-react'
+import { api, leerSesion, pesos } from '../api'
+import { Contador, Esqueleto, Patente, Vacio } from './Ui'
 import EstadoTrabajo from './EstadoTrabajo'
 
 // Panel principal: todos los números salen de GET /api/panel
@@ -7,74 +9,88 @@ export default function Panel({ ir }) {
   const [r, setR] = useState(null)
   useEffect(() => { api.panel().then(setR) }, [])
 
-  if (!r) return null
+  const hola = (
+    <div className="cab-pantalla">
+      <div>
+        <h1>Hola, {leerSesion()?.usuario}</h1>
+        <p>Así va tu taller hoy</p>
+      </div>
+    </div>
+  )
 
-  const totalTrabajos = r.pendientes + r.enCurso + r.finalizados
-  const porcentaje = (n) => (totalTrabajos ? (n / totalTrabajos) * 100 : 0)
+  if (!r) return <>{hola}<div className="stats">{[0, 1, 2, 3].map((i) => <Esqueleto key={i} alto={110} />)}</div><Esqueleto alto={160} /></>
+
+  const total = r.pendientes + r.enCurso + r.finalizados
+  const pct = (n) => (total ? (n / total) * 100 : 0) + '%'
   const maximo = Math.max(1, ...r.porTipo.map((t) => t.cantidad))
+
+  const tarjetas = [
+    { clase: 'a', Icono: Car, valor: r.vehiculos, texto: 'Vehículos' },
+    { clase: 'b', Icono: UserCog, valor: r.mecanicos, texto: 'Mecánicos' },
+    { clase: 'c', Icono: Wrench, valor: r.pendientes + r.enCurso, texto: 'Trabajos abiertos' },
+    { clase: 'd', Icono: Banknote, valor: r.ingresos, texto: 'Ingresos', formato: pesos },
+  ]
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <div>
-          <h3 className="mb-0">Panel del taller</h3>
-          <span className="text-muted">Resumen de lo que está pasando hoy</span>
-        </div>
-        <button className="btn btn-marca" onClick={() => ir('nuevo')}>+ Nuevo vehículo</button>
-      </div>
-
-      <div className="resumen">
-        <div className="dato a"><b>{r.vehiculos}</b><span>Vehículos</span></div>
-        <div className="dato b"><b>{r.mecanicos}</b><span>Mecánicos</span></div>
-        <div className="dato c"><b>{r.pendientes + r.enCurso}</b><span>Trabajos activos</span></div>
-        <div className="dato d"><b>{pesos(r.ingresos)}</b><span>Ingresos (finalizados)</span></div>
-      </div>
-
-      <div className="row g-3">
-        <div className="col-lg-6">
-          <div className="tarjeta h-100">
-            <h5>Estado de los trabajos</h5>
-            <div className="barra-estados my-3">
-              <div className="e-pendiente" style={{ width: porcentaje(r.pendientes) + '%' }} />
-              <div className="e-curso" style={{ width: porcentaje(r.enCurso) + '%' }} />
-              <div className="e-final" style={{ width: porcentaje(r.finalizados) + '%' }} />
-            </div>
-            <div className="d-flex gap-3 flex-wrap">
-              <EstadoTrabajo estado="Pendiente" /> {r.pendientes}
-              <EstadoTrabajo estado="En curso" /> {r.enCurso}
-              <EstadoTrabajo estado="Finalizado" /> {r.finalizados}
-            </div>
-
-            <h5 className="mt-4">Trabajos por tipo</h5>
-            {r.porTipo.length === 0 && <div className="text-muted">Todavía no hay trabajos</div>}
-            {r.porTipo.map((t) => (
-              <div key={t.nombre} className="mb-2">
-                <div className="d-flex justify-content-between small"><span>{t.nombre}</span><b>{t.cantidad}</b></div>
-                <div className="barrita"><div style={{ width: (t.cantidad / maximo) * 100 + '%' }} /></div>
-              </div>
-            ))}
+      {hola}
+      <div className="stats">
+        {tarjetas.map(({ clase, Icono, valor, texto, formato }, i) => (
+          <div className={`stat ${clase}`} key={texto} style={{ '--i': i }}>
+            <div className="burbuja"><Icono size={20} /></div>
+            <b><Contador valor={valor} formato={formato} /></b>
+            <span>{texto}</span>
           </div>
+        ))}
+      </div>
+
+      <div className="tarjeta">
+        <h3>Estado de los trabajos</h3>
+        <div className="segmentos">
+          <div className="seg-p" style={{ width: pct(r.pendientes) }} />
+          <div className="seg-c" style={{ width: pct(r.enCurso) }} />
+          <div className="seg-f" style={{ width: pct(r.finalizados) }} />
+        </div>
+        <div className="leyenda">
+          <span><i style={{ background: 'var(--ambar)' }} />Pendientes {r.pendientes}</span>
+          <span><i style={{ background: 'var(--azul)' }} />En curso {r.enCurso}</span>
+          <span><i style={{ background: 'var(--verde)' }} />Finalizados {r.finalizados}</span>
         </div>
 
-        <div className="col-lg-6">
-          <div className="tarjeta h-100">
-            <h5>Últimos trabajos</h5>
-            {r.ultimos.length === 0 && <div className="vacio"><span className="icono">🛠️</span>Sin trabajos todavía</div>}
-            {r.ultimos.map((u, i) => (
-              <div key={i} className="ultimo" onClick={() => ir('detalle', u.vehiculoId)}>
-                <div>
-                  <span className="patente">{u.patente}</span> <b className="ms-1">{u.tipo}</b>
-                  <div className="small text-muted">{u.mecanico} · {new Date(u.fecha).toLocaleDateString('es-AR')}</div>
+        <h3 style={{ marginTop: 22 }}>Trabajos por tipo</h3>
+        {r.porTipo.length === 0 && <p className="suave chico" style={{ marginTop: 8 }}>Todavía no hay trabajos</p>}
+        {r.porTipo.map((t) => (
+          <div className="barra-fila" key={t.nombre}>
+            <div><span>{t.nombre}</span><b className="num">{t.cantidad}</b></div>
+            <div className="barra-fondo"><i style={{ width: (t.cantidad / maximo) * 100 + '%' }} /></div>
+          </div>
+        ))}
+      </div>
+
+      <div className="tarjeta">
+        <h3 style={{ marginBottom: 12 }}>Últimos trabajos</h3>
+        {r.ultimos.length === 0 && <Vacio icono={<Wrench size={34} />} texto="Cuando cargues trabajos van a aparecer acá" />}
+        <div className="lista">
+          {r.ultimos.map((u, i) => (
+            <button key={i} className="item" style={{ '--i': i, textAlign: 'left' }} onClick={() => ir('detalle', u.vehiculoId)}>
+              <div className="veh-fila">
+                <div style={{ minWidth: 0 }}>
+                  <Patente valor={u.patente} />
+                  <div style={{ marginTop: 6 }}><b>{u.tipo}</b></div>
+                  <div className="suave chico">{u.mecanico} · {new Date(u.fecha).toLocaleDateString('es-AR')}</div>
                 </div>
-                <div className="text-end">
+                <div style={{ textAlign: 'right' }}>
                   <EstadoTrabajo estado={u.estado} />
-                  <div className="small mt-1">{pesos(u.costo)}</div>
+                  <div className="costo" style={{ marginTop: 6 }}>{pesos(u.costo)}</div>
                 </div>
+                <ChevronRight size={18} className="suave" />
               </div>
-            ))}
-          </div>
+            </button>
+          ))}
         </div>
       </div>
+
+      <button className="fab" onClick={() => ir('nuevo')}><Plus size={22} /><span>Nuevo vehículo</span></button>
     </>
   )
 }
