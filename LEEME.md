@@ -1,6 +1,6 @@
 # TallerApp: sistema para talleres mecánicos (API .NET + SQL Server + React)
 
-TP de Programación Avanzada II. Varios talleres mecánicos usan el mismo sistema y **cada taller ve solo lo suyo**.
+TP de Programación Avanzada. Varios talleres mecánicos usan el mismo sistema y **cada taller ve solo lo suyo**.
 ABM de **Vehículos** (entidad principal) con **Trabajos** (entidad de relación) que además usan **Mecánicos** y **Tipos de trabajo**.
 
 ## Cómo correrlo
